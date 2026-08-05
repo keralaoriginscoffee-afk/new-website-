@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kerala Origins Coffee | The Journey of Kerala Coffee</title>
+<title>Join / Contact | Kerala Origins Coffee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -374,164 +374,87 @@ footer{background:var(--footer-bg); color:var(--cream); padding:56px 0 28px; bor
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <nav id="nav">
       <ul>
-        <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="why-we-exist.html">Why We Exist</a></li>
         <li><a href="kerala-coffee.html">Kerala Coffee</a></li>
         <li><a href="producers-people.html">Producers & People</a></li>
         <li><a href="our-work.html">Our Work</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="stories.html">Stories</a></li>
-        <li><a href="join.html">Join / Contact</a></li>
+        <li class="current"><a href="join.html">Join / Contact</a></li>
         <li class="assoc"><a href="#assoc">Association ↗</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" style="padding:0; border-bottom:none;">
-  <div class="hero-main">
-    <div class="wrap" style="padding:0;">
-      <div class="eyebrow">An initiative of Specialty Coffee Association Kerala</div>
-      <h1 class="hero-headline">The<br>Journey of<br><span class="orange">Kerala Coffee</span></h1>
-      <p class="hero-sub">Connecting Kerala's coffee producers, farm workers, processors and roasters — and building greater recognition for coffee from Kerala.</p>
-      <div class="btn-row">
-        <a href="kerala-coffee.html" class="btn btn-primary">Discover Kerala Coffee</a>
-        <a href="join.html" class="btn btn-secondary">Support the Community</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-side">
-    <div class="cell">
-      <div class="coord">11.2500° N</div>
-      <div class="coord">75.7804° E</div>
-    </div>
-    <div class="cell" style="flex:1;">
-      <svg class="journey-svg" viewBox="0 0 200 220" fill="none">
-        <path d="M20 20 C 60 40, 40 90, 90 100 S 160 140, 150 200" stroke="var(--navy)" stroke-width="1" opacity="0.25"/>
-        <path class="journey-dash" d="M20 20 C 60 40, 40 90, 90 100 S 160 140, 150 200" stroke="var(--pink)" stroke-width="1.4"/>
-        <circle cx="20" cy="20" r="3.5" fill="var(--navy)"/>
-        <circle cx="150" cy="200" r="3.5" fill="var(--orange)"/>
-      </svg>
-    </div>
-    <div class="cell">
-      <div class="coord" style="color:var(--pink); opacity:1;">FROM THE WESTERN GHATS →</div>
-    </div>
+<section class="article-hero" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Join / Contact</div>
+    <h1>Be Part of Kerala's<br>Coffee Journey</h1>
+    <p class="lede">Are you a producer, worker, processor, roaster, researcher or someone who wants to support Kerala coffee? We would like to hear from you.</p>
   </div>
 </section>
 
-<div class="photo-placeholder duotone-orange" style="min-height:280px; border-top:none;">
-  <div class="label">Hero visual — Kerala coffee farm / producer in landscape<br>(replace with your photography, full-width duotone)</div>
-</div>
+<section style="padding-top:0;">
+  <div class="wrap form-shell">
+    <div class="intro">
+      <div class="eyebrow pink">Who Can Join</div>
+      <h2 style="margin-top:14px;">Every part of the community has a place here.</h2>
+      <p>Tell us how you connect to Kerala coffee — we'll follow up directly.</p>
+      <div class="role-list">
+        <div class="role-item">Producer or Farmer</div>
+        <div class="role-item">Farm or Harvest Worker</div>
+        <div class="role-item">Processor</div>
+        <div class="role-item">Roaster</div>
+        <div class="role-item">Café or Barista</div>
+        <div class="role-item">Researcher</div>
+        <div class="role-item">Volunteer</div>
+        <div class="role-item">Supporting Organization</div>
+        <div class="role-item">Coffee Enthusiast</div>
+        <div class="role-item">Media</div>
+      </div>
+    </div>
 
-<!-- WHY WE EXIST -->
-<section id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="eyebrow">Why Kerala Origins Exists</div>
-      <h2>Coffee begins<br>with people<br>and place.</h2>
-      <p style="margin-top:20px; font-size:15.5px; opacity:0.85; max-width:480px;">
-        Kerala produces diverse coffees shaped by its landscapes, biodiversity, communities and changing production practices. Yet many of the producers and workers behind these coffees remain unseen. Kerala Origins exists to document their work, connect the coffee community and build greater recognition for coffee from Kerala.
-      </p>
-      <a href="why-we-exist.html" class="btn btn-primary" style="margin-top:26px; display:inline-block;">Why We Exist</a>
-    </div>
-    <div class="photo-placeholder">
-      <div class="label">Producer or worker portrait — real environment</div>
+      <form id="joinForm">
+        <div class="field-row">
+          <div class="field"><label for="name">Name</label><input type="text" id="name" required></div>
+          <div class="field"><label for="org">Organization or Farm</label><input type="text" id="org"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="location">Location</label><input type="text" id="location" required></div>
+          <div class="field"><label for="phone">Phone</label><input type="tel" id="phone"></div>
+        </div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" required></div>
+        <div class="field">
+          <label for="participation">Participation Type</label>
+          <select id="participation" required>
+            <option value="">Select one</option>
+            <option>Producer or Farmer</option>
+            <option>Farm or Harvest Worker</option>
+            <option>Processor</option>
+            <option>Roaster</option>
+            <option>Café or Barista</option>
+            <option>Researcher</option>
+            <option>Volunteer</option>
+            <option>Supporting Organization</option>
+            <option>Coffee Enthusiast</option>
+            <option>Media</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message"></textarea></div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="consent" required>
+          <label for="consent">I consent to Kerala Origins Coffee storing and using this information to respond to my message, in line with the privacy policy.</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p id="formNote" style="display:none; margin-top:16px; font-size:13.5px; color:var(--green);">Thanks — this is a design preview, so the form isn't wired to a backend yet. Once it is, submissions will land in your inbox.</p>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- KERALA COFFEE -->
-<section id="coffee" class="bg-alt">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Kerala Coffee</div>
-      <h2>Coffee from Kerala</h2>
-      <p>Explore Kerala's coffee-growing regions, farms, species, varieties, processing methods and the people shaping every harvest.</p>
-    </div>
-    <div class="species-grid">
-      <div class="species-card"><span class="tag">Species 01</span><h3>Robusta</h3><p>Kerala's most widely grown species, shaped by shade and altitude.</p></div>
-      <div class="species-card"><span class="tag">Species 02</span><h3>Arabica</h3><p>Grown across the state's higher elevations and cooler microclimates.</p></div>
-      <div class="species-card"><span class="tag">Species 03</span><h3>Liberica</h3><p>A rare, distinctive species with a growing presence in Kerala.</p></div>
-      <div class="species-card"><span class="tag">Species 04</span><h3>Excelsa</h3><p>An emerging species offering new expressions of Kerala coffee.</p></div>
-    </div>
-    <a href="kerala-coffee.html" class="btn btn-secondary" style="margin-top:28px; display:inline-block;">Explore Kerala Coffee</a>
-  </div>
-</section>
-
-<!-- PRODUCERS & PEOPLE -->
-<section id="people">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Producers & People</div>
-      <h2>Meet the People Behind Kerala Coffee</h2>
-      <p>Farmers, harvest workers, processors and coffee communities carry the knowledge and skills behind every coffee. Kerala Origins creates a place for their work, experience and voices to be recognised.</p>
-    </div>
-    <div class="people-grid">
-      <div class="people-card"><div class="photo-placeholder"><div class="label">Producer profile photo</div></div><h3>Producer name</h3><div class="role">Farmer · Region</div><p>Short line on their farm, practice or story — permission-published.</p></div>
-      <div class="people-card"><div class="photo-placeholder"><div class="label">Worker profile photo</div></div><h3>Worker name</h3><div class="role">Harvest team · Region</div><p>Short line on their role and connection to the harvest.</p></div>
-      <div class="people-card"><div class="photo-placeholder"><div class="label">Processor profile photo</div></div><h3>Processor name</h3><div class="role">Processing team · Region</div><p>Short line on their craft and part of the journey.</p></div>
-    </div>
-    <a href="producers-people.html" class="btn btn-primary" style="margin-top:30px; display:inline-block;">Meet the Community</a>
-  </div>
-</section>
-
-<!-- WHAT WE DO -->
-<section id="work" style="padding:0 0 64px; border-bottom:1px solid var(--line);">
-  <div class="wrap" style="padding-top:64px;">
-    <div class="section-head">
-      <div class="eyebrow pink">What We Do</div>
-      <h2>Supporting Kerala's Coffee Community</h2>
-    </div>
-    <div class="work-grid">
-      <div class="work-card"><span class="num">01</span><div><h3>Connect</h3><p>Connecting producers, processors and roasters.</p></div></div>
-      <div class="work-card"><span class="num">02</span><div><h3>Learn</h3><p>Sharing knowledge about farming, processing and coffee quality.</p></div></div>
-      <div class="work-card"><span class="num">03</span><div><h3>Document</h3><p>Recording Kerala's coffee regions, people and production practices.</p></div></div>
-      <div class="work-card"><span class="num">04</span><div><h3>Celebrate</h3><p>Creating events and recognition for producers, workers and communities.</p></div></div>
-    </div>
-    <a href="our-work.html" class="btn btn-secondary" style="margin-top:28px; display:inline-block;">Explore Our Work</a>
-  </div>
-</section>
-
-<!-- EVENTS -->
-<section id="events" class="bg-alt">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Events</div>
-      <h2>Come Together Around Kerala Coffee</h2>
-      <p>Producer–roaster meetings, farm visits, processing workshops, tastings and community gatherings.</p>
-    </div>
-    <div class="event-card">
-      <div class="photo-placeholder"><div class="label">Event photo</div></div>
-      <div class="event-body">
-        <div class="eyebrow pink">Upcoming</div>
-        <h3>Event title</h3>
-        <div class="event-meta"><span>📍 Location, Kerala</span><span>🗓 Date</span><span>⏱ Time</span></div>
-        <p style="font-size:14px; opacity:0.8; max-width:480px;">Short description of the event and who should attend.</p>
-        <a href="events.html" class="btn btn-primary" style="margin-top:20px; display:inline-block;">View Details</a>
-      </div>
-    </div>
-    <div style="text-align:right; margin-top:20px;"><a href="events.html" class="btn btn-secondary">View Events</a></div>
-  </div>
-</section>
-
-<!-- STORIES -->
-<section id="stories">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Stories</div>
-      <h2>Stories from Kerala Coffee</h2>
-    </div>
-    <div class="story-grid">
-      <div class="story-card"><div class="photo-placeholder"><div class="label">Story image</div></div><div class="eyebrow">Producers</div><h3>Story headline goes here</h3></div>
-      <div class="story-card"><div class="photo-placeholder"><div class="label">Story image</div></div><div class="eyebrow">Origins</div><h3>Story headline goes here</h3></div>
-      <div class="story-card"><div class="photo-placeholder"><div class="label">Story image</div></div><div class="eyebrow">Processing</div><h3>Story headline goes here</h3></div>
-    </div>
-    <a href="stories.html" class="btn btn-primary" style="margin-top:30px; display:inline-block;">Read the Stories</a>
-  </div>
-</section>
-
-<!-- ASSOCIATION CONNECTION -->
 <div class="assoc-band" id="assoc">
   <div class="wrap assoc-inner">
     <div class="eyebrow">An Initiative Of</div>
@@ -540,16 +463,6 @@ footer{background:var(--footer-bg); color:var(--cream); padding:56px 0 28px; bor
     <a href="#" class="btn btn-primary">Visit the Association ↗</a>
   </div>
 </div>
-
-<!-- FINAL CTA -->
-<section class="final-cta" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Join / Contact</div>
-    <h2>Be Part of Kerala's<br>Coffee Journey</h2>
-    <p>Are you a producer, worker, processor, roaster, researcher or someone who wants to support Kerala coffee? We would like to hear from you.</p>
-    <div class="btn-row"><a href="join.html" class="btn btn-primary">Join the Community</a><a href="join.html" class="btn btn-secondary">Contact Kerala Origins</a></div>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
@@ -613,6 +526,15 @@ document.querySelectorAll('.filter-tabs').forEach(tabGroup => {
   });
 });
 
+</script>
+<script>
+  const form = document.getElementById('joinForm');
+  const note = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    note.style.display = 'block';
+    form.querySelector('button[type=submit]').textContent = 'Sent';
+  });
 </script>
 </body>
 </html>
