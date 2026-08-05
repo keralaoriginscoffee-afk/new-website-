@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>KERALA ORIGINS — Celebrating Kerala's Specialty Coffee Producers</title>
+<meta name="description" content="Kerala Origins brings together the estates growing specialty coffee in Kerala — traced to elevation, varietal and the people who process it." />
+<link rel="canonical" href="https://YOURDOMAIN.com/" />
+<meta name="theme-color" content="#012448" />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kerala Origins" />
+<meta property="og:url" content="https://YOURDOMAIN.com/" />
+<meta property="og:title" content="KERALA ORIGINS — Celebrating Kerala's Specialty Coffee Producers" />
+<meta property="og:description" content="The estates growing specialty coffee in Kerala — traced to elevation, varietal and the people who process it." />
+<meta property="og:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Kerala Origins" />
+<meta property="og:locale" content="en_IN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="KERALA ORIGINS — Celebrating Kerala's Specialty Coffee Producers" />
+<meta name="twitter:description" content="The estates growing specialty coffee in Kerala." />
+<meta name="twitter:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#012448;
+    --paper:#FFFFFF;
+    --paper-warm:#F7F5F0;
+    --orange:#EC8800;
+    --orange-deep:#B36800;
+    --navy-deep:#002848;
+    --muted:#5C6472;
+    --display:"Playfair Display",serif;
+    --body:"Inter",system-ui,sans-serif;
+    --mono:"DM Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important;transition:none!important}
+  }
+  body{
+    background:var(--paper);
+    color:var(--navy);
+    font-family:var(--body);
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--orange);
+  }
+
+
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(1,36,72,.10);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+  .nav img{height:36px;width:auto;display:block}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--navy);text-decoration:none;
+    padding-bottom:3px;border-bottom:1px solid transparent;transition:border-color .2s ease;
+  }
+  .nav-links a:hover{border-bottom-color:var(--orange)}
+  .nav-cta{
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    background:var(--orange);color:#fff;padding:11px 20px;text-decoration:none;
+    transition:background .2s ease;
+  }
+  .nav-cta:hover{background:var(--orange-deep)}
+  @media (max-width:760px){
+    .nav-links{display:none}
+    .nav img{height:30px}
+    .nav .wrap{height:62px}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:calc(100svh - 72px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    overflow:hidden;
+    border-bottom:1px solid rgba(1,36,72,.12);
+  }
+  .contours{
+    position:absolute;inset:0;
+    opacity:.13;
+    pointer-events:none;
+  }
+  .contours svg{width:100%;height:100%}
+  .hero-inner{position:relative;z-index:2;padding:120px 0 80px}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:600;
+    line-height:.88;
+    letter-spacing:-.02em;
+    font-size:clamp(3.6rem,13vw,10.5rem);
+    margin:22px 0 0;
+  }
+  .hero h1 em{
+    display:block;
+    font-style:italic;
+    font-weight:400;
+    color:var(--orange);
+    font-size:.42em;
+    letter-spacing:.01em;
+    margin-top:.18em;
+    padding-left:.12em;
+  }
+  .rule{
+    height:1px;
+    background:linear-gradient(90deg,var(--orange),rgba(200,162,74,0));
+    margin:38px 0 26px;
+  }
+  .lede{
+    max-width:46ch;
+    font-size:clamp(1rem,1.6vw,1.18rem);
+    color:var(--muted);
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .btn{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    padding:15px 28px;
+    border:1px solid var(--navy);
+    color:#FFFFFF;
+    background:var(--navy);
+    text-decoration:none;
+    display:inline-block;
+    transition:transform .25s ease,background .25s ease,color .25s ease;
+  }
+  .btn:hover{background:#013A6E}
+  .btn.ghost{background:transparent;color:var(--navy);border-color:rgba(1,36,72,.3)}
+  .btn.ghost:hover{background:rgba(236,136,0,.10)}
+  .btn:focus-visible,a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+  /* ---------- fact strip ---------- */
+  .facts{
+    border-bottom:1px solid rgba(1,36,72,.12);
+    background:var(--paper-warm);
+  }
+  .facts .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+  }
+  .fact{padding:34px 0}
+  .fact b{
+    display:block;
+    font-family:var(--display);
+    font-size:clamp(1.9rem,4vw,2.9rem);
+    font-weight:600;
+    line-height:1;
+    color:var(--navy);
+  }
+  .fact span{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+    display:block;
+    margin-top:10px;
+  }
+
+  /* ---------- editorial ---------- */
+  .editorial{padding:110px 0 90px}
+  .editorial .grid{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:56px;
+    align-items:start;
+  }
+  .editorial h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(1.9rem,4vw,2.7rem);
+    line-height:1.1;
+  }
+  .editorial p{color:var(--muted);margin-bottom:18px;max-width:60ch}
+  .editorial p.first::first-letter{
+    font-family:var(--display);
+    float:left;
+    font-size:3.4em;
+    line-height:.82;
+    padding:6px 12px 0 0;
+    color:var(--orange);
+  }
+
+  /* ---------- estates / elevation axis ---------- */
+  .estates{
+    padding:90px 0 110px;
+    background:var(--paper-warm);
+    border-top:1px solid rgba(1,36,72,.12);
+  }
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+  .sec-head h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(1.9rem,4vw,2.7rem);
+  }
+  .axis-note{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+  }
+  .axis{margin-top:46px;position:relative}
+  .axis::before{
+    content:"";
+    position:absolute;
+    left:96px;top:0;bottom:0;
+    width:1px;
+    background:linear-gradient(180deg,var(--orange),rgba(236,136,0,.18));
+  }
+  .est{
+    display:grid;
+    grid-template-columns:96px 1fr;
+    gap:0 34px;
+    padding:26px 0;
+    position:relative;
+    border-bottom:1px solid rgba(1,36,72,.10);
+  }
+  .masl{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--orange);
+    text-align:right;
+    padding-right:18px;
+    padding-top:4px;
+    letter-spacing:.04em;
+  }
+  .est::after{
+    content:"";
+    position:absolute;
+    left:92px;top:32px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--orange);
+    transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .est:hover::after{transform:scale(1.5);box-shadow:0 0 0 6px rgba(236,136,0,.16)}
+  .est h3{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.5rem;
+    line-height:1.2;
+  }
+  .est .district{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:6px;
+  }
+  .spec{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 10px;
+    margin-top:16px;
+  }
+  .spec span{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    border:1px solid rgba(236,136,0,.35);
+    padding:5px 11px;
+  }
+
+  /* ---------- schedule ---------- */
+  .day{padding:100px 0}
+  .slots{margin-top:44px;border-top:1px solid rgba(1,36,72,.12)}
+  .slot{
+    display:grid;
+    grid-template-columns:130px 1fr;
+    gap:28px;
+    padding:24px 0;
+    border-bottom:1px solid rgba(1,36,72,.10);
+    align-items:baseline;
+  }
+  .slot time{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--orange);
+    letter-spacing:.06em;
+  }
+  .slot h4{font-family:var(--display);font-weight:600;font-size:1.25rem}
+  .slot p{color:var(--muted);font-size:.94rem;margin-top:5px;max-width:56ch}
+
+  /* ---------- register ---------- */
+  .register{
+    padding:100px 0 110px;
+    background:var(--navy-deep);
+    border-top:1px solid rgba(236,136,0,.35);
+    text-align:center;
+  }
+  .register h2{color:#FFFFFF;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(2.1rem,5.5vw,3.6rem);
+    line-height:1.05;
+    max-width:18ch;
+    margin:20px auto 0;
+  }
+  .register p{color:rgba(239,232,216,.7);max-width:48ch;margin:22px auto 0}
+
+  footer{
+    padding:44px 0;
+    background:var(--paper-warm);
+    border-top:1px solid rgba(1,36,72,.12);
+  }
+  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  footer p{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-deep)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:820px){
+    .editorial .grid{grid-template-columns:1fr;gap:30px}
+    .facts .wrap{grid-template-columns:repeat(2,1fr)}
+    .fact{padding:26px 0}
+    .axis::before{left:66px}
+    .est{grid-template-columns:66px 1fr;gap:0 22px}
+    .est::after{left:62px}
+    .masl{font-size:11px;padding-right:12px}
+    .slot{grid-template-columns:92px 1fr;gap:18px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x, /logo@3x.png 3x" alt="Kerala Origins" /></a>
+    <div class="nav-links">
+      <a href="#estates">Estates</a>
+      <a href="#day">The day</a>
+      <a href="#register">Register</a>
+    </div>
+    <a class="nav-cta" href="#register">Register interest</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="contours" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none">
+      <g stroke="#012448" stroke-width="1" opacity=".5">
+        <path d="M-40 640 C 220 600 340 470 560 452 C 800 432 940 520 1240 470"/>
+        <path d="M-40 690 C 210 654 350 524 570 505 C 810 484 950 572 1240 522"/>
+        <path d="M-40 742 C 200 708 360 578 580 558 C 820 536 960 624 1240 574"/>
+        <path d="M-40 590 C 240 546 330 416 550 399 C 790 380 930 468 1240 418"/>
+        <path d="M-40 540 C 250 492 320 362 540 346 C 780 328 920 416 1240 366"/>
+        <path d="M-40 492 C 260 440 310 310 530 294 C 770 276 910 364 1240 314"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Kozhikode · Kerala · India</p>
+    <h1>KERALA<br/>ORIGINS<em>the estates behind the cup</em></h1>
+    <div class="rule"></div>
+    <p class="lede">
+      Kerala grows coffee that almost never carries Kerala's name. One day,
+      nine estates, and the people who pick it — in the room, pouring.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="#register">Register interest</a>
+      <a class="btn ghost" href="#estates">See the estates</a>
+    </div>
+  </div>
+</header>
+
+<section class="facts">
+  <div class="wrap">
+    <div class="fact"><b>09</b><span>Estates</span></div>
+    <div class="fact"><b>04</b><span>Districts</span></div>
+    <div class="fact"><b>1,600</b><span>Metres, highest lot</span></div>
+    <div class="fact"><b>01</b><span>Day</span></div>
+  </div>
+</section>
+
+<section class="editorial">
+  <div class="wrap grid">
+    <div class="reveal">
+      <p class="eyebrow">Why this exists</p>
+      <h2>Grown here.<br/>Named elsewhere.</h2>
+    </div>
+    <div class="reveal">
+      <p class="first">
+        Most coffee grown in Kerala leaves the state as an anonymous lot. It gets
+        blended, re-bagged, and sold under a name that belongs to somebody else.
+        The grower is a line item on a purchase order.
+      </p>
+      <p>
+        Kerala Origins puts that back in order. Every lot on the table is traced to
+        the estate, the elevation, and the person who processed it — and that person
+        is standing next to it, answering questions.
+      </p>
+      <p>
+        No trade stand. No panel of buyers explaining the farmer's own coffee to them.
+        Just the growers, the roasters who work with them, and enough cupping bowls
+        to settle any argument.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="estates" id="estates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">On the table</p>
+        <h2>Nine estates</h2>
+      </div>
+      <p class="axis-note">Ordered by elevation ↑</p>
+    </div>
+
+    <div class="axis">
+      <article class="est reveal">
+        <div class="masl">1,600 m</div>
+        <div>
+          <h3>Ellamalai Ridge</h3>
+          <p class="district">Idukki</p>
+          <div class="spec"><span>Arabica</span><span>SL-9</span><span>Washed</span><span>Shade: Silver Oak</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">1,480 m</div>
+        <div>
+          <h3>Chempara Slopes</h3>
+          <p class="district">Idukki</p>
+          <div class="spec"><span>Arabica</span><span>Cauvery</span><span>Honey</span><span>Shade: Jackfruit</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">1,310 m</div>
+        <div>
+          <h3>Meppadi Old Block</h3>
+          <p class="district">Wayanad</p>
+          <div class="spec"><span>Arabica</span><span>Sarchimor</span><span>Natural</span><span>96 hr ferment</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">1,150 m</div>
+        <div>
+          <h3>Nelliampathy Hollow</h3>
+          <p class="district">Palakkad</p>
+          <div class="spec"><span>Arabica</span><span>Chandragiri</span><span>Washed</span><span>Shade: Native</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">1,040 m</div>
+        <div>
+          <h3>Kalpetta North</h3>
+          <p class="district">Wayanad</p>
+          <div class="spec"><span>Arabica</span><span>S-795</span><span>Anaerobic</span><span>120 hr</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">940 m</div>
+        <div>
+          <h3>Pulpally Fields</h3>
+          <p class="district">Wayanad</p>
+          <div class="spec"><span>Robusta</span><span>Fine cherry</span><span>Natural</span><span>Sun-dried</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">880 m</div>
+        <div>
+          <h3>Silent Valley Edge</h3>
+          <p class="district">Palakkad</p>
+          <div class="spec"><span>Robusta</span><span>Kaapi Royale</span><span>Washed</span><span>Shade: Pepper</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">820 m</div>
+        <div>
+          <h3>Terravagamon</h3>
+          <p class="district">Idukki</p>
+          <div class="spec"><span>Excelsa</span><span>Anaerobic</span><span>120 hr</span><span>Rare lot</span></div>
+        </div>
+      </article>
+
+      <article class="est reveal">
+        <div class="masl">760 m</div>
+        <div>
+          <h3>Mananthavady Low</h3>
+          <p class="district">Wayanad</p>
+          <div class="spec"><span>Liberica</span><span>Natural</span><span>Sun-dried</span><span>Experimental</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="day" id="day">
+  <div class="wrap">
+    <p class="eyebrow">The day</p>
+    <h2 style="font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4vw,2.7rem);margin-top:8px">
+      Doors at nine. Cupping until it's gone.
+    </h2>
+
+    <div class="slots">
+      <div class="slot reveal">
+        <time>09:00</time>
+        <div>
+          <h4>Doors and filter bar</h4>
+          <p>Three brew stations running the day's lots. Come early, the 1,600 m block goes first.</p>
+        </div>
+      </div>
+      <div class="slot reveal">
+        <time>10:30</time>
+        <div>
+          <h4>Growers on record</h4>
+          <p>Four estate owners, one table, no moderator softening the answers.</p>
+        </div>
+      </div>
+      <div class="slot reveal">
+        <time>12:00</time>
+        <div>
+          <h4>The cupping flight</h4>
+          <p>All nine lots, blind, scored together. Bring your own spoon or borrow one.</p>
+        </div>
+      </div>
+      <div class="slot reveal">
+        <time>14:00</time>
+        <div>
+          <h4>Processing, in the open</h4>
+          <p>Anaerobic versus washed on the same cherry, tasted side by side.</p>
+        </div>
+      </div>
+      <div class="slot reveal">
+        <time>16:00</time>
+        <div>
+          <h4>Trade floor</h4>
+          <p>Direct conversations between growers and roasters. Green samples go home with you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="register" id="register">
+  <div class="wrap">
+    <p class="eyebrow">Limited seats</p>
+    <h2>Put your name down</h2>
+    <p>
+      Registration opens to the list first. Tell us you're coming and we'll send the
+      lot sheet before anyone else sees it.
+    </p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn" href="#">Register interest</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Kerala Origins</p>
+    <p>Kozhikode · Kerala</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 6) * 60 + 'ms';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
