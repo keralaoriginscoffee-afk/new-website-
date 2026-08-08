@@ -113,28 +113,98 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-o
 @media(max-width:880px){.nav-links{display:none}.nav img{height:30px}.nav .wrap{height:62px}}
 
 /* ---------- hero ---------- */
-.hero{background:var(--green);color:var(--paper);padding:0;overflow:hidden;position:relative}
-.topo{position:absolute;inset:0;opacity:.26;pointer-events:none}
-.topo path{fill:none;stroke:var(--paper);stroke-width:1.1}
-.hero .wrap{position:relative;z-index:3;padding:84px 26px 90px;
-  display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:center;min-height:78svh}
-.utility{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.hero{background:var(--paper);color:var(--ink);position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:5;padding:88px 26px 96px;
+  display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;min-height:80svh}
+.hero-copy{max-width:34rem}
+.utility{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--green);opacity:.9}
 .hero h1{font-family:var(--head);font-weight:700;letter-spacing:-.035em;line-height:.98;
-  font-size:clamp(2.6rem,6.6vw,5.1rem);margin:20px 0 0;max-width:16ch}
-.hero .support{margin-top:24px;max-width:48ch;opacity:.9;font-size:clamp(1rem,1.5vw,1.14rem)}
-.hero .mal{margin-top:18px;color:var(--turmeric);opacity:1}
+  font-size:clamp(2.5rem,5.6vw,4.6rem);margin:20px 0 0;max-width:15ch;color:var(--ink)}
+.hero .support{margin-top:24px;max-width:44ch;font-size:clamp(1rem,1.4vw,1.12rem);
+  color:var(--ink);opacity:.84}
+.hero .mal{margin-top:18px;color:var(--green);opacity:1}
 .hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}
-.edition-badge{
-  align-self:end;justify-self:end;text-align:right;
-  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.85;
-}
+.hero .btn{background:var(--green);border-color:var(--green);color:var(--paper)}
+.hero .btn.accent{background:var(--turmeric);border-color:var(--turmeric);color:var(--ink)}
+.hero .btn.ghost{background:transparent;color:var(--green);border-color:rgba(11,79,58,.45)}
+.hero .btn.ghost:hover{background:rgba(11,79,58,.08)}
+.edition-badge{align-self:end;justify-self:end;text-align:right;position:relative;z-index:6;
+  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.9}
 .edition-badge b{display:block;font-family:var(--head);font-size:3.2rem;letter-spacing:-.03em;
-  color:var(--turmeric);line-height:1;margin-bottom:6px}
-.cherry-branch{position:absolute;right:-40px;top:0;height:100%;opacity:.9;z-index:2;pointer-events:none}
+  color:var(--green);line-height:1;margin-bottom:6px}
+
+/* Western Ghats — stationary, lower right, bleeding off both edges */
+.ghats{
+  position:absolute;right:0;bottom:0;z-index:1;
+  width:66%;height:88%;
+  overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(100deg,transparent 0%,#000 26%,#000 100%);
+          mask-image:linear-gradient(100deg,transparent 0%,#000 26%,#000 100%);
+}
+.ghats picture,.ghats img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:right bottom;display:block;
+}
+
+/* monsoon mist — horizontal drift only, clipped inside .ghats */
+.fog{
+  position:absolute;left:0;bottom:0;
+  width:200%;height:100%;
+  pointer-events:none;will-change:transform;
+}
+.fog i{
+  position:absolute;top:0;left:0;width:50%;height:100%;
+  background-repeat:no-repeat;
+}
+.fog i+i{left:50%}
+
+.fog-1 i{
+  background-image:
+    radial-gradient(58% 13% at 22% 62%,rgba(244,232,207,.80),rgba(244,232,207,0) 70%),
+    radial-gradient(46% 10% at 62% 70%,rgba(244,232,207,.66),rgba(244,232,207,0) 72%),
+    radial-gradient(40% 9%  at 86% 58%,rgba(244,232,207,.58),rgba(244,232,207,0) 74%);
+  filter:blur(16px);
+}
+.fog-2 i{
+  background-image:
+    radial-gradient(64% 11% at 38% 78%,rgba(244,232,207,.62),rgba(244,232,207,0) 72%),
+    radial-gradient(48% 9%  at 74% 86%,rgba(244,232,207,.52),rgba(244,232,207,0) 74%);
+  filter:blur(22px);
+}
+.fog-3 i{
+  background-image:
+    radial-gradient(52% 8%  at 30% 50%,rgba(244,232,207,.44),rgba(244,232,207,0) 76%),
+    radial-gradient(44% 7%  at 70% 46%,rgba(244,232,207,.38),rgba(244,232,207,0) 78%);
+  filter:blur(12px);
+}
+
+.fog-1{animation:drift 96s linear infinite}
+.fog-2{animation:drift 148s linear infinite;animation-delay:-40s}
+.fog-3{animation:drift 214s linear infinite;animation-delay:-90s}
+
+@keyframes drift{
+  from{transform:translate3d(0,0,0)}
+  to  {transform:translate3d(-50%,0,0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .fog-1,.fog-2,.fog-3{animation:none}
+}
+
 @media(max-width:880px){
-  .hero .wrap{grid-template-columns:1fr;gap:28px;padding:56px 26px 64px}
+  .hero{overflow:visible}
+  .hero .wrap{grid-template-columns:1fr;gap:26px;padding:52px 26px 0;min-height:auto}
   .edition-badge{justify-self:start;text-align:left}
-  .cherry-branch{display:none}
+  .ghats{
+    position:relative;width:100vw;left:50%;right:auto;margin-left:-50vw;
+    height:44svh;min-height:280px;margin-top:40px;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 100%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 100%);
+  }
+  .ghats img{object-position:center bottom}
+  .fog-3{display:none}
+  .fog-1{animation-duration:168s}
+  .fog-2{animation-duration:246s}
 }
 
 /* ---------- 01 gathering ---------- */
@@ -260,40 +330,8 @@ footer img{height:44px;margin-bottom:26px}
 
 <main>
 <header class="hero" id="top">
-  <svg class="topo" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M-40 700C260 664 420 540 660 520 940 497 1080 590 1440 540"/>
-    <path d="M-40 748C250 716 430 592 670 572 950 549 1090 642 1440 592"/>
-    <path d="M-40 652C270 612 410 488 650 468 930 445 1070 538 1440 488"/>
-    <path d="M-40 604C280 560 400 436 640 416 920 393 1060 486 1440 436"/>
-    <path d="M-40 556C290 508 390 384 630 364 910 341 1050 434 1440 384"/>
-    <path d="M-40 508C300 456 380 332 620 312 900 289 1040 382 1440 332"/>
-    <path d="M-40 460C310 404 370 280 610 260 890 237 1030 330 1440 280"/>
-  </svg>
-
-  <svg class="cherry-branch" viewBox="0 0 220 700" aria-hidden="true">
-    <g fill="none" stroke="#F4E8CF" stroke-width="2.4" stroke-linecap="round">
-      <path d="M150 -10C150 120 118 210 96 300 74 392 78 500 108 640"/>
-      <path d="M138 120C112 132 92 150 78 176"/>
-      <path d="M126 232C154 240 176 232 196 214"/>
-      <path d="M104 350C78 360 60 378 48 404"/>
-      <path d="M96 452C126 462 150 456 172 438"/>
-    </g>
-    <g fill="#D6472F" stroke="#F4E8CF" stroke-width="2">
-      <circle cx="72" cy="182" r="15"/><circle cx="196" cy="210" r="14"/>
-      <circle cx="44" cy="410" r="15"/><circle cx="176" cy="434" r="13"/>
-      <circle cx="112" cy="286" r="12"/>
-    </g>
-    <g fill="none" stroke="#F4E8CF" stroke-width="2" stroke-linecap="round">
-      <path d="M66 176c6 5 6 8 0 13M190 204c6 5 6 8 0 13M38 404c6 5 6 8 0 13"/>
-    </g>
-    <g fill="#0B4F3A" stroke="#F4E8CF" stroke-width="2.2">
-      <path d="M158 128c26-14 46-2 44 22-2 22-26 34-46 22-14-8-14-34 2-44z"/>
-      <path d="M62 300c-26-14-46-2-44 22 2 22 26 34 46 22 14-8 14-34-2-44z"/>
-    </g>
-  </svg>
-
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <p class="utility">An initiative of Specialty Coffee Association Kerala</p>
       <h1>Kerala coffee, told from where it begins.</h1>
       <p class="support">Kerala Origins is the annual gathering celebrating the people, places and processes that define Kerala coffee.</p>
@@ -304,9 +342,19 @@ footer img{height:44px;margin-bottom:26px}
       </div>
     </div>
     <div class="edition-badge">
-      <b>KO—01</b>
-      Edition 01<br/>People • Place • Process
+      <b>KO&mdash;01</b>
+      Edition 01<br/>People &bull; Place &bull; Process
     </div>
+  </div>
+
+  <div class="ghats" aria-hidden="true">
+    <picture>
+      <source srcset="/ghats.webp" type="image/webp" />
+      <img src="/75AA0EF8-E158-4F48-BD6F-A5E358E64571.png" alt="" fetchpriority="high" decoding="async" />
+    </picture>
+    <div class="fog fog-1"><i></i><i></i></div>
+    <div class="fog fog-2"><i></i><i></i></div>
+    <div class="fog fog-3"><i></i><i></i></div>
   </div>
 </header>
 

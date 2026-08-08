@@ -76,3 +76,29 @@ git push -u origin main
 
 Vercel → Import → Framework preset **Other** → leave build command and output
 directory **empty** → Deploy.
+
+## Landing page — Western Ghats hero
+
+The hero uses `75AA0EF8-E158-4F48-BD6F-A5E358E64571.png` (original filename kept).
+A WebP copy `ghats.webp` is served first via `<picture>`; the PNG is the fallback.
+
+**The hero background is Coconut Paper, not Malabar Green.** The image has a cream
+field, so the hero had to flip to cream for it to blend. Headline and body are
+Coffee Ink, buttons are Turmeric and green-outline. The nav bar above stays
+Malabar Green. No other section changed.
+
+The old topographic line SVG and cherry-branch SVG were removed from the hero
+only — the photograph now occupies that space. They are decoration, not content;
+all wording, order and the logo are unchanged.
+
+### Fog
+
+Three layers on desktop, two on mobile. Each layer is a tile duplicated
+end-to-end inside a 200%-wide track that translates exactly -50%, so the loop
+is seamless. Durations 96s / 148s / 214s with negative delays so they never
+sync. Horizontal drift only — no vertical rise, which is what separates mist
+from smoke. All layers are clipped inside `.ghats`, so fog never reaches the
+text column. Disabled under `prefers-reduced-motion`.
+
+To adjust: `--` change the `drift` durations on `.fog-1/2/3`, or the alpha
+values in the `radial-gradient` stops for density.
