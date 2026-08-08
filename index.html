@@ -1,618 +1,552 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kerala Origins Coffee | The Journey of Kerala Coffee</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KERALA ORIGINS — Kerala coffee, told from where it begins.</title>
+<meta name="description" content="Kerala Origins is the annual gathering celebrating the people, places and processes that define Kerala coffee. An initiative of Specialty Coffee Association Kerala." />
+<link rel="canonical" href="https://YOURDOMAIN.com/" />
+<meta name="theme-color" content="#0B4F3A" />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kerala Origins" />
+<meta property="og:url" content="https://YOURDOMAIN.com/" />
+<meta property="og:title" content="Kerala coffee, told from where it begins." />
+<meta property="og:description" content="The annual gathering celebrating the people, places and processes that define Kerala coffee." />
+<meta property="og:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_IN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
+
 <style>
 :root{
-  --cream:#F2EEE3;
-  --cream-alt:#E9E2D2;
-  --navy:#1B2A4A;
-  --navy-deep:#211F3F;
-  --footer-bg:#121026;
-  --orange:#E15A22;
-  --pink:#E01A6F;
-  --green:#4C6A4F;
-  --ink:#1C1B17;
-  --line: rgba(22,33,62,0.14);
-  --line-strong: rgba(22,33,62,0.28);
-  --maxw: 1240px;
+  --green:#0B4F3A;
+  --green-deep:#083A2A;
+  --paper:#F4E8CF;
+  --paper-warm:#EEDFC0;
+  --ink:#191510;
+  --turmeric:#F2B827;
+  --cherry:#D6472F;
+  --monsoon:#2D6275;
+  --earth:#70432F;
+
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Manrope",system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+  --mal:"Anek Malayalam",sans-serif;
 }
-*{box-sizing:border-box; margin:0; padding:0;}
-html{scroll-behavior:smooth;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
 body{
-  background:var(--cream);
+  background:var(--paper);
   color:var(--ink);
-  font-family:'Inter',sans-serif;
-  line-height:1.5;
+  font-family:var(--body);
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:12px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--navy);
-  display:flex;
-  align-items:center;
-  gap:8px;
+/* paper grain across cream backgrounds */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
-.eyebrow.pink{color:var(--pink);}
-.eyebrow::before{
-  content:"";
-  width:14px;
-  height:1px;
-  background:currentColor;
-  display:inline-block;
-}
-h1,h2,h3{
-  font-family:'Anton',sans-serif;
-  text-transform:uppercase;
-  letter-spacing:0.01em;
-  color:var(--navy);
-  line-height:0.96;
-}
-a{color:inherit; text-decoration:none;}
-.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
-.hairline-top{border-top:1px solid var(--line);}
-.hairline-bottom{border-bottom:1px solid var(--line);}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+main{position:relative;z-index:2}
 
-/* ===== HEADER ===== */
-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(242,238,227,0.92);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line);
+/* ---------- shared bits ---------- */
+.stamp{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--body);font-size:10.5px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid currentColor;padding:6px 13px;border-radius:999px;
 }
-.nav-row{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0;
+.sec-no{
+  font-family:var(--body);font-size:11px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;opacity:.75;
 }
-.logo-slot{
-  display:flex; align-items:center; gap:10px;
-  font-family:'Anton',sans-serif;
-  font-size:20px;
-  letter-spacing:0.02em;
-  color:var(--navy);
-  text-transform:uppercase;
-}
-.logo-mark{
-  width:30px; height:30px;
-  border:1.5px solid var(--navy);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  color:var(--navy);
-  flex-shrink:0;
-}
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:24px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11.5px;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-}
-nav ul li a{
-  color:var(--navy);
-  opacity:0.72;
-  transition:opacity .2s;
-}
-nav ul li a:hover{opacity:1;}
-nav ul li.current a{opacity:1; border-bottom:1.5px solid var(--orange); padding-bottom:3px;}
-nav ul li.assoc a{color:var(--pink); opacity:1; font-weight:600;}
-.menu-btn{display:none; background:none; border:1px solid var(--navy); border-radius:0; width:38px; height:38px; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer;}
-.menu-btn span{width:16px; height:1.5px; background:var(--navy); display:block;}
+.mal{font-family:var(--mal);font-size:1rem;opacity:.82;letter-spacing:.01em}
+h2{font-family:var(--head);font-weight:700;line-height:1.02;letter-spacing:-.025em;
+   font-size:clamp(2rem,4.6vw,3.4rem)}
+h3{font-family:var(--head);font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.lede{font-size:clamp(1.02rem,1.5vw,1.16rem);max-width:56ch;opacity:.86}
+section{padding:96px 0;position:relative}
 
-@media (max-width: 900px){
-  nav{display:none; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--line);}
-  nav.open{display:block;}
-  nav ul{flex-direction:column; gap:0; padding:8px 24px 20px;}
-  nav ul li{padding:12px 0; border-bottom:1px solid var(--line);}
-  nav ul li.current a{border-bottom:none; color:var(--orange);}
-  .menu-btn{display:flex;}
-}
+.arrow{display:inline-block;transition:transform .25s ease}
+a:hover .arrow{transform:translateX(5px)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-offset:3px}
 
-/* ===== HERO (homepage) ===== */
-.hero{
-  display:grid;
-  grid-template-columns: 1fr 260px;
-  border-bottom:1px solid var(--line);
-}
-.hero-main{
-  padding:56px 24px 48px;
-  border-right:1px solid var(--line);
-}
-.hero-main .wrap{padding:0; max-width:640px;}
-.hero-headline{
-  font-size:clamp(52px, 9vw, 108px);
-  margin:20px 0 24px;
-}
-.hero-headline .orange{color:var(--orange);}
-.hero-sub{
-  font-size:16px;
-  max-width:460px;
-  color:var(--ink);
-  opacity:0.85;
-  margin-bottom:32px;
-}
-.btn-row{display:flex; gap:12px; flex-wrap:wrap;}
 .btn{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11.5px;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  padding:14px 22px;
-  display:inline-block;
-  border:1px solid var(--navy);
-  transition:all .2s;
-  cursor:pointer;
-  background:none;
+  display:inline-block;font-family:var(--body);font-weight:600;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 26px;text-decoration:none;border:1.5px solid var(--paper);
+  color:var(--green);background:var(--paper);transition:transform .22s ease,background .22s ease;
 }
-.btn-primary{background:var(--navy); color:var(--cream);}
-.btn-primary:hover{background:var(--navy-deep);}
-.btn-secondary{background:transparent; color:var(--navy);}
-.btn-secondary:hover{background:var(--navy); color:var(--cream);}
+.btn:hover{transform:translateY(-2px)}
+.btn.accent{background:var(--turmeric);border-color:var(--turmeric);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--paper)}
+.btn.ghost:hover{background:rgba(244,232,207,.14)}
 
-.hero-side{display:flex; flex-direction:column;}
-.hero-side .cell{padding:22px 20px; border-bottom:1px solid var(--line); font-family:'IBM Plex Mono',monospace;}
-.hero-side .cell:last-child{border-bottom:none;}
-.coord{font-size:11px; color:var(--navy); opacity:0.65; letter-spacing:0.04em;}
-.coord + .coord{margin-top:4px;}
-.journey-svg{width:100%; height:auto; display:block;}
-.journey-dash{stroke-dasharray: 6 6; animation: dash 3.5s linear infinite;}
-@media (prefers-reduced-motion: reduce){ .journey-dash{animation:none;} }
-@keyframes dash{ to { stroke-dashoffset: -240; } }
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:60;background:var(--green);color:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.nav img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:26px}
+.nav-links a{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--paper);text-decoration:none;padding-bottom:2px;border-bottom:1.5px solid transparent;transition:border-color .2s}
+.nav-links a:hover{border-bottom-color:var(--turmeric)}
+.nav-cta{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--turmeric);color:var(--ink);padding:11px 19px;text-decoration:none}
+@media(max-width:880px){.nav-links{display:none}.nav img{height:30px}.nav .wrap{height:62px}}
 
-@media (max-width: 900px){
-  .hero{grid-template-columns:1fr;}
-  .hero-main{border-right:none; padding:40px 20px 32px;}
-  .hero-headline{font-size:clamp(44px,14vw,72px);}
+/* ---------- hero ---------- */
+.hero{background:var(--green);color:var(--paper);padding:0;overflow:hidden;position:relative}
+.topo{position:absolute;inset:0;opacity:.26;pointer-events:none}
+.topo path{fill:none;stroke:var(--paper);stroke-width:1.1}
+.hero .wrap{position:relative;z-index:3;padding:84px 26px 90px;
+  display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:center;min-height:78svh}
+.utility{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.hero h1{font-family:var(--head);font-weight:700;letter-spacing:-.035em;line-height:.98;
+  font-size:clamp(2.6rem,6.6vw,5.1rem);margin:20px 0 0;max-width:16ch}
+.hero .support{margin-top:24px;max-width:48ch;opacity:.9;font-size:clamp(1rem,1.5vw,1.14rem)}
+.hero .mal{margin-top:18px;color:var(--turmeric);opacity:1}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}
+.edition-badge{
+  align-self:end;justify-self:end;text-align:right;
+  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.85;
 }
-
-/* ===== ARTICLE HERO (inner pages) ===== */
-.article-hero{
-  padding:56px 0 44px;
-  border-bottom:1px solid var(--line);
-}
-.article-hero h1{font-size:clamp(44px,8vw,84px); margin:16px 0 20px;}
-.article-hero .lede{font-size:16.5px; max-width:640px; opacity:0.85;}
-.article-hero .lede.strong{
-  font-family:'Anton',sans-serif;
-  font-size:clamp(20px,2.6vw,28px);
-  text-transform:none;
-  color:var(--navy);
-  opacity:1;
-  line-height:1.3;
-  letter-spacing:0;
-  max-width:720px;
+.edition-badge b{display:block;font-family:var(--head);font-size:3.2rem;letter-spacing:-.03em;
+  color:var(--turmeric);line-height:1;margin-bottom:6px}
+.cherry-branch{position:absolute;right:-40px;top:0;height:100%;opacity:.9;z-index:2;pointer-events:none}
+@media(max-width:880px){
+  .hero .wrap{grid-template-columns:1fr;gap:28px;padding:56px 26px 64px}
+  .edition-badge{justify-self:start;text-align:left}
+  .cherry-branch{display:none}
 }
 
-/* ===== PHOTO PLACEHOLDER ===== */
-.photo-placeholder{
-  position:relative;
-  background:
-    repeating-linear-gradient(135deg, rgba(22,33,62,0.06) 0 2px, transparent 2px 14px),
-    linear-gradient(160deg, #DCD4BE, #C9BFA2);
-  border:1px dashed var(--line-strong);
-  display:flex; align-items:center; justify-content:center;
-  text-align:center;
-  min-height:220px;
-  overflow:hidden;
+/* ---------- 01 gathering ---------- */
+.gathering .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start}
+.gathering p{margin-bottom:16px;font-family:var(--serif);font-size:1.1rem;line-height:1.62}
+.gathering p:first-of-type::first-letter{
+  font-family:var(--head);float:left;font-size:3.5em;line-height:.8;padding:8px 12px 0 0;color:var(--cherry)}
+@media(max-width:880px){.gathering .wrap{grid-template-columns:1fr;gap:26px}}
+
+/* ---------- 02 three panels ---------- */
+.ppp{background:var(--paper-warm);border-top:1px solid rgba(25,21,16,.1);border-bottom:1px solid rgba(25,21,16,.1)}
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.panel{padding:30px 26px 34px;color:var(--paper);position:relative;overflow:hidden;min-height:330px;
+  display:flex;flex-direction:column;justify-content:space-between}
+.panel:nth-child(1){background:var(--cherry)}
+.panel:nth-child(2){background:var(--monsoon)}
+.panel:nth-child(3){background:var(--earth)}
+.panel h3{font-size:1.9rem;margin-top:10px}
+.panel .mal{color:rgba(244,232,207,.85);margin-top:4px}
+.panel p{font-size:.95rem;opacity:.92;margin-top:14px}
+.panel svg{position:absolute;right:-18px;bottom:-14px;width:150px;opacity:.28}
+@media(max-width:880px){.panels{grid-template-columns:1fr}.panel{min-height:auto}}
+
+/* ---------- 03 producers ---------- */
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+.pcard{background:#fff;border:1px solid rgba(25,21,16,.12)}
+.photo{
+  aspect-ratio:4/5;background:var(--green);position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
 }
-.photo-placeholder .label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
-  color:var(--navy);
-  background:rgba(242,238,227,0.85);
-  padding:8px 14px;
-  max-width:80%;
-}
-.duotone-orange{
-  background:
-    linear-gradient(160deg, rgba(225,90,34,0.55), rgba(22,33,62,0.65)),
-    linear-gradient(160deg, #DCD4BE, #C9BFA2);
-  background-blend-mode: multiply, normal;
-}
+.photo span{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,232,207,.5)}
+.photo::after{content:"";position:absolute;inset:0;background:var(--monsoon);mix-blend-mode:multiply;opacity:.55;transition:opacity .45s ease}
+.pcard:hover .photo::after{opacity:0}
+.pbody{padding:22px}
+.pcard h3{font-size:1.3rem}
+.pmeta{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.62;margin-top:7px}
+.quote{font-family:var(--serif);font-style:italic;font-size:1.02rem;margin-top:15px;color:var(--earth)}
+.pcard a{display:inline-block;margin-top:16px;font-size:11.5px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--green);text-decoration:none;border-bottom:1.5px solid var(--turmeric);padding-bottom:2px}
+.species{display:inline-block;margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;background:var(--turmeric);color:var(--ink);padding:4px 10px}
+@media(max-width:880px){.people-grid{grid-template-columns:1fr}}
 
-/* ===== SECTION GENERIC ===== */
-section{padding:64px 0; border-bottom:1px solid var(--line);}
-.section-head{max-width:600px; margin-bottom:36px;}
-.section-head h2{font-size:clamp(30px,5vw,46px); margin-top:14px;}
-.section-head p{margin-top:16px; font-size:15.5px; opacity:0.85; max-width:560px;}
-.bg-alt{background:var(--cream-alt);}
+/* ---------- 04 map ---------- */
+.map{background:var(--green);color:var(--paper)}
+.map .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.kmap{width:100%;max-width:340px;margin:0 auto;display:block}
+.kmap .land{fill:rgba(244,232,207,.09);stroke:var(--paper);stroke-width:1.6}
+.kmap .region{fill:var(--turmeric);cursor:pointer;transition:r .25s ease,fill .25s ease}
+.kmap .region:hover,.kmap .region.on{fill:var(--cherry);r:11}
+.region-info{border-left:2px solid var(--turmeric);padding-left:24px;min-height:220px}
+.region-info h3{font-size:1.9rem;color:var(--turmeric)}
+.region-info dl{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:9px 22px;font-size:.95rem}
+.region-info dt{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.62;padding-top:4px}
+.region-info dd{font-family:var(--serif)}
+@media(max-width:880px){.map .wrap{grid-template-columns:1fr;gap:32px}}
 
-/* Why exists / article alternating blocks */
-.why-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start;}
-.why-grid .photo-placeholder{min-height:340px;}
-@media (max-width:900px){ .why-grid{grid-template-columns:1fr; gap:28px;} .why-grid .photo-placeholder{order:-1;} }
+/* ---------- 05 edition ---------- */
+.edition .box{background:var(--ink);color:var(--paper);padding:52px 44px;margin-top:38px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.edition .box div span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.55;margin-bottom:9px}
+.edition .box div b{font-family:var(--head);font-size:1.4rem;font-weight:700;letter-spacing:-.015em}
+.soon{color:var(--turmeric)}
+@media(max-width:880px){.edition .box{grid-template-columns:1fr 1fr;padding:34px 26px}}
 
-.article-block{display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:start; padding:56px 0; border-bottom:1px solid var(--line);}
-.article-block.reverse{grid-template-columns:1.1fr 0.9fr;}
-.article-block.reverse .photo-placeholder{order:2;}
-.article-block .photo-placeholder{min-height:280px;}
-.article-block h3{font-size:clamp(24px,3.4vw,32px); margin-bottom:14px;}
-.article-block p{font-size:15px; opacity:0.85;}
-.article-block .num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--orange); letter-spacing:0.08em; margin-bottom:12px; display:block;}
-@media (max-width:900px){ .article-block, .article-block.reverse{grid-template-columns:1fr; gap:24px;} .article-block.reverse .photo-placeholder{order:-1;} }
+/* ---------- 06 stories ---------- */
+.stories{background:var(--paper-warm);border-top:1px solid rgba(25,21,16,.1)}
+.slist{margin-top:40px;border-top:1px solid rgba(25,21,16,.16)}
+.story{display:grid;grid-template-columns:80px 1fr auto;gap:26px;align-items:center;
+  padding:24px 0;border-bottom:1px solid rgba(25,21,16,.16);text-decoration:none;color:var(--ink);transition:padding-left .25s ease}
+.story:hover{padding-left:10px}
+.story .idx{font-size:11px;font-weight:600;letter-spacing:.16em;opacity:.5}
+.story h3{font-size:1.32rem}
+.story .tag{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+@media(max-width:680px){.story{grid-template-columns:1fr;gap:8px}}
 
-/* Species cards */
-.species-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.species-card{background:var(--cream); padding:26px 20px 30px;}
-.species-card .tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.08em; color:var(--green); text-transform:uppercase; margin-bottom:14px; display:block;}
-.species-card h3{font-size:24px; color:var(--navy); margin-bottom:10px;}
-.species-card p{font-size:13.5px; opacity:0.8;}
-@media (max-width:900px){ .species-grid{grid-template-columns:repeat(2,1fr);} }
-@media (max-width:520px){ .species-grid{grid-template-columns:1fr;} }
+/* ---------- 07 record ---------- */
+.record .rec{margin-top:40px;border:1.5px solid var(--ink);padding:38px 34px;
+  display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.record .no{font-family:var(--head);font-weight:700;font-size:clamp(3rem,9vw,6rem);
+  line-height:.86;letter-spacing:-.045em;color:var(--cherry)}
+.record ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.record li{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(25,21,16,.3);padding:7px 13px}
+@media(max-width:680px){.record .rec{grid-template-columns:1fr;gap:20px}}
 
-/* Region / district cards */
-.region-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.region-card{background:var(--cream); padding:0;}
-.region-card .photo-placeholder{min-height:150px; border:none; border-bottom:1px solid var(--line);}
-.region-card .region-body{padding:18px 20px 24px;}
-.region-card h3{font-size:19px; color:var(--navy); text-transform:none; font-family:'Inter'; font-weight:700;}
-.region-card p{font-size:13px; opacity:0.8; margin-top:8px;}
-@media (max-width:900px){ .region-grid{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .region-grid{grid-template-columns:1fr;} }
+/* ---------- 08 association ---------- */
+.assoc{background:var(--green);color:var(--paper);text-align:center}
+.assoc h2{max-width:20ch;margin:18px auto 0}
+.assoc p{max-width:50ch;margin:20px auto 0;opacity:.88}
 
-/* Process list */
-.process-list{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.process-card{background:var(--navy); color:var(--cream); padding:26px 20px;}
-.process-card .num{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--orange); letter-spacing:0.08em;}
-.process-card h3{font-size:18px; color:var(--cream); margin:14px 0 8px; text-transform:none; font-family:'Inter'; font-weight:700;}
-.process-card p{font-size:12.5px; opacity:0.75;}
-@media (max-width:900px){ .process-list{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .process-list{grid-template-columns:1fr;} }
+footer{background:var(--ink);color:var(--paper);padding:64px 0 40px;position:relative;z-index:2}
+footer img{height:44px;margin-bottom:26px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+.fgrid h4{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.55;margin-bottom:13px}
+.fgrid a{display:block;color:var(--paper);text-decoration:none;opacity:.85;font-size:.95rem;margin-bottom:8px}
+.fgrid a:hover{color:var(--turmeric)}
+.fbot{margin-top:44px;padding-top:22px;border-top:1px solid rgba(244,232,207,.18);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+@media(max-width:880px){.fgrid{grid-template-columns:1fr}}
 
-/* Producers */
-.people-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-.people-card .photo-placeholder{min-height:230px; margin-bottom:14px;}
-.people-card h3{font-size:19px; color:var(--navy); text-transform:none; font-family:'Inter'; font-weight:700;}
-.people-card .role{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--pink); text-transform:uppercase; letter-spacing:0.05em; margin:4px 0 8px;}
-.people-card p{font-size:13.5px; opacity:0.8;}
-@media (max-width:900px){ .people-grid{grid-template-columns:1fr 1fr; gap:18px;} }
-@media (max-width:560px){ .people-grid{grid-template-columns:1fr;} }
-
-/* Filter tabs (people / stories) */
-.filter-tabs{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;}
-.filter-tab{
-  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.05em; text-transform:uppercase;
-  padding:8px 16px; border:1px solid var(--line-strong); color:var(--navy); opacity:0.7; cursor:pointer; background:none;
-}
-.filter-tab.active{background:var(--navy); color:var(--cream); border-color:var(--navy); opacity:1;}
-
-/* What we do / Our work */
-.work-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.work-card{background:var(--navy); color:var(--cream); padding:30px 22px; min-height:190px; display:flex; flex-direction:column; justify-content:space-between;}
-.work-card .num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--orange); letter-spacing:0.08em;}
-.work-card h3{font-size:20px; color:var(--cream); margin:20px 0 8px;}
-.work-card p{font-size:13px; opacity:0.75;}
-@media (max-width:900px){ .work-grid{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .work-grid{grid-template-columns:1fr;} }
-
-/* Events */
-.event-card{display:grid; grid-template-columns:280px 1fr; gap:0; border:1px solid var(--line); background:var(--cream);}
-.event-card .photo-placeholder{min-height:100%;}
-.event-body{padding:28px 30px;}
-.event-body .eyebrow{margin-bottom:10px;}
-.event-body h3{font-family:'Inter'; text-transform:none; font-size:22px; font-weight:700; color:var(--navy); margin-bottom:10px;}
-.event-meta{display:flex; gap:22px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--navy); opacity:0.75; margin:14px 0 18px;}
-.event-list{display:flex; flex-direction:column; gap:24px;}
-.event-card.past{opacity:0.75;}
-@media (max-width:760px){ .event-card{grid-template-columns:1fr;} .event-card .photo-placeholder{min-height:200px;} }
-
-/* Stories */
-.story-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-.story-card .photo-placeholder{min-height:190px; margin-bottom:14px;}
-.story-card .eyebrow{font-size:10.5px; margin-bottom:8px;}
-.story-card h3{font-family:'Inter'; text-transform:none; font-size:17px; font-weight:700; color:var(--navy);}
-.story-card p{font-size:13px; opacity:0.75; margin-top:8px;}
-@media (max-width:900px){ .story-grid{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .story-grid{grid-template-columns:1fr;} }
-
-/* Association connection band */
-.assoc-band{background:var(--navy-deep); color:var(--cream); padding:70px 0;}
-.assoc-inner{max-width:640px;}
-.assoc-inner .eyebrow{color:var(--pink);}
-.assoc-inner h2{color:var(--cream); font-size:clamp(28px,4.5vw,42px); margin:16px 0 18px;}
-.assoc-inner p{opacity:0.8; font-size:15px; margin-bottom:28px;}
-.assoc-inner .btn-primary{background:var(--pink); border-color:var(--pink); color:var(--cream);}
-.assoc-inner .btn-primary:hover{background:#B81259; border-color:#B81259;}
-
-/* Final CTA */
-.final-cta{text-align:center; padding:80px 0;}
-.final-cta h2{font-size:clamp(34px,6vw,58px); margin:16px auto 18px; max-width:700px;}
-.final-cta p{max-width:520px; margin:0 auto 30px; font-size:15.5px; opacity:0.85;}
-.final-cta .btn-row{justify-content:center;}
-
-/* Contact / Join form */
-.form-shell{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px;}
-.form-shell .intro h2{font-size:clamp(30px,5vw,44px);}
-.form-shell .intro p{margin-top:16px; font-size:15px; opacity:0.85; max-width:380px;}
-.role-list{margin-top:28px; display:flex; flex-direction:column; gap:8px;}
-.role-list .role-item{font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.04em; opacity:0.7; padding:8px 0; border-bottom:1px solid var(--line);}
-.field{margin-bottom:20px;}
-.field label{display:block; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--navy); margin-bottom:8px;}
-.field input[type=text], .field input[type=email], .field input[type=tel], .field select, .field textarea{
-  width:100%; border:1px solid var(--line-strong); background:var(--cream-alt); padding:13px 14px;
-  font-family:'Inter',sans-serif; font-size:14px; color:var(--ink);
-}
-.field textarea{min-height:110px; resize:vertical;}
-.field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-.checkbox-row{display:flex; align-items:flex-start; gap:10px; margin-bottom:26px;}
-.checkbox-row input{margin-top:4px;}
-.checkbox-row label{font-size:13px; opacity:0.8;}
-@media (max-width:900px){ .form-shell{grid-template-columns:1fr; gap:32px;} .field-row{grid-template-columns:1fr;} }
-
-/* Footer */
-footer{background:var(--footer-bg); color:var(--cream); padding:56px 0 28px; border-top:2px solid var(--pink);}
-.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(242,238,227,0.15);}
-.footer-brand{font-family:'Anton',sans-serif; font-size:26px; text-transform:uppercase;}
-.footer-tag{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--orange); margin-top:8px; letter-spacing:0.04em;}
-.footer-init{font-size:13px; opacity:0.88; margin-top:16px; max-width:320px; line-height:1.6;}
-.footer-init a{color:var(--pink); text-decoration:underline;}
-.footer-col h4{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange); margin-bottom:14px;}
-.footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px; font-size:13.5px; opacity:0.95;}
-.footer-bottom{display:flex; justify-content:space-between; padding-top:22px; font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:0.62; flex-wrap:wrap; gap:10px;}
-@media (max-width:760px){ .footer-grid{grid-template-columns:1fr; gap:28px;} .footer-bottom{flex-direction:column;} }
-
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav-row">
-    <a href="index.html" class="logo-slot"><span class="logo-mark">KO</span>Kerala Origins</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    <nav id="nav">
-      <ul>
-        <li class="current"><a href="index.html">Home</a></li>
-        <li><a href="why-we-exist.html">Why We Exist</a></li>
-        <li><a href="kerala-coffee.html">Kerala Coffee</a></li>
-        <li><a href="producers-people.html">Producers & People</a></li>
-        <li><a href="our-work.html">Our Work</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="stories.html">Stories</a></li>
-        <li><a href="join.html">Join / Contact</a></li>
-        <li class="assoc"><a href="#assoc">Association ↗</a></li>
-      </ul>
-    </nav>
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top"><img src="/logo-paper.png" srcset="/logo-paper.png 1x, /logo-paper@2x.png 2x, /logo-paper@3x.png 3x" alt="Kerala Origins" /></a>
+    <div class="nav-links">
+      <a href="#gathering">The Gathering</a>
+      <a href="#people">People</a>
+      <a href="#map">Map</a>
+      <a href="#stories">Field Stories</a>
+      <a href="#record">The Record</a>
+    </div>
+    <a class="nav-cta" href="#edition">Take Part</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero" id="top">
+  <svg class="topo" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-40 700C260 664 420 540 660 520 940 497 1080 590 1440 540"/>
+    <path d="M-40 748C250 716 430 592 670 572 950 549 1090 642 1440 592"/>
+    <path d="M-40 652C270 612 410 488 650 468 930 445 1070 538 1440 488"/>
+    <path d="M-40 604C280 560 400 436 640 416 920 393 1060 486 1440 436"/>
+    <path d="M-40 556C290 508 390 384 630 364 910 341 1050 434 1440 384"/>
+    <path d="M-40 508C300 456 380 332 620 312 900 289 1040 382 1440 332"/>
+    <path d="M-40 460C310 404 370 280 610 260 890 237 1030 330 1440 280"/>
+  </svg>
+
+  <svg class="cherry-branch" viewBox="0 0 220 700" aria-hidden="true">
+    <g fill="none" stroke="#F4E8CF" stroke-width="2.4" stroke-linecap="round">
+      <path d="M150 -10C150 120 118 210 96 300 74 392 78 500 108 640"/>
+      <path d="M138 120C112 132 92 150 78 176"/>
+      <path d="M126 232C154 240 176 232 196 214"/>
+      <path d="M104 350C78 360 60 378 48 404"/>
+      <path d="M96 452C126 462 150 456 172 438"/>
+    </g>
+    <g fill="#D6472F" stroke="#F4E8CF" stroke-width="2">
+      <circle cx="72" cy="182" r="15"/><circle cx="196" cy="210" r="14"/>
+      <circle cx="44" cy="410" r="15"/><circle cx="176" cy="434" r="13"/>
+      <circle cx="112" cy="286" r="12"/>
+    </g>
+    <g fill="none" stroke="#F4E8CF" stroke-width="2" stroke-linecap="round">
+      <path d="M66 176c6 5 6 8 0 13M190 204c6 5 6 8 0 13M38 404c6 5 6 8 0 13"/>
+    </g>
+    <g fill="#0B4F3A" stroke="#F4E8CF" stroke-width="2.2">
+      <path d="M158 128c26-14 46-2 44 22-2 22-26 34-46 22-14-8-14-34 2-44z"/>
+      <path d="M62 300c-26-14-46-2-44 22 2 22 26 34 46 22 14-8 14-34-2-44z"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div>
+      <p class="utility">An initiative of Specialty Coffee Association Kerala</p>
+      <h1>Kerala coffee, told from where it begins.</h1>
+      <p class="support">Kerala Origins is the annual gathering celebrating the people, places and processes that define Kerala coffee.</p>
+      <p class="mal" lang="ml">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
+      <div class="hero-cta">
+        <a class="btn accent" href="#gathering">Explore Kerala Origins</a>
+        <a class="btn ghost" href="#edition">Take Part</a>
+      </div>
+    </div>
+    <div class="edition-badge">
+      <b>KO—01</b>
+      Edition 01<br/>People • Place • Process
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" style="padding:0; border-bottom:none;">
-  <div class="hero-main">
-    <div class="wrap" style="padding:0;">
-      <div class="eyebrow">An initiative of Specialty Coffee Association Kerala</div>
-      <h1 class="hero-headline">The<br>Journey of<br><span class="orange">Kerala Coffee</span></h1>
-      <p class="hero-sub">Connecting Kerala's coffee producers, farm workers, processors and roasters — and building greater recognition for coffee from Kerala.</p>
-      <div class="btn-row">
-        <a href="kerala-coffee.html" class="btn btn-primary">Discover Kerala Coffee</a>
-        <a href="join.html" class="btn btn-secondary">Support the Community</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-side">
-    <div class="cell">
-      <div class="coord">11.2500° N</div>
-      <div class="coord">75.7804° E</div>
-    </div>
-    <div class="cell" style="flex:1;">
-      <svg class="journey-svg" viewBox="0 0 200 220" fill="none">
-        <path d="M20 20 C 60 40, 40 90, 90 100 S 160 140, 150 200" stroke="var(--navy)" stroke-width="1" opacity="0.25"/>
-        <path class="journey-dash" d="M20 20 C 60 40, 40 90, 90 100 S 160 140, 150 200" stroke="var(--pink)" stroke-width="1.4"/>
-        <circle cx="20" cy="20" r="3.5" fill="var(--navy)"/>
-        <circle cx="150" cy="200" r="3.5" fill="var(--orange)"/>
-      </svg>
-    </div>
-    <div class="cell">
-      <div class="coord" style="color:var(--pink); opacity:1;">FROM THE WESTERN GHATS →</div>
-    </div>
-  </div>
-</section>
-
-<div class="photo-placeholder duotone-orange" style="min-height:280px; border-top:none;">
-  <div class="label">Hero visual — Kerala coffee farm / producer in landscape<br>(replace with your photography, full-width duotone)</div>
-</div>
-
-<!-- WHY WE EXIST -->
-<section id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="eyebrow">Why Kerala Origins Exists</div>
-      <h2>Coffee begins<br>with people<br>and place.</h2>
-      <p style="margin-top:20px; font-size:15.5px; opacity:0.85; max-width:480px;">
-        Kerala produces diverse coffees shaped by its landscapes, biodiversity, communities and changing production practices. Yet many of the producers and workers behind these coffees remain unseen. Kerala Origins exists to document their work, connect the coffee community and build greater recognition for coffee from Kerala.
-      </p>
-      <a href="why-we-exist.html" class="btn btn-primary" style="margin-top:26px; display:inline-block;">Why We Exist</a>
-    </div>
-    <div class="photo-placeholder">
-      <div class="label">Producer or worker portrait — real environment</div>
-    </div>
-  </div>
-</section>
-
-<!-- KERALA COFFEE -->
-<section id="coffee" class="bg-alt">
+<!-- 01 -->
+<section class="gathering" id="gathering">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Kerala Coffee</div>
-      <h2>Coffee from Kerala</h2>
-      <p>Explore Kerala's coffee-growing regions, farms, species, varieties, processing methods and the people shaping every harvest.</p>
+    <div class="reveal">
+      <p class="sec-no">01 — The Gathering</p>
+      <h2 style="margin-top:12px">Once a year,<br/>the whole chain<br/>in one room.</h2>
+      <p class="mal" lang="ml" style="margin-top:14px">വർഷത്തിൽ ഒരിക്കൽ</p>
     </div>
-    <div class="species-grid">
-      <div class="species-card"><span class="tag">Species 01</span><h3>Robusta</h3><p>Kerala's most widely grown species, shaped by shade and altitude.</p></div>
-      <div class="species-card"><span class="tag">Species 02</span><h3>Arabica</h3><p>Grown across the state's higher elevations and cooler microclimates.</p></div>
-      <div class="species-card"><span class="tag">Species 03</span><h3>Liberica</h3><p>A rare, distinctive species with a growing presence in Kerala.</p></div>
-      <div class="species-card"><span class="tag">Species 04</span><h3>Excelsa</h3><p>An emerging species offering new expressions of Kerala coffee.</p></div>
+    <div class="reveal">
+      <p>Kerala Origins brings producers, harvest workers, processors, roasters, researchers, café teams and coffee people together once a year — in the same room, at the same tables, tasting the same coffees.</p>
+      <p>Most coffee grown in Kerala leaves the state as an anonymous lot. It is blended, re-bagged and sold under someone else's name. The grower becomes a line on a purchase order.</p>
+      <p>This gathering puts that back in order. Every lot on the table is traced to the farm, the elevation and the person who processed it — and that person is present, answering questions.</p>
     </div>
-    <a href="kerala-coffee.html" class="btn btn-secondary" style="margin-top:28px; display:inline-block;">Explore Kerala Coffee</a>
   </div>
 </section>
 
-<!-- PRODUCERS & PEOPLE -->
+<!-- 02 -->
+<section class="ppp">
+  <div class="wrap">
+    <p class="sec-no reveal">02 — The Framework</p>
+    <h2 class="reveal" style="margin-top:12px">People. Place. Process.</h2>
+    <div class="panels">
+      <article class="panel reveal">
+        <div>
+          <span class="stamp">People</span>
+          <h3>The hands<br/>behind the cup</h3>
+          <p class="mal" lang="ml">മനുഷ്യർ</p>
+          <p>Producers, harvest workers, sorters and processors — named, present and speaking for their own coffee.</p>
+        </div>
+        <svg viewBox="0 0 100 100" fill="none" stroke="#F4E8CF" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <circle cx="50" cy="30" r="15"/><path d="M20 90c0-18 13-30 30-30s30 12 30 30"/>
+          <path d="M32 74l-8 16M68 74l8 16"/>
+        </svg>
+      </article>
+      <article class="panel reveal">
+        <div>
+          <span class="stamp">Place</span>
+          <h3>Farms, districts,<br/>elevations</h3>
+          <p class="mal" lang="ml">ഇടം</p>
+          <p>The Western Ghats, shade systems, pepper vines, rainfall and soil — the conditions that make the cup what it is.</p>
+        </div>
+        <svg viewBox="0 0 100 100" fill="none" stroke="#F4E8CF" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 78l24-34 16 20 14-24 34 38z"/><path d="M6 90h88"/>
+        </svg>
+      </article>
+      <article class="panel reveal">
+        <div>
+          <span class="stamp">Process</span>
+          <h3>Harvest to<br/>roast, in the open</h3>
+          <p class="mal" lang="ml">രീതി</p>
+          <p>Picking, fermentation, drying beds and roast decisions — shown and argued over, not summarised on a label.</p>
+        </div>
+        <svg viewBox="0 0 100 100" fill="none" stroke="#F4E8CF" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="46" width="72" height="34" rx="3"/><path d="M14 58h72M26 46V32M74 46V32M50 46V26"/>
+        </svg>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
 <section id="people">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Producers & People</div>
-      <h2>Meet the People Behind Kerala Coffee</h2>
-      <p>Farmers, harvest workers, processors and coffee communities carry the knowledge and skills behind every coffee. Kerala Origins creates a place for their work, experience and voices to be recognised.</p>
-    </div>
+    <p class="sec-no reveal">03 — Meet the People</p>
+    <h2 class="reveal" style="margin-top:12px">Named, not numbered.</h2>
     <div class="people-grid">
-      <div class="people-card"><div class="photo-placeholder"><div class="label">Producer profile photo</div></div><h3>Producer name</h3><div class="role">Farmer · Region</div><p>Short line on their farm, practice or story — permission-published.</p></div>
-      <div class="people-card"><div class="photo-placeholder"><div class="label">Worker profile photo</div></div><h3>Worker name</h3><div class="role">Harvest team · Region</div><p>Short line on their role and connection to the harvest.</p></div>
-      <div class="people-card"><div class="photo-placeholder"><div class="label">Processor profile photo</div></div><h3>Processor name</h3><div class="role">Processing team · Region</div><p>Short line on their craft and part of the journey.</p></div>
+      <article class="pcard reveal">
+        <div class="photo"><span>Producer portrait</span></div>
+        <div class="pbody">
+          <h3>[Producer name]</h3>
+          <p class="pmeta">[Farm name] · Wayanad · 1,310 m</p>
+          <span class="species">Arabica</span>
+          <p class="quote">"[One short handwritten line from the producer.]"</p>
+          <a href="#">Read their story <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="pcard reveal">
+        <div class="photo"><span>Producer portrait</span></div>
+        <div class="pbody">
+          <h3>[Producer name]</h3>
+          <p class="pmeta">[Farm name] · Idukki · 1,480 m</p>
+          <span class="species">Arabica · Honey</span>
+          <p class="quote">"[One short handwritten line from the producer.]"</p>
+          <a href="#">Read their story <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="pcard reveal">
+        <div class="photo"><span>Producer portrait</span></div>
+        <div class="pbody">
+          <h3>[Producer name]</h3>
+          <p class="pmeta">[Farm name] · Palakkad · 880 m</p>
+          <span class="species">Robusta</span>
+          <p class="quote">"[One short handwritten line from the producer.]"</p>
+          <a href="#">Read their story <span class="arrow">→</span></a>
+        </div>
+      </article>
     </div>
-    <a href="producers-people.html" class="btn btn-primary" style="margin-top:30px; display:inline-block;">Meet the Community</a>
   </div>
 </section>
 
-<!-- WHAT WE DO -->
-<section id="work" style="padding:0 0 64px; border-bottom:1px solid var(--line);">
-  <div class="wrap" style="padding-top:64px;">
-    <div class="section-head">
-      <div class="eyebrow pink">What We Do</div>
-      <h2>Supporting Kerala's Coffee Community</h2>
-    </div>
-    <div class="work-grid">
-      <div class="work-card"><span class="num">01</span><div><h3>Connect</h3><p>Connecting producers, processors and roasters.</p></div></div>
-      <div class="work-card"><span class="num">02</span><div><h3>Learn</h3><p>Sharing knowledge about farming, processing and coffee quality.</p></div></div>
-      <div class="work-card"><span class="num">03</span><div><h3>Document</h3><p>Recording Kerala's coffee regions, people and production practices.</p></div></div>
-      <div class="work-card"><span class="num">04</span><div><h3>Celebrate</h3><p>Creating events and recognition for producers, workers and communities.</p></div></div>
-    </div>
-    <a href="our-work.html" class="btn btn-secondary" style="margin-top:28px; display:inline-block;">Explore Our Work</a>
-  </div>
-</section>
-
-<!-- EVENTS -->
-<section id="events" class="bg-alt">
+<!-- 04 -->
+<section class="map" id="map">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Events</div>
-      <h2>Come Together Around Kerala Coffee</h2>
-      <p>Producer–roaster meetings, farm visits, processing workshops, tastings and community gatherings.</p>
+    <div>
+      <svg class="kmap" viewBox="0 0 200 480" aria-label="Kerala coffee regions">
+        <path class="land" d="M96 12c14 20 20 44 18 66-3 26 4 44 12 62 9 20 14 40 10 60-4 22-2 42 6 62 9 22 12 44 6 66-5 20-4 38 2 56 5 16 4 32-6 44-12 14-30 18-46 12-14-5-24-16-28-30-6-20-4-40-10-60-7-22-16-42-18-64-2-24 4-46 10-68 5-20 8-40 4-60-4-22-2-42 8-60 10-18 18-36 20-56 1-12 6-20 12-30z"/>
+        <circle class="region" cx="78" cy="126" r="8" data-r="wayanad"/>
+        <circle class="region" cx="96" cy="212" r="8" data-r="palakkad"/>
+        <circle class="region" cx="88" cy="300" r="8" data-r="idukki"/>
+        <circle class="region" cx="74" cy="382" r="8" data-r="thiruvananthapuram"/>
+      </svg>
     </div>
-    <div class="event-card">
-      <div class="photo-placeholder"><div class="label">Event photo</div></div>
-      <div class="event-body">
-        <div class="eyebrow pink">Upcoming</div>
-        <h3>Event title</h3>
-        <div class="event-meta"><span>📍 Location, Kerala</span><span>🗓 Date</span><span>⏱ Time</span></div>
-        <p style="font-size:14px; opacity:0.8; max-width:480px;">Short description of the event and who should attend.</p>
-        <a href="events.html" class="btn btn-primary" style="margin-top:20px; display:inline-block;">View Details</a>
+    <div>
+      <p class="sec-no">04 — Kerala Coffee Map</p>
+      <h2 style="margin-top:12px;color:var(--paper)">Tap a region.</h2>
+      <div class="region-info" id="rinfo" style="margin-top:26px">
+        <h3 id="rname">Wayanad</h3>
+        <dl>
+          <dt>Elevation</dt><dd id="relev">760 – 1,310 m</dd>
+          <dt>Species</dt><dd id="rspec">Arabica, Robusta</dd>
+          <dt>Processing</dt><dd id="rproc">Washed, natural, anaerobic</dd>
+          <dt>Notes</dt><dd id="rnote">[Regional note — shade systems, rainfall, harvest window.]</dd>
+        </dl>
       </div>
     </div>
-    <div style="text-align:right; margin-top:20px;"><a href="events.html" class="btn btn-secondary">View Events</a></div>
   </div>
 </section>
 
-<!-- STORIES -->
-<section id="stories">
+<!-- 05 -->
+<section class="edition" id="edition">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Stories</div>
-      <h2>Stories from Kerala Coffee</h2>
+    <p class="sec-no reveal">05 — This Year's Edition</p>
+    <h2 class="reveal" style="margin-top:12px">Edition 01 — Beginnings</h2>
+    <div class="box reveal">
+      <div><span>Edition</span><b>KO—01</b></div>
+      <div><span>Theme</span><b>Beginnings</b></div>
+      <div><span>Date</span><b class="soon">Updates soon</b></div>
+      <div><span>Location</span><b class="soon">Updates soon</b></div>
     </div>
-    <div class="story-grid">
-      <div class="story-card"><div class="photo-placeholder"><div class="label">Story image</div></div><div class="eyebrow">Producers</div><h3>Story headline goes here</h3></div>
-      <div class="story-card"><div class="photo-placeholder"><div class="label">Story image</div></div><div class="eyebrow">Origins</div><h3>Story headline goes here</h3></div>
-      <div class="story-card"><div class="photo-placeholder"><div class="label">Story image</div></div><div class="eyebrow">Processing</div><h3>Story headline goes here</h3></div>
-    </div>
-    <a href="stories.html" class="btn btn-primary" style="margin-top:30px; display:inline-block;">Read the Stories</a>
   </div>
 </section>
 
-<!-- ASSOCIATION CONNECTION -->
-<div class="assoc-band" id="assoc">
-  <div class="wrap assoc-inner">
-    <div class="eyebrow">An Initiative Of</div>
-    <h2>Specialty Coffee Association Kerala</h2>
-    <p>Kerala Origins Coffee is the producer- and origin-focused initiative of Specialty Coffee Association Kerala, created to support the people and places behind Kerala coffee.</p>
-    <a href="#" class="btn btn-primary">Visit the Association ↗</a>
-  </div>
-</div>
-
-<!-- FINAL CTA -->
-<section class="final-cta" style="border-bottom:none;">
+<!-- 06 -->
+<section class="stories" id="stories">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Join / Contact</div>
-    <h2>Be Part of Kerala's<br>Coffee Journey</h2>
-    <p>Are you a producer, worker, processor, roaster, researcher or someone who wants to support Kerala coffee? We would like to hear from you.</p>
-    <div class="btn-row"><a href="join.html" class="btn btn-primary">Join the Community</a><a href="join.html" class="btn btn-secondary">Contact Kerala Origins</a></div>
+    <p class="sec-no reveal">06 — Field Stories</p>
+    <h2 class="reveal" style="margin-top:12px">From the hills,<br/>into the record.</h2>
+    <div class="slist">
+      <a class="story reveal" href="#"><span class="idx">FS—01</span><h3>[Producer story headline]</h3><span class="tag">People <span class="arrow">→</span></span></a>
+      <a class="story reveal" href="#"><span class="idx">FS—02</span><h3>[Processing story headline]</h3><span class="tag">Process <span class="arrow">→</span></span></a>
+      <a class="story reveal" href="#"><span class="idx">FS—03</span><h3>[Species or biodiversity headline]</h3><span class="tag">Place <span class="arrow">→</span></span></a>
+      <a class="story reveal" href="#"><span class="idx">FS—04</span><h3>[Roaster–producer collaboration]</h3><span class="tag">People <span class="arrow">→</span></span></a>
+    </div>
   </div>
 </section>
+
+<!-- 07 -->
+<section class="record" id="record">
+  <div class="wrap">
+    <p class="sec-no reveal">07 — A Growing Record</p>
+    <h2 class="reveal" style="margin-top:12px">Every edition joins the archive.</h2>
+    <p class="lede reveal" style="margin-top:16px">Each gathering is recorded and kept — so the second year can be read against the first, and the tenth against all of them.</p>
+    <div class="rec reveal">
+      <div class="no">01</div>
+      <div>
+        <p class="sec-no" style="opacity:1">Edition 01 · Beginnings</p>
+        <ul style="margin-top:16px">
+          <li>People</li><li>Farms</li><li>Coffees</li><li>Conversations</li><li>Findings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="assoc">
+  <div class="wrap">
+    <p class="sec-no">08 — Association</p>
+    <h2>An initiative of Specialty Coffee Association Kerala</h2>
+    <p>Kerala Origins is convened by the association as an open, producer-led record of coffee in this state.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a class="btn accent" href="#">Visit the Association <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
+    <img src="/logo-paper.png" srcset="/logo-paper.png 1x, /logo-paper@2x.png 2x" alt="Kerala Origins" />
+    <div class="fgrid">
       <div>
-        <div class="footer-brand">Kerala Origins</div>
-        <div class="footer-tag">The Journey of Kerala Coffee</div>
-        <div class="footer-init">An initiative of <a href="#">Specialty Coffee Association Kerala</a>, created to support Kerala's coffee producers, workers and origins.</div>
+        <h4>Kerala Origins</h4>
+        <p style="opacity:.8;max-width:34ch">Celebrating the people, places and processes that define Kerala coffee.</p>
+        <p class="mal" lang="ml" style="margin-top:12px;color:var(--turmeric)">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="why-we-exist.html">Why We Exist</a></li>
-          <li><a href="kerala-coffee.html">Kerala Coffee</a></li>
-          <li><a href="producers-people.html">Producers & People</a></li>
-          <li><a href="stories.html">Stories</a></li>
-        </ul>
+      <div>
+        <h4>Sections</h4>
+        <a href="#gathering">The Gathering</a>
+        <a href="#people">Meet the People</a>
+        <a href="#map">Kerala Coffee Map</a>
+        <a href="#stories">Field Stories</a>
       </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="join.html">Join / Contact</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
+      <div>
+        <h4>Location</h4>
+        <p style="opacity:.8">Western Ghats<br/>Kerala, India</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Kerala Origins Coffee</span>
-      <span>From the Western Ghats to the world →</span>
+    <div class="fbot">
+      <span>KO—01 · Edition 01</span>
+      <span>People • Place • Process</span>
     </div>
   </div>
 </footer>
 
 <script>
-const menuBtn = document.getElementById('menuBtn');
-const nav = document.getElementById('nav');
-if (menuBtn && nav) {
-  menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
-  document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-}
-
-// Generic filter-tab handling: any .filter-tabs with buttons carrying
-// data-filter, paired with a grid whose cards carry data-category.
-document.querySelectorAll('.filter-tabs').forEach(tabGroup => {
-  const gridId = tabGroup.dataset.targetGrid;
-  const grid = gridId ? document.getElementById(gridId) : null;
-  if (!grid) return;
-  const cards = grid.children;
-  tabGroup.querySelectorAll('.filter-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabGroup.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const filter = tab.dataset.filter;
-      Array.from(cards).forEach(card => {
-        const cat = card.dataset.category || '';
-        card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
-      });
-    });
+const REGIONS = {
+  wayanad:{name:"Wayanad",elev:"760 – 1,310 m",spec:"Arabica, Robusta",proc:"Washed, natural, anaerobic",note:"[Regional note — shade systems, rainfall, harvest window.]"},
+  palakkad:{name:"Palakkad",elev:"880 – 1,150 m",spec:"Arabica, Robusta",proc:"Washed",note:"[Regional note — Nelliampathy block, native shade.]"},
+  idukki:{name:"Idukki",elev:"820 – 1,600 m",spec:"Arabica, Excelsa",proc:"Washed, honey, anaerobic",note:"[Regional note — highest lots in the state.]"},
+  thiruvananthapuram:{name:"Thiruvananthapuram",elev:"[to confirm]",spec:"[to confirm]",proc:"[to confirm]",note:"[Regional note.]"}
+};
+document.querySelectorAll('.region').forEach(el=>{
+  el.addEventListener('click',()=>{
+    document.querySelectorAll('.region').forEach(r=>r.classList.remove('on'));
+    el.classList.add('on');
+    const d=REGIONS[el.dataset.r]; if(!d) return;
+    rname.textContent=d.name; relev.textContent=d.elev;
+    rspec.textContent=d.spec; rproc.textContent=d.proc; rnote.textContent=d.note;
   });
 });
-
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay=(i%5)*55+'ms'; io.observe(el);
+});
 </script>
 </body>
 </html>
