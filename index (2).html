@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KERALA ORIGINS — Kerala coffee, told from where it begins.</title>
+<meta name="description" content="Kerala Origins is the annual gathering celebrating the people, places and processes that define Kerala coffee. An initiative of Specialty Coffee Association Kerala." />
+<link rel="canonical" href="https://YOURDOMAIN.com/" />
+<meta name="theme-color" content="#0B4F3A" />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kerala Origins" />
+<meta property="og:url" content="https://YOURDOMAIN.com/" />
+<meta property="og:title" content="Kerala coffee, told from where it begins." />
+<meta property="og:description" content="The annual gathering celebrating the people, places and processes that define Kerala coffee." />
+<meta property="og:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_IN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --green:#0B4F3A;
+  --green-deep:#083A2A;
+  --paper:#F4E8CF;
+  --paper-warm:#EEDFC0;
+  --ink:#191510;
+  --turmeric:#F2B827;
+  --cherry:#D6472F;
+  --monsoon:#2D6275;
+  --earth:#70432F;
+
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Manrope",system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+  --mal:"Anek Malayalam",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+/* paper grain across cream backgrounds */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+main{position:relative;z-index:2}
+
+/* ---------- shared bits ---------- */
+.stamp{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--body);font-size:10.5px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid currentColor;padding:6px 13px;border-radius:999px;
+}
+.sec-no{
+  font-family:var(--body);font-size:11px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;opacity:.75;
+}
+.mal{font-family:var(--mal);font-size:1rem;opacity:.82;letter-spacing:.01em}
+h2{font-family:var(--head);font-weight:700;line-height:1.02;letter-spacing:-.025em;
+   font-size:clamp(2rem,4.6vw,3.4rem)}
+h3{font-family:var(--head);font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.lede{font-size:clamp(1.02rem,1.5vw,1.16rem);max-width:56ch;opacity:.86}
+section{padding:96px 0;position:relative}
+
+.arrow{display:inline-block;transition:transform .25s ease}
+a:hover .arrow{transform:translateX(5px)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-offset:3px}
+
+.btn{
+  display:inline-block;font-family:var(--body);font-weight:600;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 26px;text-decoration:none;border:1.5px solid var(--paper);
+  color:var(--green);background:var(--paper);transition:transform .22s ease,background .22s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.accent{background:var(--turmeric);border-color:var(--turmeric);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--paper)}
+.btn.ghost:hover{background:rgba(244,232,207,.14)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:60;background:var(--green);color:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.nav img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:26px}
+.nav-links a{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--paper);text-decoration:none;padding-bottom:2px;border-bottom:1.5px solid transparent;transition:border-color .2s}
+.nav-links a:hover{border-bottom-color:var(--turmeric)}
+.nav-cta{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--turmeric);color:var(--ink);padding:11px 19px;text-decoration:none}
+@media(max-width:880px){.nav-links{display:none}.nav img{height:30px}.nav .wrap{height:62px}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--paper);color:var(--ink);position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:5;padding:56px 26px 72px;
+  display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;min-height:72svh}
+.hero-copy{max-width:34rem}
+.utility{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--green);opacity:.9}
+.hero h1{font-family:var(--head);font-weight:700;letter-spacing:-.035em;line-height:.98;
+  font-size:clamp(2.5rem,5.6vw,4.6rem);margin:20px 0 0;max-width:15ch;color:var(--ink)}
+.hero .support{margin-top:24px;max-width:44ch;font-size:clamp(1rem,1.4vw,1.12rem);
+  color:var(--ink);opacity:.84}
+.hero .mal{margin-top:18px;color:var(--green);opacity:1}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}
+.hero .btn{background:var(--green);border-color:var(--green);color:var(--paper)}
+.hero .btn.accent{background:var(--turmeric);border-color:var(--turmeric);color:var(--ink)}
+.hero .btn.ghost{background:transparent;color:var(--green);border-color:rgba(11,79,58,.45)}
+.hero .btn.ghost:hover{background:rgba(11,79,58,.08)}
+.edition-badge{
+  align-self:end;justify-self:end;position:relative;z-index:6;
+  background:var(--green);color:var(--turmeric);
+  padding:22px 26px 20px;text-align:left;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  border-left:4px solid var(--turmeric);
+}
+.edition-badge b{display:block;font-family:var(--head);font-size:2.9rem;letter-spacing:-.03em;
+  color:var(--turmeric);line-height:1;margin-bottom:8px}
+
+/* Western Ghats — stationary, lower right, bleeding off both edges */
+.ghats{
+  position:absolute;right:0;bottom:0;z-index:1;
+  width:66%;height:88%;
+  overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(100deg,transparent 0%,#000 26%,#000 100%);
+          mask-image:linear-gradient(100deg,transparent 0%,#000 26%,#000 100%);
+}
+.ghats picture,.ghats img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:right bottom;display:block;
+}
+
+/* monsoon mist — horizontal drift only, clipped inside .ghats */
+.fog{
+  position:absolute;left:0;bottom:0;
+  width:200%;height:100%;
+  pointer-events:none;will-change:transform;
+}
+.fog i{
+  position:absolute;top:0;left:0;width:50%;height:100%;
+  background-repeat:no-repeat;
+  will-change:opacity;
+}
+.fog i+i{left:50%}
+
+.fog-1 i{
+  background-image:
+    radial-gradient(46% 9%  at 30% 60%,rgba(255,250,240,.95),rgba(255,250,240,0) 68%),
+    radial-gradient(38% 7%  at 58% 70%,rgba(255,250,240,.88),rgba(255,250,240,0) 70%),
+    radial-gradient(34% 6%  at 84% 56%,rgba(255,250,240,.80),rgba(255,250,240,0) 72%);
+  filter:blur(9px);
+  animation:breathe 26s ease-in-out infinite;
+}
+.fog-2 i{
+  background-image:
+    radial-gradient(52% 8%  at 42% 79%,rgba(255,250,240,.85),rgba(255,250,240,0) 70%),
+    radial-gradient(40% 7%  at 76% 87%,rgba(255,250,240,.75),rgba(255,250,240,0) 72%);
+  filter:blur(14px);
+  animation:breathe 34s ease-in-out infinite;
+  animation-delay:-11s;
+}
+.fog-3 i{
+  background-image:
+    radial-gradient(42% 6%  at 34% 47%,rgba(255,250,240,.70),rgba(255,250,240,0) 74%),
+    radial-gradient(36% 5%  at 72% 42%,rgba(255,250,240,.60),rgba(255,250,240,0) 76%);
+  filter:blur(7px);
+  animation:breathe 42s ease-in-out infinite;
+  animation-delay:-19s;
+}
+
+.fog-1{animation:drift 38s linear infinite}
+.fog-2{animation:drift 62s linear infinite;animation-delay:-21s}
+.fog-3{animation:drift 88s linear infinite;animation-delay:-47s}
+
+@keyframes drift{
+  from{transform:translate3d(0,0,0)}
+  to  {transform:translate3d(-50%,0,0)}
+}
+@keyframes breathe{
+  0%,100%{opacity:.55}
+  50%    {opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .fog-1,.fog-2,.fog-3,.fog i{animation:none}
+}
+
+@media(max-width:880px){
+  .hero{overflow:hidden}
+  .hero .wrap{grid-template-columns:1fr;gap:22px;padding:34px 26px 0;min-height:auto}
+  .edition-badge{justify-self:start;text-align:left;margin-top:4px}
+  .ghats{
+    position:relative;
+    width:100%;left:auto;right:auto;margin-left:0;
+    height:42svh;min-height:260px;margin-top:34px;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
+  }
+  .ghats img{object-position:center bottom}
+  .fog-3{display:none}
+  .fog-1{animation-duration:64s}
+  .fog-2{animation-duration:96s}
+}
+
+/* ---------- 01 gathering ---------- */
+.gathering .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start}
+.gathering p{margin-bottom:16px;font-family:var(--serif);font-size:1.1rem;line-height:1.62}
+.gathering p:first-of-type::first-letter{
+  font-family:var(--head);float:left;font-size:3.5em;line-height:.8;padding:8px 12px 0 0;color:var(--cherry)}
+@media(max-width:880px){.gathering .wrap{grid-template-columns:1fr;gap:26px}}
+
+/* ---------- 02 three panels ---------- */
+.ppp{background:var(--paper-warm);border-top:1px solid rgba(25,21,16,.1);border-bottom:1px solid rgba(25,21,16,.1)}
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.panel{padding:30px 26px 34px;color:var(--paper);position:relative;overflow:hidden;min-height:330px;
+  display:flex;flex-direction:column;justify-content:space-between}
+.panel:nth-child(1){background:var(--cherry)}
+.panel:nth-child(2){background:var(--monsoon)}
+.panel:nth-child(3){background:var(--earth)}
+.panel h3{font-size:1.9rem;margin-top:10px}
+.panel .mal{color:rgba(244,232,207,.85);margin-top:4px}
+.panel p{font-size:.95rem;opacity:.92;margin-top:14px}
+.panel svg{position:absolute;right:-18px;bottom:-14px;width:150px;opacity:.28}
+@media(max-width:880px){.panels{grid-template-columns:1fr}.panel{min-height:auto}}
+
+/* ---------- 03 producers ---------- */
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+.pcard{background:#fff;border:1px solid rgba(25,21,16,.12)}
+.photo{
+  aspect-ratio:4/5;background:var(--green);position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.photo span{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,232,207,.5)}
+.photo::after{content:"";position:absolute;inset:0;background:var(--monsoon);mix-blend-mode:multiply;opacity:.55;transition:opacity .45s ease}
+.pcard:hover .photo::after{opacity:0}
+.pbody{padding:22px}
+.pcard h3{font-size:1.3rem}
+.pmeta{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.62;margin-top:7px}
+.quote{font-family:var(--serif);font-style:italic;font-size:1.02rem;margin-top:15px;color:var(--earth)}
+.pcard a{display:inline-block;margin-top:16px;font-size:11.5px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--green);text-decoration:none;border-bottom:1.5px solid var(--turmeric);padding-bottom:2px}
+.species{display:inline-block;margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;background:var(--turmeric);color:var(--ink);padding:4px 10px}
+@media(max-width:880px){.people-grid{grid-template-columns:1fr}}
+
+/* ---------- 04 map ---------- */
+.map{background:var(--green);color:var(--paper)}
+.map .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.kmap{width:100%;max-width:340px;margin:0 auto;display:block}
+.kmap .land{fill:rgba(244,232,207,.09);stroke:var(--paper);stroke-width:1.6}
+.kmap .region{fill:var(--turmeric);cursor:pointer;transition:r .25s ease,fill .25s ease}
+.kmap .region:hover,.kmap .region.on{fill:var(--cherry);r:11}
+.region-info{border-left:2px solid var(--turmeric);padding-left:24px;min-height:220px}
+.region-info h3{font-size:1.9rem;color:var(--turmeric)}
+.region-info dl{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:9px 22px;font-size:.95rem}
+.region-info dt{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.62;padding-top:4px}
+.region-info dd{font-family:var(--serif)}
+@media(max-width:880px){.map .wrap{grid-template-columns:1fr;gap:32px}}
+
+/* ---------- 05 edition ---------- */
+.edition .box{background:var(--ink);color:var(--paper);padding:52px 44px;margin-top:38px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.edition .box div span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.55;margin-bottom:9px}
+.edition .box div b{font-family:var(--head);font-size:1.4rem;font-weight:700;letter-spacing:-.015em}
+.soon{color:var(--turmeric)}
+@media(max-width:880px){.edition .box{grid-template-columns:1fr 1fr;padding:34px 26px}}
+
+/* ---------- 06 stories ---------- */
+.stories{background:var(--paper-warm);border-top:1px solid rgba(25,21,16,.1)}
+.slist{margin-top:40px;border-top:1px solid rgba(25,21,16,.16)}
+.story{display:grid;grid-template-columns:80px 1fr auto;gap:26px;align-items:center;
+  padding:24px 0;border-bottom:1px solid rgba(25,21,16,.16);text-decoration:none;color:var(--ink);transition:padding-left .25s ease}
+.story:hover{padding-left:10px}
+.story .idx{font-size:11px;font-weight:600;letter-spacing:.16em;opacity:.5}
+.story h3{font-size:1.32rem}
+.story .tag{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+@media(max-width:680px){.story{grid-template-columns:1fr;gap:8px}}
+
+/* ---------- 07 record ---------- */
+.record .rec{margin-top:40px;border:1.5px solid var(--ink);padding:38px 34px;
+  display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.record .no{font-family:var(--head);font-weight:700;font-size:clamp(3rem,9vw,6rem);
+  line-height:.86;letter-spacing:-.045em;color:var(--cherry)}
+.record ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.record li{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(25,21,16,.3);padding:7px 13px}
+@media(max-width:680px){.record .rec{grid-template-columns:1fr;gap:20px}}
+
+/* ---------- 08 association ---------- */
+.assoc{background:var(--green);color:var(--paper);text-align:center}
+.assoc h2{max-width:20ch;margin:18px auto 0}
+.assoc p{max-width:50ch;margin:20px auto 0;opacity:.88}
+
+footer{background:var(--ink);color:var(--paper);padding:64px 0 40px;position:relative;z-index:2}
+footer img{height:44px;margin-bottom:26px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+.fgrid h4{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.55;margin-bottom:13px}
+.fgrid a{display:block;color:var(--paper);text-decoration:none;opacity:.85;font-size:.95rem;margin-bottom:8px}
+.fgrid a:hover{color:var(--turmeric)}
+.fbot{margin-top:44px;padding-top:22px;border-top:1px solid rgba(244,232,207,.18);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+@media(max-width:880px){.fgrid{grid-template-columns:1fr}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top"><img src="/logo-paper.png" srcset="/logo-paper.png 1x, /logo-paper@2x.png 2x, /logo-paper@3x.png 3x" alt="Kerala Origins" /></a>
+    <div class="nav-links">
+      <a href="#gathering">The Gathering</a>
+      <a href="#people">People</a>
+      <a href="#map">Map</a>
+      <a href="#stories">Field Stories</a>
+      <a href="#record">The Record</a>
+    </div>
+    <a class="nav-cta" href="#edition">Take Part</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="utility">An initiative of Specialty Coffee Association Kerala</p>
+      <h1>Kerala coffee, told from where it begins.</h1>
+      <p class="support">Kerala Origins is the annual gathering celebrating the people, places and processes that define Kerala coffee.</p>
+      <p class="mal" lang="ml">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
+      <div class="hero-cta">
+        <a class="btn accent" href="#gathering">Explore Kerala Origins</a>
+        <a class="btn ghost" href="#edition">Take Part</a>
+      </div>
+    </div>
+    <div class="edition-badge">
+      <b>KO&mdash;01</b>
+      Edition 01<br/>People &bull; Place &bull; Process
+    </div>
+  </div>
+
+  <div class="ghats" aria-hidden="true">
+    <picture>
+      <source srcset="/ghats.webp" type="image/webp" />
+      <img src="/75AA0EF8-E158-4F48-BD6F-A5E358E64571.png" alt="" fetchpriority="high" decoding="async" />
+    </picture>
+    <div class="fog fog-1"><i></i><i></i></div>
+    <div class="fog fog-2"><i></i><i></i></div>
+    <div class="fog fog-3"><i></i><i></i></div>
+  </div>
+</header>
+
+<!-- 01 -->
+<section class="gathering" id="gathering">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-no">01 — The Gathering</p>
+      <h2 style="margin-top:12px">Once a year,<br/>the whole chain<br/>in one room.</h2>
+      <p class="mal" lang="ml" style="margin-top:14px">വർഷത്തിൽ ഒരിക്കൽ</p>
+    </div>
+    <div class="reveal">
+      <p>Kerala Origins brings producers, harvest workers, processors, roasters, researchers, café teams and coffee people together once a year — in the same room, at the same tables, tasting the same coffees.</p>
+      <p>Most coffee grown in Kerala leaves the state as an anonymous lot. It is blended, re-bagged and sold under someone else's name. The grower becomes a line on a purchase order.</p>
+      <p>This gathering puts that back in order. Every lot on the table is traced to the farm, the elevation and the person who processed it — and that person is present, answering questions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="ppp">
+  <div class="wrap">
+    <p class="sec-no reveal">02 — The Framework</p>
+    <h2 class="reveal" style="margin-top:12px">People. Place. Process.</h2>
+    <div class="panels">
+      <article class="panel reveal">
+        <div>
+          <span class="stamp">People</span>
+          <h3>The hands<br/>behind the cup</h3>
+          <p class="mal" lang="ml">മനുഷ്യർ</p>
+          <p>Producers, harvest workers, sorters and processors — named, present and speaking for their own coffee.</p>
+        </div>
+        <svg viewBox="0 0 100 100" fill="none" stroke="#F4E8CF" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <circle cx="50" cy="30" r="15"/><path d="M20 90c0-18 13-30 30-30s30 12 30 30"/>
+          <path d="M32 74l-8 16M68 74l8 16"/>
+        </svg>
+      </article>
+      <article class="panel reveal">
+        <div>
+          <span class="stamp">Place</span>
+          <h3>Farms, districts,<br/>elevations</h3>
+          <p class="mal" lang="ml">ഇടം</p>
+          <p>The Western Ghats, shade systems, pepper vines, rainfall and soil — the conditions that make the cup what it is.</p>
+        </div>
+        <svg viewBox="0 0 100 100" fill="none" stroke="#F4E8CF" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 78l24-34 16 20 14-24 34 38z"/><path d="M6 90h88"/>
+        </svg>
+      </article>
+      <article class="panel reveal">
+        <div>
+          <span class="stamp">Process</span>
+          <h3>Harvest to<br/>roast, in the open</h3>
+          <p class="mal" lang="ml">രീതി</p>
+          <p>Picking, fermentation, drying beds and roast decisions — shown and argued over, not summarised on a label.</p>
+        </div>
+        <svg viewBox="0 0 100 100" fill="none" stroke="#F4E8CF" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <rect x="14" y="46" width="72" height="34" rx="3"/><path d="M14 58h72M26 46V32M74 46V32M50 46V26"/>
+        </svg>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section id="people">
+  <div class="wrap">
+    <p class="sec-no reveal">03 — Meet the People</p>
+    <h2 class="reveal" style="margin-top:12px">Named, not numbered.</h2>
+    <div class="people-grid">
+      <article class="pcard reveal">
+        <div class="photo"><span>Producer portrait</span></div>
+        <div class="pbody">
+          <h3>[Producer name]</h3>
+          <p class="pmeta">[Farm name] · Wayanad · 1,310 m</p>
+          <span class="species">Arabica</span>
+          <p class="quote">"[One short handwritten line from the producer.]"</p>
+          <a href="#">Read their story <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="pcard reveal">
+        <div class="photo"><span>Producer portrait</span></div>
+        <div class="pbody">
+          <h3>[Producer name]</h3>
+          <p class="pmeta">[Farm name] · Idukki · 1,480 m</p>
+          <span class="species">Arabica · Honey</span>
+          <p class="quote">"[One short handwritten line from the producer.]"</p>
+          <a href="#">Read their story <span class="arrow">→</span></a>
+        </div>
+      </article>
+      <article class="pcard reveal">
+        <div class="photo"><span>Producer portrait</span></div>
+        <div class="pbody">
+          <h3>[Producer name]</h3>
+          <p class="pmeta">[Farm name] · Palakkad · 880 m</p>
+          <span class="species">Robusta</span>
+          <p class="quote">"[One short handwritten line from the producer.]"</p>
+          <a href="#">Read their story <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="map" id="map">
+  <div class="wrap">
+    <div>
+      <svg class="kmap" viewBox="0 0 200 480" aria-label="Kerala coffee regions">
+        <path class="land" d="M96 12c14 20 20 44 18 66-3 26 4 44 12 62 9 20 14 40 10 60-4 22-2 42 6 62 9 22 12 44 6 66-5 20-4 38 2 56 5 16 4 32-6 44-12 14-30 18-46 12-14-5-24-16-28-30-6-20-4-40-10-60-7-22-16-42-18-64-2-24 4-46 10-68 5-20 8-40 4-60-4-22-2-42 8-60 10-18 18-36 20-56 1-12 6-20 12-30z"/>
+        <circle class="region" cx="78" cy="126" r="8" data-r="wayanad"/>
+        <circle class="region" cx="96" cy="212" r="8" data-r="palakkad"/>
+        <circle class="region" cx="88" cy="300" r="8" data-r="idukki"/>
+        <circle class="region" cx="74" cy="382" r="8" data-r="thiruvananthapuram"/>
+      </svg>
+    </div>
+    <div>
+      <p class="sec-no">04 — Kerala Coffee Map</p>
+      <h2 style="margin-top:12px;color:var(--paper)">Tap a region.</h2>
+      <div class="region-info" id="rinfo" style="margin-top:26px">
+        <h3 id="rname">Wayanad</h3>
+        <dl>
+          <dt>Elevation</dt><dd id="relev">760 – 1,310 m</dd>
+          <dt>Species</dt><dd id="rspec">Arabica, Robusta</dd>
+          <dt>Processing</dt><dd id="rproc">Washed, natural, anaerobic</dd>
+          <dt>Notes</dt><dd id="rnote">[Regional note — shade systems, rainfall, harvest window.]</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="edition" id="edition">
+  <div class="wrap">
+    <p class="sec-no reveal">05 — This Year's Edition</p>
+    <h2 class="reveal" style="margin-top:12px">Edition 01 — Beginnings</h2>
+    <div class="box reveal">
+      <div><span>Edition</span><b>KO—01</b></div>
+      <div><span>Theme</span><b>Beginnings</b></div>
+      <div><span>Date</span><b class="soon">Updates soon</b></div>
+      <div><span>Location</span><b class="soon">Updates soon</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="stories" id="stories">
+  <div class="wrap">
+    <p class="sec-no reveal">06 — Field Stories</p>
+    <h2 class="reveal" style="margin-top:12px">From the hills,<br/>into the record.</h2>
+    <div class="slist">
+      <a class="story reveal" href="#"><span class="idx">FS—01</span><h3>[Producer story headline]</h3><span class="tag">People <span class="arrow">→</span></span></a>
+      <a class="story reveal" href="#"><span class="idx">FS—02</span><h3>[Processing story headline]</h3><span class="tag">Process <span class="arrow">→</span></span></a>
+      <a class="story reveal" href="#"><span class="idx">FS—03</span><h3>[Species or biodiversity headline]</h3><span class="tag">Place <span class="arrow">→</span></span></a>
+      <a class="story reveal" href="#"><span class="idx">FS—04</span><h3>[Roaster–producer collaboration]</h3><span class="tag">People <span class="arrow">→</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="record" id="record">
+  <div class="wrap">
+    <p class="sec-no reveal">07 — A Growing Record</p>
+    <h2 class="reveal" style="margin-top:12px">Every edition joins the archive.</h2>
+    <p class="lede reveal" style="margin-top:16px">Each gathering is recorded and kept — so the second year can be read against the first, and the tenth against all of them.</p>
+    <div class="rec reveal">
+      <div class="no">01</div>
+      <div>
+        <p class="sec-no" style="opacity:1">Edition 01 · Beginnings</p>
+        <ul style="margin-top:16px">
+          <li>People</li><li>Farms</li><li>Coffees</li><li>Conversations</li><li>Findings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="assoc">
+  <div class="wrap">
+    <p class="sec-no">08 — Association</p>
+    <h2>An initiative of Specialty Coffee Association Kerala</h2>
+    <p>Kerala Origins is convened by the association as an open, producer-led record of coffee in this state.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a class="btn accent" href="#">Visit the Association <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="/logo-paper.png" srcset="/logo-paper.png 1x, /logo-paper@2x.png 2x" alt="Kerala Origins" />
+    <div class="fgrid">
+      <div>
+        <h4>Kerala Origins</h4>
+        <p style="opacity:.8;max-width:34ch">Celebrating the people, places and processes that define Kerala coffee.</p>
+        <p class="mal" lang="ml" style="margin-top:12px;color:var(--turmeric)">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
+      </div>
+      <div>
+        <h4>Sections</h4>
+        <a href="#gathering">The Gathering</a>
+        <a href="#people">Meet the People</a>
+        <a href="#map">Kerala Coffee Map</a>
+        <a href="#stories">Field Stories</a>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <p style="opacity:.8">Western Ghats<br/>Kerala, India</p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>KO—01 · Edition 01</span>
+      <span>People • Place • Process</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const REGIONS = {
+  wayanad:{name:"Wayanad",elev:"760 – 1,310 m",spec:"Arabica, Robusta",proc:"Washed, natural, anaerobic",note:"[Regional note — shade systems, rainfall, harvest window.]"},
+  palakkad:{name:"Palakkad",elev:"880 – 1,150 m",spec:"Arabica, Robusta",proc:"Washed",note:"[Regional note — Nelliampathy block, native shade.]"},
+  idukki:{name:"Idukki",elev:"820 – 1,600 m",spec:"Arabica, Excelsa",proc:"Washed, honey, anaerobic",note:"[Regional note — highest lots in the state.]"},
+  thiruvananthapuram:{name:"Thiruvananthapuram",elev:"[to confirm]",spec:"[to confirm]",proc:"[to confirm]",note:"[Regional note.]"}
+};
+document.querySelectorAll('.region').forEach(el=>{
+  el.addEventListener('click',()=>{
+    document.querySelectorAll('.region').forEach(r=>r.classList.remove('on'));
+    el.classList.add('on');
+    const d=REGIONS[el.dataset.r]; if(!d) return;
+    rname.textContent=d.name; relev.textContent=d.elev;
+    rspec.textContent=d.spec; rproc.textContent=d.proc; rnote.textContent=d.note;
+  });
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay=(i%5)*55+'ms'; io.observe(el);
+});
+</script>
+</body>
+</html>
