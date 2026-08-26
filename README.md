@@ -75,3 +75,22 @@ git push -u origin main
 
 Vercel → Import → Framework preset **Other** → build command and output
 directory both **empty** → Deploy.
+
+
+## Five-page Kaapi Kada Almanac structure
+
+| Page | File | Vernacular character |
+|---|---|---|
+| Home | index.html | Almanac cover — mountain scenes + tickers + stamps |
+| Why We Exist | why-we-exist.html | Malayalam film poster — three acts |
+| Our Story | our-story.html | Matchbox label archive — editions as labels |
+| Farmers | farmers.html | Painted wall chart — cherry-to-cup in six steps |
+| Contact | contact.html | Lorry art — route board Calicut → Fort Kochi |
+
+Shared system: styles.css (tokens, tickers, matchbox stamps, menu overlay,
+buttons, footer) + app.js (menu, reveals, ticker loop, cherry cursor).
+
+Fill before launch, in addition to earlier list: [bracketed] lines on
+our-story and farmers pages, WhatsApp number and email on contact page.
+ALL Malayalam still needs a native copy-editor pass — there is much more of it
+now, on every page.

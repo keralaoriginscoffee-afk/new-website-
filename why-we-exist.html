@@ -1,539 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why We Exist | Kerala Origins Coffee</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why We Exist — Kerala Origins</title>
+<meta name="description" content="Most Kerala coffee is sold under another name. Kerala Origins exists to put the grower back on the label." />
+<link rel="canonical" href="https://YOURDOMAIN.com/why-we-exist.html" />
+<meta name="theme-color" content="#0B4F3A" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kerala Origins" />
+<meta property="og:title" content="Why We Exist — Kerala Origins" />
+<meta property="og:description" content="Most Kerala coffee is sold under another name. Kerala Origins exists to put the grower back on the label." />
+<meta property="og:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
 <style>
-:root{
-  --cream:#F2EEE3;
-  --cream-alt:#E9E2D2;
-  --navy:#1B2A4A;
-  --navy-deep:#211F3F;
-  --footer-bg:#121026;
-  --orange:#E15A22;
-  --pink:#E01A6F;
-  --green:#4C6A4F;
-  --ink:#1C1B17;
-  --line: rgba(22,33,62,0.14);
-  --line-strong: rgba(22,33,62,0.28);
-  --maxw: 1240px;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--cream);
-  color:var(--ink);
-  font-family:'Inter',sans-serif;
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:12px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--navy);
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.eyebrow.pink{color:var(--pink);}
-.eyebrow::before{
-  content:"";
-  width:14px;
-  height:1px;
-  background:currentColor;
-  display:inline-block;
-}
-h1,h2,h3{
-  font-family:'Anton',sans-serif;
-  text-transform:uppercase;
-  letter-spacing:0.01em;
-  color:var(--navy);
-  line-height:0.96;
-}
-a{color:inherit; text-decoration:none;}
-.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
-.hairline-top{border-top:1px solid var(--line);}
-.hairline-bottom{border-bottom:1px solid var(--line);}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+section{position:relative}
 
-/* ===== HEADER ===== */
-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(242,238,227,0.92);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line);
-}
-.nav-row{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0;
-}
-.logo-slot{
-  display:flex; align-items:center; gap:10px;
-  font-family:'Anton',sans-serif;
-  font-size:20px;
-  letter-spacing:0.02em;
-  color:var(--navy);
-  text-transform:uppercase;
-}
-.logo-mark{
-  width:30px; height:30px;
-  border:1.5px solid var(--navy);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  color:var(--navy);
-  flex-shrink:0;
-}
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:24px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11.5px;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-}
-nav ul li a{
-  color:var(--navy);
-  opacity:0.72;
-  transition:opacity .2s;
-}
-nav ul li a:hover{opacity:1;}
-nav ul li.current a{opacity:1; border-bottom:1.5px solid var(--orange); padding-bottom:3px;}
-nav ul li.assoc a{color:var(--pink); opacity:1; font-weight:600;}
-.menu-btn{display:none; background:none; border:1px solid var(--navy); border-radius:0; width:38px; height:38px; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer;}
-.menu-btn span{width:16px; height:1.5px; background:var(--navy); display:block;}
-
-@media (max-width: 900px){
-  nav{display:none; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--line);}
-  nav.open{display:block;}
-  nav ul{flex-direction:column; gap:0; padding:8px 24px 20px;}
-  nav ul li{padding:12px 0; border-bottom:1px solid var(--line);}
-  nav ul li.current a{border-bottom:none; color:var(--orange);}
-  .menu-btn{display:flex;}
-}
-
-/* ===== HERO (homepage) ===== */
-.hero{
-  display:grid;
-  grid-template-columns: 1fr 260px;
-  border-bottom:1px solid var(--line);
-}
-.hero-main{
-  padding:56px 24px 48px;
-  border-right:1px solid var(--line);
-}
-.hero-main .wrap{padding:0; max-width:640px;}
-.hero-headline{
-  font-size:clamp(52px, 9vw, 108px);
-  margin:20px 0 24px;
-}
-.hero-headline .orange{color:var(--orange);}
-.hero-sub{
-  font-size:16px;
-  max-width:460px;
-  color:var(--ink);
-  opacity:0.85;
-  margin-bottom:32px;
-}
-.btn-row{display:flex; gap:12px; flex-wrap:wrap;}
-.btn{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11.5px;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  padding:14px 22px;
-  display:inline-block;
-  border:1px solid var(--navy);
-  transition:all .2s;
-  cursor:pointer;
-  background:none;
-}
-.btn-primary{background:var(--navy); color:var(--cream);}
-.btn-primary:hover{background:var(--navy-deep);}
-.btn-secondary{background:transparent; color:var(--navy);}
-.btn-secondary:hover{background:var(--navy); color:var(--cream);}
-
-.hero-side{display:flex; flex-direction:column;}
-.hero-side .cell{padding:22px 20px; border-bottom:1px solid var(--line); font-family:'IBM Plex Mono',monospace;}
-.hero-side .cell:last-child{border-bottom:none;}
-.coord{font-size:11px; color:var(--navy); opacity:0.65; letter-spacing:0.04em;}
-.coord + .coord{margin-top:4px;}
-.journey-svg{width:100%; height:auto; display:block;}
-.journey-dash{stroke-dasharray: 6 6; animation: dash 3.5s linear infinite;}
-@media (prefers-reduced-motion: reduce){ .journey-dash{animation:none;} }
-@keyframes dash{ to { stroke-dashoffset: -240; } }
-
-@media (max-width: 900px){
-  .hero{grid-template-columns:1fr;}
-  .hero-main{border-right:none; padding:40px 20px 32px;}
-  .hero-headline{font-size:clamp(44px,14vw,72px);}
-}
-
-/* ===== ARTICLE HERO (inner pages) ===== */
-.article-hero{
-  padding:56px 0 44px;
-  border-bottom:1px solid var(--line);
-}
-.article-hero h1{font-size:clamp(44px,8vw,84px); margin:16px 0 20px;}
-.article-hero .lede{font-size:16.5px; max-width:640px; opacity:0.85;}
-.article-hero .lede.strong{
-  font-family:'Anton',sans-serif;
-  font-size:clamp(20px,2.6vw,28px);
-  text-transform:none;
-  color:var(--navy);
-  opacity:1;
-  line-height:1.3;
-  letter-spacing:0;
-  max-width:720px;
-}
-
-/* ===== PHOTO PLACEHOLDER ===== */
-.photo-placeholder{
-  position:relative;
-  background:
-    repeating-linear-gradient(135deg, rgba(22,33,62,0.06) 0 2px, transparent 2px 14px),
-    linear-gradient(160deg, #DCD4BE, #C9BFA2);
-  border:1px dashed var(--line-strong);
-  display:flex; align-items:center; justify-content:center;
-  text-align:center;
-  min-height:220px;
-  overflow:hidden;
-}
-.photo-placeholder .label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
-  color:var(--navy);
-  background:rgba(242,238,227,0.85);
-  padding:8px 14px;
-  max-width:80%;
-}
-.duotone-orange{
-  background:
-    linear-gradient(160deg, rgba(225,90,34,0.55), rgba(22,33,62,0.65)),
-    linear-gradient(160deg, #DCD4BE, #C9BFA2);
-  background-blend-mode: multiply, normal;
-}
-
-/* ===== SECTION GENERIC ===== */
-section{padding:64px 0; border-bottom:1px solid var(--line);}
-.section-head{max-width:600px; margin-bottom:36px;}
-.section-head h2{font-size:clamp(30px,5vw,46px); margin-top:14px;}
-.section-head p{margin-top:16px; font-size:15.5px; opacity:0.85; max-width:560px;}
-.bg-alt{background:var(--cream-alt);}
-
-/* Why exists / article alternating blocks */
-.why-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start;}
-.why-grid .photo-placeholder{min-height:340px;}
-@media (max-width:900px){ .why-grid{grid-template-columns:1fr; gap:28px;} .why-grid .photo-placeholder{order:-1;} }
-
-.article-block{display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:start; padding:56px 0; border-bottom:1px solid var(--line);}
-.article-block.reverse{grid-template-columns:1.1fr 0.9fr;}
-.article-block.reverse .photo-placeholder{order:2;}
-.article-block .photo-placeholder{min-height:280px;}
-.article-block h3{font-size:clamp(24px,3.4vw,32px); margin-bottom:14px;}
-.article-block p{font-size:15px; opacity:0.85;}
-.article-block .num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--orange); letter-spacing:0.08em; margin-bottom:12px; display:block;}
-@media (max-width:900px){ .article-block, .article-block.reverse{grid-template-columns:1fr; gap:24px;} .article-block.reverse .photo-placeholder{order:-1;} }
-
-/* Species cards */
-.species-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.species-card{background:var(--cream); padding:26px 20px 30px;}
-.species-card .tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.08em; color:var(--green); text-transform:uppercase; margin-bottom:14px; display:block;}
-.species-card h3{font-size:24px; color:var(--navy); margin-bottom:10px;}
-.species-card p{font-size:13.5px; opacity:0.8;}
-@media (max-width:900px){ .species-grid{grid-template-columns:repeat(2,1fr);} }
-@media (max-width:520px){ .species-grid{grid-template-columns:1fr;} }
-
-/* Region / district cards */
-.region-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.region-card{background:var(--cream); padding:0;}
-.region-card .photo-placeholder{min-height:150px; border:none; border-bottom:1px solid var(--line);}
-.region-card .region-body{padding:18px 20px 24px;}
-.region-card h3{font-size:19px; color:var(--navy); text-transform:none; font-family:'Inter'; font-weight:700;}
-.region-card p{font-size:13px; opacity:0.8; margin-top:8px;}
-@media (max-width:900px){ .region-grid{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .region-grid{grid-template-columns:1fr;} }
-
-/* Process list */
-.process-list{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.process-card{background:var(--navy); color:var(--cream); padding:26px 20px;}
-.process-card .num{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--orange); letter-spacing:0.08em;}
-.process-card h3{font-size:18px; color:var(--cream); margin:14px 0 8px; text-transform:none; font-family:'Inter'; font-weight:700;}
-.process-card p{font-size:12.5px; opacity:0.75;}
-@media (max-width:900px){ .process-list{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .process-list{grid-template-columns:1fr;} }
-
-/* Producers */
-.people-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-.people-card .photo-placeholder{min-height:230px; margin-bottom:14px;}
-.people-card h3{font-size:19px; color:var(--navy); text-transform:none; font-family:'Inter'; font-weight:700;}
-.people-card .role{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--pink); text-transform:uppercase; letter-spacing:0.05em; margin:4px 0 8px;}
-.people-card p{font-size:13.5px; opacity:0.8;}
-@media (max-width:900px){ .people-grid{grid-template-columns:1fr 1fr; gap:18px;} }
-@media (max-width:560px){ .people-grid{grid-template-columns:1fr;} }
-
-/* Filter tabs (people / stories) */
-.filter-tabs{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;}
-.filter-tab{
-  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.05em; text-transform:uppercase;
-  padding:8px 16px; border:1px solid var(--line-strong); color:var(--navy); opacity:0.7; cursor:pointer; background:none;
-}
-.filter-tab.active{background:var(--navy); color:var(--cream); border-color:var(--navy); opacity:1;}
-
-/* What we do / Our work */
-.work-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-.work-card{background:var(--navy); color:var(--cream); padding:30px 22px; min-height:190px; display:flex; flex-direction:column; justify-content:space-between;}
-.work-card .num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--orange); letter-spacing:0.08em;}
-.work-card h3{font-size:20px; color:var(--cream); margin:20px 0 8px;}
-.work-card p{font-size:13px; opacity:0.75;}
-@media (max-width:900px){ .work-grid{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .work-grid{grid-template-columns:1fr;} }
-
-/* Events */
-.event-card{display:grid; grid-template-columns:280px 1fr; gap:0; border:1px solid var(--line); background:var(--cream);}
-.event-card .photo-placeholder{min-height:100%;}
-.event-body{padding:28px 30px;}
-.event-body .eyebrow{margin-bottom:10px;}
-.event-body h3{font-family:'Inter'; text-transform:none; font-size:22px; font-weight:700; color:var(--navy); margin-bottom:10px;}
-.event-meta{display:flex; gap:22px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--navy); opacity:0.75; margin:14px 0 18px;}
-.event-list{display:flex; flex-direction:column; gap:24px;}
-.event-card.past{opacity:0.75;}
-@media (max-width:760px){ .event-card{grid-template-columns:1fr;} .event-card .photo-placeholder{min-height:200px;} }
-
-/* Stories */
-.story-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-.story-card .photo-placeholder{min-height:190px; margin-bottom:14px;}
-.story-card .eyebrow{font-size:10.5px; margin-bottom:8px;}
-.story-card h3{font-family:'Inter'; text-transform:none; font-size:17px; font-weight:700; color:var(--navy);}
-.story-card p{font-size:13px; opacity:0.75; margin-top:8px;}
-@media (max-width:900px){ .story-grid{grid-template-columns:1fr 1fr;} }
-@media (max-width:560px){ .story-grid{grid-template-columns:1fr;} }
-
-/* Association connection band */
-.assoc-band{background:var(--navy-deep); color:var(--cream); padding:70px 0;}
-.assoc-inner{max-width:640px;}
-.assoc-inner .eyebrow{color:var(--pink);}
-.assoc-inner h2{color:var(--cream); font-size:clamp(28px,4.5vw,42px); margin:16px 0 18px;}
-.assoc-inner p{opacity:0.8; font-size:15px; margin-bottom:28px;}
-.assoc-inner .btn-primary{background:var(--pink); border-color:var(--pink); color:var(--cream);}
-.assoc-inner .btn-primary:hover{background:#B81259; border-color:#B81259;}
-
-/* Final CTA */
-.final-cta{text-align:center; padding:80px 0;}
-.final-cta h2{font-size:clamp(34px,6vw,58px); margin:16px auto 18px; max-width:700px;}
-.final-cta p{max-width:520px; margin:0 auto 30px; font-size:15.5px; opacity:0.85;}
-.final-cta .btn-row{justify-content:center;}
-
-/* Contact / Join form */
-.form-shell{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px;}
-.form-shell .intro h2{font-size:clamp(30px,5vw,44px);}
-.form-shell .intro p{margin-top:16px; font-size:15px; opacity:0.85; max-width:380px;}
-.role-list{margin-top:28px; display:flex; flex-direction:column; gap:8px;}
-.role-list .role-item{font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.04em; opacity:0.7; padding:8px 0; border-bottom:1px solid var(--line);}
-.field{margin-bottom:20px;}
-.field label{display:block; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--navy); margin-bottom:8px;}
-.field input[type=text], .field input[type=email], .field input[type=tel], .field select, .field textarea{
-  width:100%; border:1px solid var(--line-strong); background:var(--cream-alt); padding:13px 14px;
-  font-family:'Inter',sans-serif; font-size:14px; color:var(--ink);
-}
-.field textarea{min-height:110px; resize:vertical;}
-.field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-.checkbox-row{display:flex; align-items:flex-start; gap:10px; margin-bottom:26px;}
-.checkbox-row input{margin-top:4px;}
-.checkbox-row label{font-size:13px; opacity:0.8;}
-@media (max-width:900px){ .form-shell{grid-template-columns:1fr; gap:32px;} .field-row{grid-template-columns:1fr;} }
-
-/* Footer */
-footer{background:var(--footer-bg); color:var(--cream); padding:56px 0 28px; border-top:2px solid var(--pink);}
-.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(242,238,227,0.15);}
-.footer-brand{font-family:'Anton',sans-serif; font-size:26px; text-transform:uppercase;}
-.footer-tag{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--orange); margin-top:8px; letter-spacing:0.04em;}
-.footer-init{font-size:13px; opacity:0.88; margin-top:16px; max-width:320px; line-height:1.6;}
-.footer-init a{color:var(--pink); text-decoration:underline;}
-.footer-col h4{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange); margin-bottom:14px;}
-.footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px; font-size:13.5px; opacity:0.95;}
-.footer-bottom{display:flex; justify-content:space-between; padding-top:22px; font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:0.62; flex-wrap:wrap; gap:10px;}
-@media (max-width:760px){ .footer-grid{grid-template-columns:1fr; gap:28px;} .footer-bottom{flex-direction:column;} }
+.fp-hero{background:var(--ink);color:var(--paper)}
+.fp-hero .kicker{color:var(--turmeric)}
+.fp-hero h1{max-width:14ch}
+.fp-hero h1 .alt{color:var(--cherry);-webkit-text-stroke:1.5px var(--paper)}
+.fp-hero .malline{color:var(--turmeric)}
+.fp-cast{margin-top:34px;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,232,207,.65);max-width:60ch;line-height:2}
+.act{padding:88px 0;border-bottom:2.5px solid var(--ink)}
+.act .no{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+.act h2{font-family:var(--head);font-weight:700;font-size:clamp(1.9rem,5vw,3.2rem);letter-spacing:-.03em;line-height:1.02;margin-top:12px;max-width:16ch}
+.act p{font-family:var(--serif);font-size:1.1rem;max-width:58ch;margin-top:18px}
+.act .malline{font-family:var(--mal);margin-top:10px}
+.a1{background:var(--cherry);color:var(--paper)}
+.a2{background:var(--paper)}
+.a3{background:var(--monsoon);color:var(--paper)}
+.interval{padding:96px 0;background:var(--green);color:var(--paper);text-align:center}
+.interval h2{font-family:var(--head);font-weight:700;font-size:clamp(2rem,6vw,3.8rem);letter-spacing:-.035em;line-height:1;max-width:18ch;margin:14px auto 0}
+.interval h2 em{font-style:normal;color:var(--turmeric)}
+.interval .stamp-row{justify-content:center}
 
 </style>
 </head>
 <body>
+<nav class="nav">
+  <div class="wrap">
+    <a href="/"><img src="/logo-green.png" srcset="/logo-green.png 1x, /logo-green@2x.png 2x" alt="Kerala Origins" /></a>
+    <button class="menu-btn" aria-haspopup="dialog">Menu</button>
+  </div>
+</nav>
 
-<header>
-  <div class="wrap nav-row">
-    <a href="index.html" class="logo-slot"><span class="logo-mark">KO</span>Kerala Origins</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    <nav id="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="current"><a href="why-we-exist.html">Why We Exist</a></li>
-        <li><a href="kerala-coffee.html">Kerala Coffee</a></li>
-        <li><a href="producers-people.html">Producers & People</a></li>
-        <li><a href="our-work.html">Our Work</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="stories.html">Stories</a></li>
-        <li><a href="join.html">Join / Contact</a></li>
-        <li class="assoc"><a href="#assoc">Association ↗</a></li>
-      </ul>
-    </nav>
+<div class="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <img src="/logo-paper.png" alt="Kerala Origins" />
+    <button class="menu-x">Close</button>
+  </div>
+  <nav class="menu-links">
+    <a href="/"><span class="no">01</span>Home<span class="m" lang="ml">തുടക്കം</span></a>
+    <a href="/why-we-exist.html"><span class="no">02</span>Why We Exist<span class="m" lang="ml">എന്തിന്</span></a>
+    <a href="/our-story.html"><span class="no">03</span>Our Story<span class="m" lang="ml">കഥ</span></a>
+    <a href="/farmers.html"><span class="no">04</span>Farmers<span class="m" lang="ml">കർഷകർ</span></a>
+    <a href="/contact.html"><span class="no">05</span>Contact<span class="m" lang="ml">ബന്ധപ്പെടുക</span></a>
+  </nav>
+  <div class="menu-foot">
+    <span>Kerala Origins &middot; Kaapi Kada Almanac</span>
+    <span>KO&mdash;02 &middot; Fort Kochi &middot; 11 Oct</span>
+  </div>
+</div>
+
+<header class="page-hero fp-hero grain">
+  <div class="wrap">
+    <p class="kicker fx">A Kerala Origins Production</p>
+    <h1 class="fx">Grown here.<br/><span class="alt">Named elsewhere.</span></h1>
+    <p class="malline fx" lang="ml">വളരുന്നത് ഇവിടെ &middot; പേര് മറ്റെവിടെയോ</p>
+    <p class="fp-cast fx">Starring &middot; The growers of Wayanad, Idukki &amp; Palakkad &middot; Featuring &middot; Arabica, Robusta, Excelsa &amp; Liberica &middot; In &middot; The Western Ghats</p>
   </div>
 </header>
 
-<section class="article-hero">
-  <div class="wrap">
-    <div class="eyebrow">Why We Exist</div>
-    <h1>Coffee begins with<br>people and place.</h1>
-    <p class="lede strong">Kerala coffee deserves to be understood through its own people, places, varieties, processes and experiences.</p>
+<div class="ticker t-cherry" aria-hidden="true"><div class="ticker-track"><span>Why we exist</span><span class="m" lang="ml">എന്തിന്</span><span>&#10041;</span><span>Every harvest leaves a story</span><span>&#10041;</span></div></div>
+
+<section class="act a1">
+  <div class="wrap fx">
+    <p class="no">Act I &middot; The problem</p>
+    <h2>The grower becomes a line on a purchase order.</h2>
+    <p>Most coffee grown in Kerala leaves the state as an anonymous lot. It gets blended, re-bagged, and sold under a name that belongs to somebody else. The place that grew it disappears from the label, and the person who grew it disappears with it.</p>
   </div>
 </section>
 
-<div class="wrap">
-
-  <div class="article-block">
-    <div class="photo-placeholder"><div class="label">Unattributed coffee sacks / anonymous farm scene</div></div>
-    <div>
-      <span class="num">01 — The Gap</span>
-      <h3>Kerala coffee is rarely recognised on its own terms</h3>
-      <p>For years, coffee grown in Kerala has moved through the trade quietly — blended, exported and consumed without its origin, its growers or its story ever being named. Kerala Origins exists to change that, one relationship at a time.</p>
-    </div>
-  </div>
-
-  <div class="article-block reverse">
-    <div class="photo-placeholder"><div class="label">Farmer or harvest worker at work, real environment</div></div>
-    <div>
-      <span class="num">02 — The People</span>
-      <h3>Producers and workers carry the knowledge</h3>
-      <p>Behind every lot is a farmer who chose what to plant, a worker who picked at the right moment, a processor who shaped the final cup. Their skill is the actual quality control of Kerala coffee, and it has gone largely unseen. Supporting them is not a side project — it is the point.</p>
-    </div>
-  </div>
-
-  <div class="article-block">
-    <div class="photo-placeholder"><div class="label">Documentary-style farm / landscape photography</div></div>
-    <div>
-      <span class="num">03 — On Its Own Terms</span>
-      <h3>Documenting Kerala coffee honestly</h3>
-      <p>Kerala coffee doesn't need to be compared to other origins to matter. It has its own species mix, its own biodiversity, its own harvest rhythms and processing traditions. Kerala Origins documents this as it actually is — without inflated claims, without borrowing another origin's story.</p>
-    </div>
-  </div>
-
-  <div class="article-block reverse">
-    <div class="photo-placeholder"><div class="label">Producer and roaster in conversation, cupping table</div></div>
-    <div>
-      <span class="num">04 — The Relationship</span>
-      <h3>Producer–roaster relationships, built directly</h3>
-      <p>Quality coffee depends on feedback moving both ways — roasters sharing what they taste, producers sharing what's possible on the farm. Kerala Origins creates the space for those conversations to happen directly, instead of getting lost across layers of trade.</p>
-    </div>
-  </div>
-
-  <div class="article-block">
-    <div class="photo-placeholder"><div class="label">Workshop, tasting session, or farm visit in progress</div></div>
-    <div>
-      <span class="num">05 — Education & Events</span>
-      <h3>Learning happens together, in person</h3>
-      <p>Farm visits, processing workshops and tasting sessions do more than share knowledge — they build the trust that makes a coffee community actually work. Kerala Origins organises these moments as a core part of what it does, not an afterthought.</p>
-    </div>
-  </div>
-
-  <div class="article-block reverse" style="border-bottom:none;">
-    <div class="photo-placeholder"><div class="label">Wide landscape — Western Ghats coffee terrain</div></div>
-    <div>
-      <span class="num">06 — The Vision</span>
-      <h3>A future where Kerala coffee is known by name</h3>
-      <p>We imagine a future where a bag of Kerala coffee carries the name of the farm, the story of the harvest and the face of the person who grew it — recognised for what it is, not folded into someone else's origin story.</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="assoc-band" id="assoc">
-  <div class="wrap assoc-inner">
-    <div class="eyebrow">An Initiative Of</div>
-    <h2>Specialty Coffee Association Kerala</h2>
-    <p>Kerala Origins Coffee is the producer- and origin-focused initiative of Specialty Coffee Association Kerala, created to support the people and places behind Kerala coffee.</p>
-    <a href="#" class="btn btn-primary">Visit the Association ↗</a>
-  </div>
-</div>
-
-<section class="final-cta" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Join / Contact</div>
-    <h2>Be Part of Kerala's<br>Coffee Journey</h2>
-    <p>Are you a producer, worker, processor, roaster, researcher or someone who wants to support Kerala coffee? We would like to hear from you.</p>
-    <div class="btn-row"><a href="join.html" class="btn btn-primary">Join the Community</a><a href="join.html" class="btn btn-secondary">Contact Kerala Origins</a></div>
+<section class="act a2">
+  <div class="wrap fx">
+    <p class="no">Act II &middot; The answer</p>
+    <h2>Every lot, traced to a person standing beside it.</h2>
+    <p>Kerala Origins puts the order back. Every coffee on the table is traced to the estate, the elevation, and the person who processed it &mdash; and that person is present, answering questions about their own coffee.</p>
+    <p class="malline" lang="ml">സ്വന്തം കാപ്പിയെക്കുറിച്ച് സ്വയം പറയുന്നു</p>
   </div>
 </section>
 
+<section class="act a3">
+  <div class="wrap fx">
+    <p class="no">Act III &middot; The room</p>
+    <h2>No trade stand. No panel of buyers.</h2>
+    <p>Just the growers, the roasters who work with them, and enough cupping bowls to settle any argument. Once a year, the whole chain in one room &mdash; tasting the same coffees at the same tables.</p>
+  </div>
+</section>
+
+<section class="interval">
+  <div class="wrap fx">
+    <p class="kicker" style="color:var(--turmeric)">The framework</p>
+    <h2>People. Place. Process. <em>Nothing anonymous.</em></h2>
+    <div style="margin-top:34px" class="stamp-row">
+      <span class="stamp-box s-cherry" style="--rot:-2deg"><b>People</b><span class="m" lang="ml">മനുഷ്യർ</span></span>
+      <span class="stamp-box s-monsoon" style="--rot:2deg"><b>Place</b><span class="m" lang="ml">ഇടം</span></span>
+      <span class="stamp-box s-turmeric" style="--rot:-1deg"><b>Process</b><span class="m" lang="ml">രീതി</span></span>
+    </div>
+    <div style="margin-top:38px"><a class="btn-max" href="/our-story.html">Read our story &rarr;</a></div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
+    <img src="/logo-paper.png" alt="Kerala Origins" />
+    <div class="fgrid">
       <div>
-        <div class="footer-brand">Kerala Origins</div>
-        <div class="footer-tag">The Journey of Kerala Coffee</div>
-        <div class="footer-init">An initiative of <a href="#">Specialty Coffee Association Kerala</a>, created to support Kerala's coffee producers, workers and origins.</div>
+        <h4>Kerala Origins</h4>
+        <p style="max-width:34ch">Celebrating the people, places and processes that define Kerala coffee.</p>
+        <p lang="ml" style="margin-top:12px;color:var(--turmeric);font-family:var(--mal)">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="why-we-exist.html">Why We Exist</a></li>
-          <li><a href="kerala-coffee.html">Kerala Coffee</a></li>
-          <li><a href="producers-people.html">Producers & People</a></li>
-          <li><a href="stories.html">Stories</a></li>
-        </ul>
+      <div>
+        <h4>Pages</h4>
+        <a href="/why-we-exist.html">Why We Exist</a>
+        <a href="/our-story.html">Our Story</a>
+        <a href="/farmers.html">Farmers</a>
+        <a href="/contact.html">Contact</a>
       </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="join.html">Join / Contact</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
+      <div>
+        <h4>Next edition</h4>
+        <p>11 October 2026<br/>The Cochin Club<br/>Fort Kochi</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Kerala Origins Coffee</span>
-      <span>From the Western Ghats to the world →</span>
+    <div class="fbot">
+      <span>Kerala Origins &middot; Kaapi Kada Almanac</span>
+      <span>KO&mdash;02 &middot; Fort Kochi</span>
     </div>
   </div>
 </footer>
-
-<script>
-const menuBtn = document.getElementById('menuBtn');
-const nav = document.getElementById('nav');
-if (menuBtn && nav) {
-  menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
-  document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
-}
-
-// Generic filter-tab handling: any .filter-tabs with buttons carrying
-// data-filter, paired with a grid whose cards carry data-category.
-document.querySelectorAll('.filter-tabs').forEach(tabGroup => {
-  const gridId = tabGroup.dataset.targetGrid;
-  const grid = gridId ? document.getElementById(gridId) : null;
-  if (!grid) return;
-  const cards = grid.children;
-  tabGroup.querySelectorAll('.filter-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabGroup.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const filter = tab.dataset.filter;
-      Array.from(cards).forEach(card => {
-        const cat = card.dataset.category || '';
-        card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
-      });
-    });
-  });
-});
-
-</script>
+<script src="/app.js" defer></script>
 </body>
 </html>
