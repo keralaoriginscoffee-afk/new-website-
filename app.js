@@ -25,6 +25,17 @@
     el.style.transitionDelay=(i%4)*90+'ms';io.observe(el);
   });
 
+  /* edition photo sliders */
+  document.querySelectorAll('.slider').forEach(function(sl){
+    var track=sl.querySelector('[data-track]'),
+        prev=sl.querySelector('.sl-prev'),
+        next=sl.querySelector('.sl-next');
+    if(!track)return;
+    var step=function(){var f=track.querySelector('.slide');return f?f.getBoundingClientRect().width+14:300;};
+    if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+    if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
+  });
+
   /* coffee-cherry cursor, desktop pointer devices only */
   if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
     var c=document.createElement('div');
