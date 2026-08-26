@@ -55,6 +55,7 @@ html{scroll-behavior:smooth}
   html{scroll-behavior:auto}
   *{animation:none!important;transition:none!important}
 }
+html,body{overflow-x:clip;max-width:100%}
 body{
   background:var(--paper);
   color:var(--ink);
@@ -106,10 +107,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-o
   display:flex;align-items:flex-start;
   padding:clamp(20px,4vh,48px) 28px 0;
 }
-.hero-copy{max-width:32rem;position:relative;z-index:5}
+.hero-copy{max-width:38rem;position:relative;z-index:5}
 .hero h1{
   font-family:var(--head);font-weight:700;letter-spacing:-.035em;line-height:.99;
-  font-size:clamp(2.6rem,min(5.8vw,9vh),5rem);margin:6px 0 0;max-width:13ch;
+  font-size:clamp(3.3rem,min(7.5vw,11.5vh),6.4rem);margin:6px 0 0;max-width:12ch;
 }
 .hero h1 .w>span{
   background-image:linear-gradient(var(--cherry),var(--cherry));
@@ -123,9 +124,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-o
 body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z-index:6;display:flex;gap:16px;flex-wrap:wrap;max-width:60%}
 @media(max-width:820px){
   .hero .wrap{padding:clamp(16px,2.6vh,26px) 24px 0}
-  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem);max-width:100%}
+  .hero h1{font-size:clamp(2.15rem,9vw,2.95rem);max-width:100%}
   .hero .support{max-width:100%;font-size:.96rem}
-  .ghats img{object-position:58% 88%}
+  .ghats img{
+    top:auto;bottom:0;height:136%;
+    object-position:60% bottom;
+  }
   body.home .hero-stamps{left:24px;right:24px;max-width:none;bottom:18px;gap:10px}
   body.home .hero-stamps .stamp-box{padding:7px 10px 6px;font-size:8.5px}
   body.home .hero-stamps .stamp-box b{font-size:.95rem}
