@@ -107,6 +107,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-o
   display:flex;align-items:flex-start;
   padding:clamp(20px,4vh,48px) 28px 0;
 }
+@media(min-width:821px){
+  .hero .wrap{max-width:none;margin:0;padding-left:28px}
+}
 .hero-copy{max-width:38rem;position:relative;z-index:5}
 .hero h1{
   font-family:var(--head);font-weight:700;letter-spacing:-.035em;line-height:.99;
@@ -773,7 +776,6 @@ html.locked,html.locked body{overflow:hidden}
 <button class="dial" id="dial" aria-haspopup="dialog" aria-label="Edition 02 — 11 October 2026, The Cochin Club, Fort Kochi">
   <svg class="scallop" viewBox="0 0 132 132" aria-hidden="true">
     <path d="M124.0 66.0 Q141.1 86.1 116.2 95.0 Q121.0 121.0 95.0 116.2 Q86.1 141.1 66.0 124.0 Q45.9 141.1 37.0 116.2 Q11.0 121.0 15.8 95.0 Q-9.1 86.1 8.0 66.0 Q-9.1 45.9 15.8 37.0 Q11.0 11.0 37.0 15.8 Q45.9 -9.1 66.0 8.0 Q86.1 -9.1 95.0 15.8 Q121.0 11.0 116.2 37.0 Q141.1 45.9 124.0 66.0 Z" fill="#D6472F" stroke="#191510" stroke-width="2.5" stroke-linejoin="round"/>
-    <circle cx="66" cy="66" r="45" fill="#0B4F3A" stroke="#F2B827" stroke-width="1.5"/>
     <defs><path id="ring" d="M66,66 m-51,0 a51,51 0 1,1 102,0 a51,51 0 1,1 -102,0"/></defs>
     <text><textPath href="#ring" startOffset="0">&#9733; THE COCHIN CLUB &#9733; 11 OCTOBER &#9733; FORT KOCHI </textPath></text>
   </svg>
