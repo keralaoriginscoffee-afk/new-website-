@@ -197,7 +197,7 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 .panel:nth-child(1){
   background-color:var(--cherry);
   background-image:
-    linear-gradient(180deg,rgba(140,32,20,.52) 0%,rgba(120,26,16,.62) 55%,rgba(90,18,10,.80) 100%),
+    linear-gradient(180deg,rgba(18,16,13,.16) 0%,rgba(18,16,13,.30) 55%,rgba(18,16,13,.72) 100%),
     image-set(url("/pickers.webp") type("image/webp"), url("/pickers.jpg") type("image/jpeg"));
   background-size:cover;background-position:center 42%;
 }
@@ -205,7 +205,7 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 .panel:nth-child(2){
   background-color:var(--monsoon);
   background-image:
-    linear-gradient(180deg,rgba(20,58,78,.58) 0%,rgba(18,52,70,.66) 55%,rgba(12,38,52,.82) 100%),
+    linear-gradient(180deg,rgba(18,16,13,.16) 0%,rgba(18,16,13,.30) 55%,rgba(18,16,13,.72) 100%),
     image-set(url("/estate.webp") type("image/webp"), url("/estate.jpg") type("image/jpeg"));
   background-size:cover;background-position:center 55%;
 }
@@ -338,11 +338,18 @@ footer img{height:40px;margin-bottom:24px}
 .sheet dd{font-family:var(--serif)}
 .sheet .note{font-family:var(--serif);color:var(--muted);margin-top:20px;font-size:.98rem}
 .sheet .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.sheet .card{max-height:86svh;overflow:auto}
 .sheet .x{
-  position:absolute;top:12px;right:12px;width:30px;height:30px;
-  background:none;border:none;cursor:pointer;font-size:20px;line-height:1;color:var(--ink);opacity:.55;
+  position:absolute;top:12px;right:12px;
+  min-width:44px;height:44px;padding:0 16px;
+  background:var(--ink);color:var(--paper);border:2px solid var(--ink);
+  cursor:pointer;font-size:22px;line-height:1;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+  -webkit-tap-highlight-color:transparent;
 }
-.sheet .x:hover{opacity:1}
+.sheet .x:hover{background:var(--cherry);border-color:var(--cherry)}
+html.locked,html.locked body{overflow:hidden}
+.dial{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 @media(max-width:820px){
   .dial{right:16px;bottom:16px;width:108px;height:108px}
   .dial .core b{font-size:1.15rem}
@@ -354,17 +361,18 @@ footer img{height:40px;margin-bottom:24px}
 /* ---------- pinned scene system ---------- */
 .scene{height:calc(var(--h,260)*1vh);position:relative}
 .scene-view{
-  position:sticky;top:0;height:100svh;overflow:hidden;
+  position:sticky;top:72px;height:calc(100svh - 72px);overflow:hidden;
   display:flex;flex-direction:column;justify-content:center;
-  padding-top:72px;
 }
 .scene-view>*{width:100%}
 .scene .hero{min-height:100%;height:100%;display:flex;align-items:center}
 .scene .editorial,.scene .ppp,.scene .editions,.scene .prologue{padding-top:0;padding-bottom:0}
+.scene .editorial{height:100%;display:flex;align-items:center}
+.scene .editorial .wrap{width:100%}
 .jw{display:inline-block;will-change:opacity,transform}
 @media(max-width:820px){
   .scene{height:calc(var(--h,260)*.72*1vh)}
-  .scene-view{padding-top:60px}
+  .scene-view{top:60px;height:calc(100svh - 60px)}
   .scene[data-scene="editions"]{height:auto}
   .scene[data-scene="editions"] .scene-view{position:static;height:auto;overflow:visible;padding:80px 0 40px}
 }
@@ -615,9 +623,6 @@ footer img{height:40px;margin-bottom:24px}
           <p class="mal" lang="ml">രീതി</p>
           <p>Picking, fermentation, drying beds and roast decisions — shown and argued over, not summarised on a label.</p>
         </div>
-        <svg viewBox="0 0 100 100" fill="none" stroke="#F4E8CF" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
-          <rect x="14" y="46" width="72" height="34" rx="3"/><path d="M14 58h72M26 46V32M74 46V32M50 46V26"/>
-        </svg>
       </article>
     </div>
   </div>
@@ -924,11 +929,13 @@ if(sb){sb.addEventListener('click',function(){
 
 const dial=document.getElementById('dial'),sheet=document.getElementById('sheet'),
       sheetX=document.getElementById('sheetX');
-const openSheet=()=>{sheet.classList.add('open');sheetX.focus();};
-const closeSheet=()=>{sheet.classList.remove('open');dial.focus();};
-dial.addEventListener('click',openSheet);
-sheetX.addEventListener('click',closeSheet);
-sheet.addEventListener('click',e=>{if(e.target===sheet)closeSheet();});
+const openSheet=()=>{sheet.classList.add('open');document.documentElement.classList.add('locked');if(sheetX)sheetX.focus();};
+const closeSheet=()=>{sheet.classList.remove('open');document.documentElement.classList.remove('locked');if(dial)dial.focus();};
+if(dial&&sheet){
+  dial.addEventListener('click',openSheet);
+  if(sheetX)sheetX.addEventListener('click',closeSheet);
+  sheet.addEventListener('click',e=>{if(e.target===sheet)closeSheet();});
+}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sheet.classList.contains('open'))closeSheet();});
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{

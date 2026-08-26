@@ -26,9 +26,17 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);line-heigh
 .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
 section{position:relative}
 
-.sb-hero{background:var(--green);color:var(--paper)}
+.sb-hero{
+  background-color:var(--green);color:var(--paper);
+  background-image:
+    linear-gradient(180deg,rgba(8,45,32,.72) 0%,rgba(8,45,32,.58) 55%,rgba(6,34,24,.82) 100%),
+    image-set(url("/seedlings.webp") type("image/webp"), url("/seedlings.jpg") type("image/jpeg"));
+  background-size:cover;background-position:center 64%;
+}
+.sb-hero .wrap{position:relative;z-index:2}
+.sb-hero h1,.sb-hero p{text-shadow:0 2px 14px rgba(4,24,16,.6)}
 .sb-hero .kicker{color:var(--turmeric)}
-.sb-hero h1 .offreg::before{color:var(--turmeric);opacity:.6}
+.sb-hero h1 .offreg{text-shadow:4px 4px 0 rgba(242,184,39,.6)}
 .sb-hero .malline{color:var(--turmeric)}
 .chart{padding:76px 0;border-bottom:2.5px solid var(--ink)}
 .chart:nth-of-type(odd){background:var(--paper)}
@@ -57,7 +65,15 @@ section{position:relative}
 .c6{background:var(--paper)}
 .c6 .disc{background:var(--monsoon);color:var(--paper)}
 @media(max-width:700px){.step{grid-template-columns:1fr;gap:18px}}
-.meetcta{padding:90px 0;background:var(--ink);color:var(--paper);text-align:center}
+.meetcta{
+  padding:90px 0;color:var(--paper);text-align:center;background-color:var(--ink);
+  background-image:
+    linear-gradient(180deg,rgba(16,13,10,.62) 0%,rgba(16,13,10,.7) 55%,rgba(16,13,10,.85) 100%),
+    image-set(url("/branch.webp") type("image/webp"), url("/branch.jpg") type("image/jpeg"));
+  background-size:cover;background-position:center 44%;
+}
+.meetcta .wrap{position:relative;z-index:2}
+.meetcta h2,.meetcta p{text-shadow:0 2px 14px rgba(10,8,5,.7)}
 .meetcta h2{font-family:var(--head);font-weight:700;font-size:clamp(1.9rem,5.6vw,3.4rem);letter-spacing:-.035em;max-width:20ch;margin:12px auto 0}
 .meetcta h2 em{font-style:normal;color:var(--cherry)}
 

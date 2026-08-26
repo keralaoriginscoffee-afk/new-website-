@@ -113,12 +113,8 @@
 .btn-max.b-cherry{background:var(--cherry);color:var(--paper)}
 .btn-max.b-paper{background:var(--paper)}
 
-/* off-register signboard headline */
-.offreg{position:relative;display:inline-block}
-.offreg::before{
-  content:attr(data-t);position:absolute;left:4px;top:4px;z-index:-1;
-  color:var(--cherry);opacity:.55;
-}
+/* off-register signboard headline — shadow-based, cannot desync from the text */
+.offreg{text-shadow:4px 4px 0 rgba(214,71,47,.55)}
 
 /* ---------- home page maximalist overrides ---------- */
 body.home .nav{border-bottom:2.5px solid var(--ink)}
