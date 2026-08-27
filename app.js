@@ -25,6 +25,14 @@
     el.style.transitionDelay=(i%4)*90+'ms';io.observe(el);
   });
 
+  /* slide images fade in once decoded — prevents blank boxes mid-scroll */
+  document.querySelectorAll('.slide img').forEach(function(img){
+    var show=function(){img.classList.add('ready');};
+    if(img.complete && img.naturalWidth) show();
+    else img.addEventListener('load',show,{once:true});
+    img.addEventListener('error',show,{once:true});
+  });
+
   /* edition photo sliders */
   document.querySelectorAll('.slider').forEach(function(sl){
     var track=sl.querySelector('[data-track]'),
@@ -32,6 +40,14 @@
         next=sl.querySelector('.sl-next');
     if(!track)return;
     var step=function(){var f=track.querySelector('.slide');return f?f.getBoundingClientRect().width+14:300;};
+    var sync=function(){
+      var max=track.scrollWidth-track.clientWidth-2;
+      if(prev)prev.style.opacity=track.scrollLeft<=2?'.35':'1';
+      if(next)next.style.opacity=track.scrollLeft>=max?'.35':'1';
+    };
+    track.addEventListener('scroll',sync,{passive:true});
+    addEventListener('resize',sync,{passive:true});
+    sync();
     if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
     if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
   });
