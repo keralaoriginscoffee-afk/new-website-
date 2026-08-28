@@ -63,7 +63,9 @@ html,body{overflow-x:clip;max-width:100%}
   position:fixed;inset:0;z-index:100;background:var(--green);color:var(--paper);
   display:flex;flex-direction:column;padding:26px 28px 40px;
   transform:translateY(-102%);transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  overflow:hidden;
 }
+.menu-top,.menu-links{position:relative;z-index:2}
 .menu.open{transform:none}
 .menu-top{display:flex;justify-content:space-between;align-items:center}
 .menu-top img{height:34px}
@@ -205,4 +207,57 @@ footer img{height:40px;margin-bottom:24px}
   .slide{flex:0 0 calc((100% - 16px)/3)}
   .sl-btn{width:38px;height:38px;font-size:16px}
   .sl-prev{left:2px}.sl-next{right:2px}
+}
+
+
+/* ---------- menu scene: illustrated ghats, mist, hornbills ---------- */
+.menu-scene{position:absolute;inset:0;z-index:0;pointer-events:none}
+.menu-scene img{display:block}
+
+.m-ghats{position:absolute;left:0;right:0;bottom:0;width:100%}
+.m-ghats img{width:100%;height:auto;opacity:.95}
+
+.m-mist{position:absolute;opacity:.45;animation:m-drift 36s ease-in-out infinite alternate}
+.m-mist img{width:100%;height:auto}
+.m-mist.m1{left:-4%;bottom:16vw;width:56%;max-width:520px}
+.m-mist.m2{right:-6%;bottom:9vw;width:46%;max-width:430px;opacity:.32;
+  animation-duration:48s;animation-delay:-14s;animation-name:m-drift-r}
+@keyframes m-drift{from{transform:translateX(-3.5%)}to{transform:translateX(3.5%)}}
+@keyframes m-drift-r{from{transform:translateX(3.5%)}to{transform:translateX(-3.5%)}}
+
+/* flyby: outer element crosses, inner bobs, two aligned frames flap */
+.m-fly{
+  position:absolute;top:17%;left:0;
+  width:min(150px,24vw);aspect-ratio:565/414;
+  animation:m-cross 19s linear infinite;
+}
+.m-bob{position:absolute;inset:0;animation:m-bob 2.6s ease-in-out infinite alternate}
+.m-bob img{position:absolute;inset:0;width:100%;height:100%}
+.hb-down img{animation:m-flap-a .52s steps(1) infinite}
+.hb-up img{animation:m-flap-b .52s steps(1) infinite}
+@keyframes m-flap-a{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
+@keyframes m-flap-b{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+@keyframes m-bob{from{transform:translateY(-7px)}to{transform:translateY(7px)}}
+@keyframes m-cross{
+  0%{transform:translateX(-30vw)}
+  72%{transform:translateX(105vw)}
+  72.01%,100%{transform:translateX(-30vw)}
+}
+
+/* perched vignette: coffee branch from the right edge, hornbill on it */
+.m-perch{position:absolute;right:0;bottom:max(15vw,120px);width:min(320px,52vw)}
+.m-branch{position:relative}
+.m-branch img{width:100%;height:auto}
+.m-bird{position:absolute;left:14%;bottom:52%;width:26%}
+.m-bird img{width:100%;height:auto}
+
+@media(max-width:820px){
+  .m-fly{top:13%}
+  .m-perch{bottom:max(22vw,110px);width:min(230px,58vw)}
+  .m-mist.m1{bottom:20vw}
+  .m-mist.m2{bottom:12vw}
+}
+@media (prefers-reduced-motion:reduce){
+  .m-fly{display:none}
+  .m-mist,.m-bob,.hb-down img,.hb-up img{animation:none}
 }
