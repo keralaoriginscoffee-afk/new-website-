@@ -46,6 +46,7 @@
       "email": "keralaoriginscoffee@gmail.com",
       "telephone": "+916238991599",
       "areaServed": "Kerala, India",
+      "sameAs": ["https://www.instagram.com/keralaoriginscoffee/"],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
@@ -363,6 +364,10 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 }
 @media(max-width:820px){.support-section{padding:84px 0 92px}}
 
+.ig-link{display:inline-flex;align-items:center;gap:9px;margin-top:16px;color:var(--turmeric);text-decoration:none;font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.ig-link:hover{color:var(--paper)}
+.ig-link svg{display:block}
+
 /* ---------- footer harvest image ---------- */
 footer{position:relative !important;overflow:hidden !important}
 footer .wrap{position:relative;z-index:2}
@@ -495,6 +500,7 @@ html.locked,html.locked body{overflow:hidden}
 }
 </style>
 <link rel="stylesheet" href="/styles.css" />
+<noscript><style>.fx{opacity:1 !important;transform:none !important}.loader{display:none !important}</style></noscript>
 </head>
 <body class="home">
 <div class="loader" id="loader" aria-hidden="true">
@@ -571,7 +577,7 @@ html.locked,html.locked body{overflow:hidden}
 <div class="ticker t-turmeric" aria-hidden="true"><div class="ticker-track"><span>Kaapi</span><span class="m" lang="ml">കാപ്പി</span><span>&#10041;</span><span>Wayanad</span><span>&#10041;</span><span>Idukki</span><span>&#10041;</span><span>Palakkad</span><span>&#10041;</span><span class="m" lang="ml">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</span><span>&#10041;</span></div></div>
 
 <section class="prologue" id="prologue">
-  <video class="pro-vid" autoplay muted loop playsinline preload="auto" poster="/prologue-poster.jpg" aria-hidden="true">
+  <video class="pro-vid" autoplay muted loop playsinline preload="metadata" poster="/prologue-poster.jpg" aria-hidden="true">
     <source src="/prologue.mp4" type="video/mp4" />
   </video>
   <div class="pro-scrim" aria-hidden="true"></div>
@@ -674,7 +680,7 @@ html.locked,html.locked body{overflow:hidden}
       <div>
         <h3>Edition 02 — Fort Kochi</h3>
         <p class="where">11 October · The Cochin Club, Fort Kochi</p>
-        <p>[One or two lines on what Edition 02 will hold — who is pouring, what is on the table, who should come.]</p>
+        <p>Traceable lots from Wayanad, Idukki and Palakkad, poured by the people who grew them — with the roasters they work with, and open cupping tables. Come if you grow, roast, buy or simply drink coffee.</p>
         <span class="state next">Registration open</span>
       </div>
     </article>
@@ -684,7 +690,7 @@ html.locked,html.locked body{overflow:hidden}
       <div>
         <h3>Edition 01 — Calicut</h3>
         <p class="where">21 July · Sukuru Speciality Coffee, Calicut</p>
-        <p>[One or two lines on what happened on the day — who came, what was poured, what came out of it.]</p>
+        <p>The first gathering: growers, roasters and cuppers around one table at Sukuru Speciality Coffee, tasting traceable Kerala lots side by side — proof the whole chain fits in one room.</p>
         <span class="state done">Completed</span>
 
         <div class="slider">
@@ -772,6 +778,7 @@ html.locked,html.locked body{overflow:hidden}
         <h4>Kerala Origins</h4>
         <p style="max-width:34ch">Celebrating the people, places and processes that define Kerala coffee.</p>
         <p class="mal" lang="ml" style="margin-top:12px;color:var(--turmeric)">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
+        <a class="ig-link" href="https://www.instagram.com/keralaoriginscoffee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" stroke="none"/></svg>Instagram</a>
       </div>
       <div>
         <h4>Sections</h4>
@@ -811,7 +818,7 @@ html.locked,html.locked body{overflow:hidden}
       <dt>Venue</dt><dd>The Cochin Club, St Francis Church Road, Fort Kochi</dd>
       <dt>Edition</dt><dd>People &bull; Place &bull; Process</dd>
     </dl>
-    <p class="note">[One or two lines on what Edition 02 will hold — who is pouring, what is on the table, who should come.]</p>
+    <p class="note">Traceable Kerala lots, poured by the people who grew them — growers, roasters and cuppers at one table.</p>
     <div class="acts">
       <a class="btn accent" href="https://wa.me/916238991599?text=I%27d%20like%20to%20register%20for%20Kerala%20Origins%20Edition%2002">Register</a>
       <a class="btn ghost" href="#editions">Previous edition</a>

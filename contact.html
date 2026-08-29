@@ -143,14 +143,15 @@ section{position:relative}
 .routeboard .arr{color:var(--paper)}
 .hornline{font-family:var(--head);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin-top:20px;color:var(--turmeric)}
 .ways{padding:84px 0;background:var(--paper);border-bottom:2.5px solid var(--ink)}
-.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:38px}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:38px}
 .way{border:3px solid var(--ink);padding:30px 26px;box-shadow:7px 7px 0 var(--ink);position:relative}
 .way h3{font-family:var(--head);font-weight:700;font-size:1.5rem;letter-spacing:-.02em}
 .way p{font-family:var(--serif);margin-top:10px}
 .way .btn-max{margin-top:20px}
 .w-wa{background:var(--green);color:var(--paper)}
 .w-em{background:var(--turmeric)}
-@media(max-width:760px){.wgrid{grid-template-columns:1fr}}
+.w-ig{background:var(--cherry);color:var(--paper)}
+@media(max-width:900px){.wgrid{grid-template-columns:1fr}}
 .venue{padding:84px 0;background:var(--monsoon);color:var(--paper)}
 .venue h2{font-family:var(--head);font-weight:700;font-size:clamp(1.8rem,4.8vw,2.8rem);letter-spacing:-.03em;max-width:18ch}
 .venue dl{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:10px 22px;max-width:480px}
@@ -165,7 +166,22 @@ section{position:relative}
 .faq p{font-family:var(--serif);margin-top:8px;max-width:62ch}
 .faq a{color:var(--green);text-underline-offset:3px}
 
+.ig-link{display:inline-flex;align-items:center;gap:9px;margin-top:16px;color:var(--turmeric);text-decoration:none;font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.ig-link:hover{color:var(--paper)}
+.ig-link svg{display:block}
+footer{position:relative !important;overflow:hidden !important}
+footer .wrap{position:relative;z-index:2}
+footer .footer-harvest{position:absolute;top:0;right:0;bottom:0;display:block;pointer-events:none;z-index:1}
+footer .footer-harvest img{height:100%;width:auto;margin:0;display:block}
+@media(max-width:820px){
+  footer{padding-bottom:0 !important}
+  footer .footer-harvest{position:static;width:100%;margin:26px 0 0;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 28%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 28%)}
+  footer .footer-harvest img{width:100%;height:auto}
+}
 </style>
+<noscript><style>.fx{opacity:1 !important;transform:none !important}.loader{display:none !important}</style></noscript>
 </head>
 <body>
 <nav class="nav">
@@ -209,7 +225,7 @@ section{position:relative}
 
 <section class="ways">
   <div class="wrap">
-    <h2 class="fx" style="font-family:var(--head);font-weight:700;font-size:clamp(1.8rem,4.8vw,2.8rem);letter-spacing:-.03em">Two ways in.</h2>
+    <h2 class="fx" style="font-family:var(--head);font-weight:700;font-size:clamp(1.8rem,4.8vw,2.8rem);letter-spacing:-.03em">Three ways in.</h2>
     <div class="wgrid">
       <div class="way w-wa fx">
         <h3>WhatsApp</h3>
@@ -220,6 +236,11 @@ section{position:relative}
         <h3>Email</h3>
         <p>For registrations, producer enquiries, partnerships, and everything else.</p>
         <a class="btn-max b-paper" href="mailto:keralaoriginscoffee@gmail.com?subject=Kerala%20Origins%20Edition%2002">Write to us &rarr;</a>
+      </div>
+      <div class="way w-ig fx">
+        <h3>Instagram</h3>
+        <p>Editions, farms and cupping tables, as they happen. DMs open.</p>
+        <a class="btn-max" href="https://www.instagram.com/keralaoriginscoffee/" target="_blank" rel="noopener">Follow us &rarr;</a>
       </div>
     </div>
   </div>
@@ -292,6 +313,7 @@ section{position:relative}
         <h4>Kerala Origins</h4>
         <p style="max-width:34ch">Celebrating the people, places and processes that define Kerala coffee.</p>
         <p lang="ml" style="margin-top:12px;color:var(--turmeric);font-family:var(--mal)">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
+        <a class="ig-link" href="https://www.instagram.com/keralaoriginscoffee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" stroke="none"/></svg>Instagram</a>
       </div>
       <div>
         <h4>Pages</h4>
@@ -301,14 +323,14 @@ section{position:relative}
         <a href="/contact.html">Contact</a>
       </div>
     </div>
-    <picture class="footer-pluck" aria-hidden="true">
-      <source srcset="/pluck.webp" type="image/webp"/>
-      <img src="/pluck.png" alt="" loading="lazy"/>
-    </picture>
     <div class="fbot">
       <span>Kerala Origins</span>
     </div>
   </div>
+  <picture class="footer-harvest" aria-hidden="true">
+    <source srcset="/pluck-right.webp" type="image/webp"/>
+    <img src="/pluck-right.png" alt="" loading="lazy" decoding="async"/>
+  </picture>
 </footer>
 <script src="/app.js" defer></script>
 </body>

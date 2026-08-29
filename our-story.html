@@ -131,15 +131,25 @@ section{position:relative}
 .label .meta dd{font-family:var(--serif)}
 .label .corner{position:absolute;top:-16px;right:-14px}
 .label.l-cherry{background:var(--cherry);color:var(--paper);border-color:var(--ink)}
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-.shot{background:var(--green);aspect-ratio:4/3;border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shot span{font-family:var(--body);font-weight:700;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,232,207,.6);text-align:center;padding:0 10px}
-@media(max-width:820px){.shots{grid-template-columns:1fr 1fr}}
 .assoc{padding:90px 0;background:var(--monsoon);color:var(--paper);text-align:center}
 .assoc h2{font-family:var(--head);font-weight:700;font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.03em;max-width:22ch;margin:12px auto 0}
 
+.ig-link{display:inline-flex;align-items:center;gap:9px;margin-top:16px;color:var(--turmeric);text-decoration:none;font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.ig-link:hover{color:var(--paper)}
+.ig-link svg{display:block}
+footer{position:relative !important;overflow:hidden !important}
+footer .wrap{position:relative;z-index:2}
+footer .footer-harvest{position:absolute;top:0;right:0;bottom:0;display:block;pointer-events:none;z-index:1}
+footer .footer-harvest img{height:100%;width:auto;margin:0;display:block}
+@media(max-width:820px){
+  footer{padding-bottom:0 !important}
+  footer .footer-harvest{position:static;width:100%;margin:26px 0 0;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 28%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 28%)}
+  footer .footer-harvest img{width:100%;height:auto}
+}
 </style>
+<noscript><style>.fx{opacity:1 !important;transform:none !important}.loader{display:none !important}</style></noscript>
 </head>
 <body>
 <nav class="nav">
@@ -262,9 +272,9 @@ section{position:relative}
 
 <section class="assoc">
   <div class="wrap fx">
-    <p class="kicker" style="color:var(--turmeric)">The convener</p>
-    <h2>Convened by the association</h2>
-    <p style="max-width:52ch;margin:18px auto 0;font-family:var(--serif)">Kerala Origins is convened by the association as an open, producer-led record of coffee in this state &mdash; a story added to once a year, edition by edition.</p>
+    <p class="kicker" style="color:var(--turmeric)">The founders</p>
+    <h2>Started by four people from Kerala.</h2>
+    <p style="max-width:52ch;margin:18px auto 0;font-family:var(--serif)">Kerala Origins was founded by four people in Kerala who wanted the state&rsquo;s coffee told from where it begins &mdash; and kept as an open, producer-led record, added to once a year, edition by edition.</p>
   </div>
 </section>
 <footer>
@@ -274,6 +284,7 @@ section{position:relative}
         <h4>Kerala Origins</h4>
         <p style="max-width:34ch">Celebrating the people, places and processes that define Kerala coffee.</p>
         <p lang="ml" style="margin-top:12px;color:var(--turmeric);font-family:var(--mal)">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
+        <a class="ig-link" href="https://www.instagram.com/keralaoriginscoffee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" stroke="none"/></svg>Instagram</a>
       </div>
       <div>
         <h4>Pages</h4>
@@ -283,14 +294,14 @@ section{position:relative}
         <a href="/contact.html">Contact</a>
       </div>
     </div>
-    <picture class="footer-pluck" aria-hidden="true">
-      <source srcset="/pluck.webp" type="image/webp"/>
-      <img src="/pluck.png" alt="" loading="lazy"/>
-    </picture>
     <div class="fbot">
       <span>Kerala Origins</span>
     </div>
   </div>
+  <picture class="footer-harvest" aria-hidden="true">
+    <source srcset="/pluck-right.webp" type="image/webp"/>
+    <img src="/pluck-right.png" alt="" loading="lazy" decoding="async"/>
+  </picture>
 </footer>
 <script src="/app.js" defer></script>
 </body>
