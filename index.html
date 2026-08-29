@@ -6,7 +6,7 @@
 
 <title>KERALA ORIGINS — Kerala coffee, told from where it begins.</title>
 <meta name="description" content="Kerala Origins is the gathering celebrating the people, places and processes that define Kerala coffee. Edition 02 — 11 October, The Cochin Club, Fort Kochi." />
-<link rel="canonical" href="https://YOURDOMAIN.com/" />
+<link rel="canonical" href="https://keralaoriginscoffee.com/" />
 <meta name="theme-color" content="#0B4F3A" />
 
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -18,15 +18,17 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kerala Origins" />
-<meta property="og:url" content="https://YOURDOMAIN.com/" />
+<meta property="og:url" content="https://keralaoriginscoffee.com/" />
 <meta property="og:title" content="Kerala coffee, told from where it begins." />
 <meta property="og:description" content="Edition 02 — 11 October, The Cochin Club, Fort Kochi." />
-<meta property="og:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+<meta property="og:image" content="https://keralaoriginscoffee.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_IN" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+<meta name="twitter:title" content="Kerala coffee, told from where it begins." />
+<meta name="twitter:description" content="Edition 02 — 11 October, The Cochin Club, Fort Kochi." />
+<meta name="twitter:image" content="https://keralaoriginscoffee.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -83,6 +85,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-o
 .btn.ghost:hover{background:rgba(11,79,58,.08)}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(18px,3vh,32px)}
 
+/* ---------- entrance reveal — the ONLY animation system on this page.
+   Same mechanism the other four pages already use via app.js. Content is
+   always in the DOM at full opacity for non-JS/reduced-motion users; JS
+   only adds a class once an element scrolls into view. Nothing on this
+   page can end up permanently invisible. ---------- */
+.fx{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.fx.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.fx{opacity:1;transform:none;transition:none}}
+
 /* ---------- nav ---------- */
 .nav{
   position:sticky;top:0;z-index:50;
@@ -91,53 +102,52 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-o
 }
 .nav .wrap{display:flex;align-items:center;height:72px}
 .nav img{height:36px;width:auto;display:block}
-
-
-
-
 @media (max-width:820px){
   .nav img{height:30px}
   .nav .wrap{height:62px}
 }
 
 /* ---------- hero: full-bleed mountain ---------- */
-.hero{position:relative;overflow:hidden;background:var(--paper)}
+.hero{position:relative;overflow:hidden;background:var(--paper);min-height:calc(100svh - 72px)}
 .hero .wrap{
   position:relative;z-index:5;height:100%;
-  display:flex;align-items:flex-start;
-  padding:clamp(20px,4vh,48px) 28px 0;
+  display:flex;align-items:center;
+  padding:clamp(20px,4vh,48px) 28px;
+}
+@media(min-width:821px){
+  .hero .wrap{max-width:none;margin:0;padding-left:28px}
 }
 .hero-copy{max-width:38rem;position:relative;z-index:5}
 .hero h1{
   font-family:var(--head);font-weight:700;letter-spacing:-.035em;line-height:.99;
   font-size:clamp(3.3rem,min(7.5vw,11.5vh),6.4rem);margin:6px 0 0;max-width:12ch;
 }
-.hero h1 .w>span{
-  background-image:linear-gradient(var(--cherry),var(--cherry));
-  background-repeat:no-repeat;background-size:0% 74%;background-position:0 62%;
-}
 .hero .support{margin-top:clamp(10px,1.8vh,18px);max-width:40ch;font-size:clamp(.98rem,1.4vw,1.1rem);color:var(--ink)}
 .hero .mal{margin-top:clamp(8px,1.4vh,14px)}
 .ghats{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
-.ghats picture{position:absolute;inset:-8% 0 0 0;will-change:transform}
+.ghats picture{position:absolute;inset:-8% 0 0 0}
 .ghats img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 76%;display:block}
 body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z-index:6;display:flex;gap:16px;flex-wrap:wrap;max-width:60%}
 @media(max-width:820px){
-  .hero .wrap{padding:clamp(16px,2.6vh,26px) 24px 0}
+  .hero{min-height:calc(100svh - 60px);display:flex;flex-direction:column;justify-content:flex-start}
+  .hero .wrap{display:block;height:auto;padding:clamp(20px,3.4vh,32px) 24px 0}
   .hero h1{font-size:clamp(2.15rem,9vw,2.95rem);max-width:100%}
-  .hero .support{max-width:100%;font-size:.96rem}
-  .ghats img{
-    top:auto;bottom:0;height:136%;
-    object-position:60% bottom;
+  .hero .support{font-size:.97rem;max-width:100%}
+  .ghats{
+    position:relative;width:100%;flex:1 1 auto;height:auto;min-height:220px;margin-top:clamp(18px,3vh,28px);
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
   }
+  .ghats img{object-position:72% bottom;top:auto;bottom:0;height:136%}
   body.home .hero-stamps{left:24px;right:24px;max-width:none;bottom:18px;gap:10px}
   body.home .hero-stamps .stamp-box{padding:7px 10px 6px;font-size:8.5px}
   body.home .hero-stamps .stamp-box b{font-size:.95rem}
 }
+
+/* monsoon mist — always rendered, fades to full strength shortly after load */
 .fog{
   position:absolute;left:0;bottom:0;width:200%;height:100%;
-  pointer-events:none;will-change:transform;
-  opacity:0;animation-play-state:running;
+  pointer-events:none;opacity:0;
 }
 .fog.lit{opacity:1;transition:opacity 6s ease}
 .fog svg{
@@ -150,23 +160,38 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 .fog-3{animation:drift 46s linear infinite;animation-delay:-27s}
 @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @keyframes breathe{0%,100%{opacity:.32}50%{opacity:.62}}
-@media (prefers-reduced-motion:reduce){.fog-1,.fog-2,.fog-3,.fog i{animation:none}}
+@media (max-width:820px){.fog-3{display:none}.fog-1{animation-duration:44s}.fog-2{animation-duration:56s}}
+@media (prefers-reduced-motion:reduce){.fog-1,.fog-2,.fog-3{animation:none}.fog{opacity:1}}
 
+/* ---------- prologue: full-screen video moment ---------- */
+.prologue{
+  position:relative;overflow:hidden;min-height:100svh;
+  display:flex;align-items:center;background-color:var(--ink);
+  background-image:image-set(url("/prologue-poster.webp") type("image/webp"), url("/prologue-poster.jpg") type("image/jpeg"));
+  background-size:cover;background-position:center 38%;
+}
+.pro-vid{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.pro-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(6,10,7,.30) 0%,rgba(6,10,7,.44) 55%,rgba(6,10,7,.68) 100%);
+}
+.prologue .wrap{position:relative;z-index:2;width:100%}
+.prologue blockquote{
+  font-family:var(--head);font-weight:700;letter-spacing:-.03em;line-height:1.1;
+  font-size:clamp(1.6rem,4.6vw,3.3rem);max-width:22ch;color:var(--paper);
+  text-shadow:0 2px 22px rgba(0,0,0,.4);
+}
+.prologue blockquote em{font-style:normal;color:var(--turmeric)}
 @media(max-width:820px){
-  .hero{min-height:calc(100svh - 60px);display:flex;flex-direction:column;justify-content:flex-start}
-  .hero .wrap{display:block;gap:0;padding:clamp(20px,3.4vh,32px) 24px 0;min-height:0}
-  .hero h1{font-size:clamp(1.8rem,7.6vw,2.4rem);max-width:100%}
-  .hero .support{font-size:.97rem;max-width:100%}
+  .prologue blockquote{font-size:clamp(1.5rem,7.2vw,2.1rem)}
+}
 
-  .ghats{
-    position:relative;width:100%;flex:1 1 auto;height:auto;min-height:220px;margin-top:clamp(18px,3vh,28px);
-    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
-            mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
-  }
-  .ghats img{object-position:72% bottom}
-  .fog-3{display:none}
-  .fog-1{animation-duration:44s}
-  .fog-2{animation-duration:56s}
+/* ---------- kasavu divider ---------- */
+.kasavu{
+  height:26px;border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);
+  background:repeating-linear-gradient(90deg,
+    var(--paper) 0 14px,var(--turmeric) 14px 20px,
+    var(--paper) 20px 34px,var(--green) 34px 37px);
 }
 
 /* ---------- editorial: cherry-harvest bed ---------- */
@@ -192,6 +217,7 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
   .editorial .grid{grid-template-columns:1fr;gap:26px}
   .editorial .bed{background-position:center 62%}
 }
+
 /* ---------- People. Place. Process. ---------- */
 .ppp{background:var(--paper-warm);border-top:1px solid rgba(25,21,16,.12);
      border-bottom:1px solid rgba(25,21,16,.12);padding:88px 0}
@@ -220,7 +246,6 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 .panel p{font-size:.94rem;opacity:.94;margin-top:14px}
 .panel .tag{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
   border:1px solid rgba(244,232,207,.6);padding:5px 12px;display:inline-block}
-.panel svg{position:absolute;right:-16px;bottom:-12px;width:130px;opacity:.26}
 @media(max-width:820px){.panels{grid-template-columns:1fr}.panel{min-height:auto}}
 
 /* ---------- editions ---------- */
@@ -228,6 +253,13 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
 .sec-head h2{font-family:var(--head);font-weight:700;font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.025em}
 .axis-note{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+
+.axisline{position:relative}
+.axisline::before{
+  content:"";position:absolute;left:59px;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--turmeric),rgba(242,184,39,.15));
+}
+@media(max-width:820px){.axisline::before{display:none}}
 
 .ed{display:grid;grid-template-columns:120px 1fr;gap:0 34px;padding:30px 0;position:relative;
     border-bottom:1px solid rgba(25,21,16,.14)}
@@ -242,17 +274,6 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 .state.next{background:var(--turmeric);color:var(--ink)}
 .state.done{border:1px solid rgba(25,21,16,.3);color:var(--muted)}
 @media(max-width:820px){.ed{grid-template-columns:1fr;gap:8px}.ed .code{padding-top:0}}
-
-/* photo row */
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-.shot{background:var(--green);aspect-ratio:4/3;position:relative;overflow:hidden;
-  display:flex;align-items:center;justify-content:center}
-.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shot span{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(244,232,207,.55);text-align:center;padding:0 14px}
-.shot-cap{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);margin-top:8px}
-@media(max-width:820px){.shots{grid-template-columns:1fr 1fr}}
 
 /* ---------- farmer support ---------- */
 .support-section{position:relative;overflow:hidden;color:var(--paper);padding:110px 0 118px;text-align:center}
@@ -282,55 +303,37 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 }
 @media(max-width:820px){.support-section{padding:84px 0 92px}}
 
-footer{position:relative;overflow:hidden;background:var(--ink);color:var(--paper);padding:56px 0 36px}
+/* ---------- footer harvest image ---------- */
+footer{position:relative !important;overflow:hidden !important}
 footer .wrap{position:relative;z-index:2}
-footer img{height:40px;margin-bottom:24px}
-.footer-harvest{position:absolute;top:0;right:0;bottom:0;display:block;pointer-events:none;z-index:1}
-.footer-harvest img{height:100%;width:auto;margin:0;display:block}
+footer .footer-harvest{position:absolute;top:0;right:0;bottom:0;display:block;pointer-events:none;z-index:1}
+footer .footer-harvest img{height:100%;width:auto;margin:0;display:block}
 @media(max-width:820px){
-  .footer-harvest{
-    position:static;width:100%;margin:26px 0 -36px;
+  footer{padding-bottom:0 !important}
+  footer .footer-harvest{
+    position:static;width:100%;margin:26px 0 0;
     -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 28%);
             mask-image:linear-gradient(180deg,transparent 0%,#000 28%);
   }
-  .footer-harvest img{width:100%;height:auto}
+  footer .footer-harvest img{width:100%;height:auto}
 }
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
-.fgrid h4{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
-  opacity:.55;margin-bottom:12px}
-.fgrid a{display:block;color:var(--paper);text-decoration:none;opacity:.85;font-size:.95rem;margin-bottom:8px}
-.fgrid a:hover{color:var(--turmeric)}
-.fgrid p{opacity:.8;font-size:.95rem}
-.fbot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(244,232,207,.18);
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-  font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
-@media(max-width:820px){.fgrid{grid-template-columns:1fr}}
-
 
 /* ---------- floating event dial ---------- */
-.dial{background:transparent;box-shadow:none;border-radius:0}
-.dial:hover{box-shadow:none}
-.dial .scallop{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 10px 24px rgba(8,58,42,.35))}
-.dial .scallop{animation:spin 26s linear infinite}
-.dial>svg:not(.scallop){display:none}
-.dial text{fill:var(--turmeric);font-weight:700;font-size:9.6px;letter-spacing:.24em}
-.dial .core b{color:var(--paper)}
-.dial .core span{color:var(--turmeric)}
-
 .dial{
   position:fixed;right:26px;bottom:26px;z-index:80;
   width:132px;height:132px;border-radius:50%;
-  background:var(--green);color:var(--turmeric);
-  border:none;cursor:pointer;padding:0;
-  box-shadow:0 10px 30px rgba(8,58,42,.28);
-  transition:transform .3s ease,box-shadow .3s ease,opacity .3s ease;
+  background:transparent;color:var(--turmeric);
+  border:none;cursor:pointer;padding:0;box-shadow:none;
+  transition:transform .3s ease,opacity .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
 }
-.dial:hover{transform:scale(1.06);box-shadow:0 14px 38px rgba(8,58,42,.36)}
+.dial:hover{transform:scale(1.06)}
 .dial.hidden{opacity:0;pointer-events:none;transform:scale(.7)}
-.dial svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
+.dial .scallop{position:absolute;inset:0;width:100%;height:100%;
+  filter:drop-shadow(0 10px 24px rgba(8,58,42,.35));animation:spin 26s linear infinite}
 .dial text{
   font-family:var(--body);font-size:8.4px;font-weight:600;
-  letter-spacing:.26em;text-transform:uppercase;fill:var(--paper);
+  letter-spacing:.26em;text-transform:uppercase;fill:var(--turmeric);
 }
 .dial .core{
   position:absolute;inset:0;display:flex;flex-direction:column;
@@ -345,8 +348,24 @@ footer img{height:40px;margin-bottom:24px}
   letter-spacing:.2em;text-transform:uppercase;color:rgba(244,232,207,.82);
 }
 @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.dial svg{animation:none}}
+@media (prefers-reduced-motion:reduce){.dial .scallop{animation:none}}
 
+.dial-close{
+  position:fixed;right:22px;bottom:158px;z-index:81;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--ink);color:var(--paper);border:2px solid var(--paper);
+  cursor:pointer;font-size:17px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  transition:opacity .3s ease,transform .3s ease;
+}
+.dial-close.hidden{opacity:0;pointer-events:none;transform:scale(.7)}
+@media(max-width:820px){
+  .dial{right:16px;bottom:16px;width:108px;height:108px}
+  .dial .core b{font-size:1.15rem}
+  .dial text{font-size:7.4px;letter-spacing:.22em}
+  .dial-close{right:14px;bottom:128px;width:38px;height:38px}
+}
 
 .sheet{
   position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;
@@ -357,6 +376,7 @@ footer img{height:40px;margin-bottom:24px}
 .sheet .card{
   background:var(--paper);max-width:440px;width:100%;padding:36px 32px 32px;
   position:relative;border-top:5px solid var(--turmeric);
+  max-height:86svh;overflow:auto;
   transform:translateY(14px);transition:transform .3s ease;
 }
 .sheet.open .card{transform:none}
@@ -370,7 +390,6 @@ footer img{height:40px;margin-bottom:24px}
 .sheet dd{font-family:var(--serif)}
 .sheet .note{font-family:var(--serif);color:var(--muted);margin-top:20px;font-size:.98rem}
 .sheet .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.sheet .card{max-height:86svh;overflow:auto}
 .sheet .x{
   position:absolute;top:12px;right:12px;
   min-width:44px;height:44px;padding:0 16px;
@@ -381,24 +400,6 @@ footer img{height:40px;margin-bottom:24px}
 }
 .sheet .x:hover{background:var(--cherry);border-color:var(--cherry)}
 html.locked,html.locked body{overflow:hidden}
-.dial{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.dial.hidden,.dial-close.hidden{opacity:0;pointer-events:none;transform:scale(.7);transition:opacity .3s ease,transform .3s ease}
-.dial-close{
-  position:fixed;right:22px;bottom:158px;z-index:81;
-  width:36px;height:36px;border-radius:50%;
-  background:var(--ink);color:var(--paper);border:2px solid var(--paper);
-  cursor:pointer;font-size:17px;line-height:1;
-  display:flex;align-items:center;justify-content:center;
-  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
-}
-@media(max-width:820px){.dial-close{right:14px;bottom:128px;width:38px;height:38px}}
-@media(max-width:820px){
-  .dial{right:16px;bottom:16px;width:108px;height:108px}
-  .dial .core b{font-size:1.15rem}
-  .dial text{font-size:7.4px;letter-spacing:.22em}
-  }
-
-
 
 /* ---------- loading screen ---------- */
 .loader{
@@ -413,119 +414,25 @@ html.locked,html.locked body{overflow:hidden}
 }
 #loadWord{color:var(--cherry)}
 
-/* ---------- pinned scene system ---------- */
-.scene{height:calc(var(--h,260)*1vh);position:relative}
-.scene-view{
-  position:sticky;top:72px;height:calc(100svh - 72px);overflow:hidden;
-  display:flex;flex-direction:column;justify-content:center;
-}
-.scene-view>*{width:100%}
-.scene .hero{min-height:100%;height:100%;display:flex;align-items:center}
-.scene .editorial,.scene .ppp,.scene .editions,.scene .prologue{padding-top:0;padding-bottom:0}
-.scene .editorial{height:100%;display:flex;align-items:center}
-.scene .editorial .wrap{width:100%}
-.jw{display:inline-block;will-change:opacity,transform}
-@media(max-width:820px){
-  .scene{height:calc(var(--h,260)*.72*1vh)}
-  .scene-view{top:60px;height:calc(100svh - 60px)}
-  .scene[data-scene="editions"],.scene[data-scene="ppp"],.scene[data-scene="why"]{height:auto}
-  .scene[data-scene="editions"] .scene-view,
-  .scene[data-scene="ppp"] .scene-view,
-  .scene[data-scene="why"] .scene-view{position:static;height:auto;overflow:visible;top:auto;padding:64px 0}
-  .scene[data-scene="why"] .editorial{height:auto;padding:56px 0}
-  .panel{min-height:340px}
-}
-@media (prefers-reduced-motion:reduce){
-  .scene{height:auto}
-  .scene-view{position:static;height:auto;overflow:visible;padding-top:0}
-  .jw{opacity:1!important;transform:none!important}
-}
-
-
-.prologue{position:relative;overflow:hidden}
-.prologue .wm{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);
-  font-family:var(--mal);font-weight:500;font-size:clamp(11rem,34vw,26rem);
-  color:var(--turmeric);opacity:.08;pointer-events:none;line-height:1;white-space:nowrap;
-}
-.sprig{position:absolute;pointer-events:none;opacity:.85}
-.sprig.tr{top:26px;right:26px;width:110px;transform:rotate(8deg)}
-.sprig.bl{bottom:26px;left:26px;width:96px;transform:rotate(-172deg)}
-.kasavu{
-  height:26px;border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);
-  background:repeating-linear-gradient(90deg,
-    var(--paper) 0 14px,var(--turmeric) 14px 20px,
-    var(--paper) 20px 34px,var(--green) 34px 37px);
-}
+/* ---------- flavour spinner ---------- */
 .taste{background:var(--turmeric);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);padding:52px 0;text-align:center}
-.taste .kicker{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--cherry)}
 .spin-btn{
-  display:block;margin:14px auto 0;background:none;border:none;cursor:pointer;color:var(--ink);
-  font-family:var(--head);font-weight:700;letter-spacing:-.03em;line-height:1.05;
-  font-size:clamp(1.95rem,6.2vw,3.9rem);
+  display:block;width:100%;margin:14px auto 0;background:none;border:none;cursor:pointer;color:var(--ink);
+  font-family:var(--head);font-weight:700;letter-spacing:-.03em;line-height:1.06;
+  font-size:var(--spin-size,clamp(1.4rem,5.6vw,3.9rem));
+  white-space:nowrap;
 }
+.spin-line{display:block;white-space:nowrap;min-height:1.12em}
 .spin-word{color:var(--cherry);position:relative;display:inline-block;transition:transform .18s ease,opacity .18s ease}
 .spin-word.flip{transform:translateY(12px);opacity:0}
 .spin-mal{display:block;font-family:var(--mal);font-weight:500;font-size:.44em;margin-top:8px;color:var(--ink);opacity:.75}
 .spin-hint{font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-top:16px;opacity:.6}
-
-/* ---------- scroll motion system ---------- */
-.ghats picture{position:absolute;inset:-12% 0 0 0;will-change:transform}
-.hero-copy{will-change:transform,opacity}
-
-/* word-by-word headline reveal */
-.wsplit .w{
-  display:inline-block;overflow:hidden;vertical-align:bottom;
+@media(max-width:820px){
+  .spin-btn{font-size:min(6.9vw,1.95rem)}
+  .spin-line{min-height:1.15em}
+  .spin-mal{font-size:.5em}
+  .taste{padding:44px 0}
 }
-.wsplit .w>span{
-  display:inline-block;transform:translateY(110%);
-  transition:transform .8s cubic-bezier(.2,.7,.2,1);
-}
-.wsplit.in .w>span{transform:none}
-
-/* directional reveals */
-.fx{opacity:0;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);will-change:transform,opacity}
-.fx-up{transform:translateY(46px)}
-.fx-left{transform:translateX(-56px)}
-.fx-right{transform:translateX(56px)}
-.fx-scale{transform:translateY(30px) scale(.94)}
-.fx.in{opacity:1;transform:none}
-
-/* editions timeline line grows in */
-.axisline{position:relative}
-.axisline::before{
-  content:"";position:absolute;left:59px;top:0;bottom:0;width:2px;
-  background:linear-gradient(180deg,var(--turmeric),rgba(242,184,39,.15));
-  transform:scaleY(0);transform-origin:top;transition:transform 1.4s cubic-bezier(.2,.7,.2,1);
-}
-.axisline.in::before{transform:scaleY(1)}
-@media(max-width:820px){.axisline::before{display:none}}
-
-/* contour divider between chapters */
-.divider{display:block;width:100%;height:64px;margin:-1px 0}
-.divider path{fill:none;stroke-width:1.4;opacity:.5}
-
-/* big prologue quote */
-.prologue{padding:18svh 0 16svh;background:var(--paper)}
-.prologue blockquote{
-  font-family:var(--head);font-weight:700;letter-spacing:-.03em;line-height:1.06;
-  font-size:clamp(1.7rem,4.4vw,3.2rem);max-width:24ch;color:var(--ink);
-}
-.prologue blockquote em{font-style:normal;color:var(--green)}
-.prologue .who{
-  font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--muted);margin-top:26px;
-}
-
-@media (prefers-reduced-motion:reduce){
-  .wsplit .w>span{transform:none;transition:none}
-  .fx{opacity:1;transform:none;transition:none}
-  .axisline::before{transform:scaleY(1);transition:none}
-  .ghats picture{inset:0}
-}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
-.reveal.in{opacity:1;transform:none}
 </style>
 <link rel="stylesheet" href="/styles.css" />
 </head>
@@ -555,6 +462,12 @@ html.locked,html.locked body{overflow:hidden}
 </nav>
 
 <div class="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-scene" aria-hidden="true">
+    <div class="m-fly"><div class="m-bob">
+      <picture class="hb-down"><source srcset="/hb-down.webp" type="image/webp"/><img src="/hb-down.png" alt=""/></picture>
+      <picture class="hb-up"><source srcset="/hb-up.webp" type="image/webp"/><img src="/hb-up.png" alt=""/></picture>
+    </div></div>
+  </div>
   <div class="menu-top">
     <img src="/logo-paper.png" alt="Kerala Origins" />
     <button class="menu-x">Close</button>
@@ -566,23 +479,19 @@ html.locked,html.locked body{overflow:hidden}
     <a href="/farmers.html"><span class="no">04</span>Farmers<span class="m" lang="ml">കർഷകർ</span></a>
     <a href="/contact.html"><span class="no">05</span>Contact<span class="m" lang="ml">ബന്ധപ്പെടുക</span></a>
   </nav>
-  <div class="menu-foot">
-    <span>Kerala Origins</span>
-    <span>KO&mdash;02 · Fort Kochi · 11 Oct</span>
-  </div>
+  
 </div>
 
-<div class="scene" data-scene="hero" style="--h:240"><div class="scene-view">
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="hero-copy">
-      <h1 class="wsplit" data-split>Kerala coffee, told from where it begins.</h1>
+    <div class="hero-copy fx">
+      <h1>Kerala coffee, told from where it begins.</h1>
       <p class="support">The gathering celebrating the people, places and processes that define Kerala coffee.</p>
       <p class="mal" lang="ml">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</p>
     </div>
   </div>
 
-  <div class="hero-stamps" aria-hidden="true">
+  <div class="hero-stamps fx" aria-hidden="true">
     <span class="stamp-box s-turmeric" style="--rot:-3deg"><b>1,600 m</b>Highest lot</span>
     <span class="stamp-box" style="--rot:2deg"><b>04</b>Districts</span>
     <span class="stamp-box s-cherry" style="--rot:-1.5deg"><b>KO&mdash;02</b><span class="m" lang="ml">ലക്കം</span></span>
@@ -598,43 +507,32 @@ html.locked,html.locked body{overflow:hidden}
     <div class="fog fog-3"><svg viewBox="0 0 1200 600" preserveAspectRatio="none" style="--bd:42s"><filter id="fge" x="-60%" y="-60%" width="220%" height="220%"><feTurbulence type="fractalNoise" baseFrequency="0.011 0.026" numOctaves="3" seed="21"/><feDisplacementMap in="SourceGraphic" scale="64"/><feGaussianBlur stdDeviation="11"/></filter><g filter="url(#fge)" fill="#F2E9D6"><ellipse cx="360" cy="306" rx="160" ry="42"/><ellipse cx="830" cy="268" rx="145" ry="38"/></g></svg><svg viewBox="0 0 1200 600" preserveAspectRatio="none" style="--bd:42s"><filter id="fgf" x="-60%" y="-60%" width="220%" height="220%"><feTurbulence type="fractalNoise" baseFrequency="0.011 0.026" numOctaves="3" seed="21"/><feDisplacementMap in="SourceGraphic" scale="64"/><feGaussianBlur stdDeviation="11"/></filter><g filter="url(#fgf)" fill="#F2E9D6"><ellipse cx="360" cy="306" rx="160" ry="42"/><ellipse cx="830" cy="268" rx="145" ry="38"/></g></svg></div>
   </div>
 </header>
-</div></div>
+
 <div class="ticker t-turmeric" aria-hidden="true"><div class="ticker-track"><span>Kaapi</span><span class="m" lang="ml">കാപ്പി</span><span>&#10041;</span><span>Wayanad</span><span>&#10041;</span><span>Idukki</span><span>&#10041;</span><span>Palakkad</span><span>&#10041;</span><span class="m" lang="ml">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</span><span>&#10041;</span></div></div>
 
-
-<div class="scene" data-scene="prologue" style="--h:220"><div class="scene-view">
-<section class="prologue">
-    <div class="wm" aria-hidden="true" lang="ml">കഥ</div>
-    <svg class="sprig tr" viewBox="0 0 120 90" fill="none" stroke="#F2B827" stroke-width="3" stroke-linecap="round" aria-hidden="true">
-      <path d="M8 82C34 66 58 44 104 14"/><path d="M42 56c-10-2-16-9-18-19 10 0 18 5 22 14"/>
-      <path d="M66 38c-2-11 2-20 10-27 5 9 4 19-2 27"/>
-      <circle cx="96" cy="24" r="7" fill="#D6472F" stroke="#F2B827"/><circle cx="82" cy="35" r="6" fill="#D6472F" stroke="#F2B827"/>
-    </svg>
-    <svg class="sprig bl" viewBox="0 0 120 90" fill="none" stroke="#F2B827" stroke-width="3" stroke-linecap="round" aria-hidden="true">
-      <path d="M8 82C34 66 58 44 104 14"/><path d="M42 56c-10-2-16-9-18-19 10 0 18 5 22 14"/>
-      <circle cx="96" cy="24" r="7" fill="#D6472F" stroke="#F2B827"/>
-    </svg>
+<section class="prologue" id="prologue">
+  <video class="pro-vid" autoplay muted loop playsinline preload="auto" poster="/prologue-poster.jpg" aria-hidden="true">
+    <source src="/prologue.mp4" type="video/mp4" />
+  </video>
+  <div class="pro-scrim" aria-hidden="true"></div>
   <div class="wrap">
-    <blockquote data-jsplit>&ldquo;Here, in these hills, every harvest leaves a story &mdash; and the people who grow it <em>finally get to tell it.</em>&rdquo;</blockquote>
-    <p class="who">Kerala Origins</p>
+    <blockquote class="fx">&ldquo;Here, in these hills, every harvest leaves a story &mdash; and the people who grow it <em>finally get to tell it.</em>&rdquo;</blockquote>
   </div>
 </section>
-</div></div>
-<div class="ticker t-cherry" aria-hidden="true"><div class="ticker-track"><span>People</span><span class="m" lang="ml">മനുഷ്യർ</span><span>&#10041;</span><span>Place</span><span class="m" lang="ml">ഇടം</span><span>&#10041;</span><span>Process</span><span class="m" lang="ml">രീതി</span><span>&#10041;</span></div></div>
 
+<div class="ticker t-cherry" aria-hidden="true"><div class="ticker-track"><span>People</span><span class="m" lang="ml">മനുഷ്യർ</span><span>&#10041;</span><span>Place</span><span class="m" lang="ml">ഇടം</span><span>&#10041;</span><span>Process</span><span class="m" lang="ml">രീതി</span><span>&#10041;</span></div></div>
 
 <div class="kasavu" aria-hidden="true"></div>
 
-<div class="scene" data-scene="why" style="--h:280"><div class="scene-view">
 <section class="editorial" id="why">
   <div class="bed" aria-hidden="true"></div>
   <div class="wrap grid">
-    <div>
+    <div class="fx">
       <p class="eyebrow">Why this exists</p>
-      <h2 data-jsplit>Grown here.<br/>Named elsewhere.</h2>
+      <h2>Grown here.<br/>Named elsewhere.</h2>
       <p class="mal" lang="ml" style="margin-top:14px">വളരുന്നത് ഇവിടെ</p>
     </div>
-    <div class="epwrap">
+    <div class="fx">
       <p class="first">
         Most coffee grown in Kerala leaves the state as an anonymous lot. It gets
         blended, re-bagged, and sold under a name that belongs to somebody else.
@@ -653,27 +551,24 @@ html.locked,html.locked body{overflow:hidden}
     </div>
   </div>
 </section>
-</div></div>
 
 <section class="taste" id="taste">
   <div class="wrap">
     <button class="spin-btn" id="spinBtn" aria-live="polite">
-      Kerala tastes like <span class="spin-word" id="spinWord">jackfruit</span>
+      <span class="spin-line">Kerala tastes like <span class="spin-word" id="spinWord">jackfruit</span></span>
       <span class="spin-mal" id="spinMal" lang="ml">ചക്ക</span>
     </button>
     <p class="spin-hint">&#10041; tap the word &#10041;</p>
   </div>
 </section>
 
-
-<div class="scene" data-scene="ppp" style="--h:300"><div class="scene-view">
 <section class="ppp" id="framework">
   <div class="wrap">
-    <h2 data-jsplit style="font-family:var(--head);font-weight:700;font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.025em">
+    <h2 class="fx" style="font-family:var(--head);font-weight:700;font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.025em">
       People. Place. Process.
     </h2>
     <div class="panels">
-      <article class="panel">
+      <article class="panel fx">
         <div>
           <span class="tag">People</span>
           <h3>The hands<br/>behind the cup</h3>
@@ -681,7 +576,7 @@ html.locked,html.locked body{overflow:hidden}
           <p>Producers, harvest workers, sorters and processors — named, present, and speaking for their own coffee.</p>
         </div>
       </article>
-      <article class="panel">
+      <article class="panel fx">
         <div>
           <span class="tag">Place</span>
           <h3>Farms, districts,<br/>elevations</h3>
@@ -689,7 +584,7 @@ html.locked,html.locked body{overflow:hidden}
           <p>The Western Ghats, shade systems, pepper vines, rainfall and soil — the conditions that make the cup what it is.</p>
         </div>
       </article>
-      <article class="panel">
+      <article class="panel fx">
         <div>
           <span class="tag">Process</span>
           <h3>Harvest to roast,<br/>in the open</h3>
@@ -700,14 +595,12 @@ html.locked,html.locked body{overflow:hidden}
     </div>
   </div>
 </section>
-</div></div>
+
 <div class="ticker t-green" aria-hidden="true"><div class="ticker-track"><span>Edition 01 &middot; Calicut</span><span>&#10041;</span><span>Edition 02 &middot; Fort Kochi</span><span>&#10041;</span><span>11 October 2026</span><span>&#10041;</span><span class="m" lang="ml">ഒരു വർഷം ഒരു ഒത്തുചേരൽ</span><span>&#10041;</span></div></div>
 
-
-<div class="scene" data-scene="editions" style="--h:330"><div class="scene-view">
 <section class="editions" id="editions">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head fx">
       <div>
         <p class="eyebrow">The editions</p>
         <h2 style="margin-top:8px">One gathering a year.</h2>
@@ -715,7 +608,7 @@ html.locked,html.locked body{overflow:hidden}
       <p class="axis-note">Most recent first ↓</p>
     </div>
 
-    <div class="axisline" style="margin-top:34px">
+    <div class="axisline fx" style="margin-top:34px">
     <article class="ed">
       <div class="code">KO&mdash;02</div>
       <div>
@@ -734,33 +627,69 @@ html.locked,html.locked body{overflow:hidden}
         <p>[One or two lines on what happened on the day — who came, what was poured, what came out of it.]</p>
         <span class="state done">Completed</span>
 
-        <div class="shots">
-          <figure>
-            <div class="shot"><span>Photo 01 — the room</span></div>
-            <figcaption class="shot-cap">Sukuru Speciality Coffee · July</figcaption>
-          </figure>
-          <figure>
-            <div class="shot"><span>Photo 02 — cupping table</span></div>
-            <figcaption class="shot-cap">Sukuru Speciality Coffee · July</figcaption>
-          </figure>
-          <figure>
-            <div class="shot"><span>Photo 03 — pouring</span></div>
-            <figcaption class="shot-cap">Sukuru Speciality Coffee · July</figcaption>
-          </figure>
+        <div class="slider">
+          <div class="shots" data-track>
+            <figure class="slide">
+              <picture><source srcset="/e01-1.webp" type="image/webp"/><img src="/e01-1.jpg" alt="The room at Edition 01, Sukuru Speciality Coffee, Calicut" fetchpriority="high"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-2.webp" type="image/webp"/><img src="/e01-2.jpg" alt="Cuppers at the table, Edition 01" fetchpriority="high"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-3.webp" type="image/webp"/><img src="/e01-3.jpg" alt="At the counter, Edition 01" fetchpriority="high"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-4.webp" type="image/webp"/><img src="/e01-4.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-5.webp" type="image/webp"/><img src="/e01-5.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-6.webp" type="image/webp"/><img src="/e01-6.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-7.webp" type="image/webp"/><img src="/e01-7.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-8.webp" type="image/webp"/><img src="/e01-8.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-9.webp" type="image/webp"/><img src="/e01-9.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-10.webp" type="image/webp"/><img src="/e01-10.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-11.webp" type="image/webp"/><img src="/e01-11.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-12.webp" type="image/webp"/><img src="/e01-12.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-13.webp" type="image/webp"/><img src="/e01-13.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-14.webp" type="image/webp"/><img src="/e01-14.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+            <figure class="slide">
+              <picture><source srcset="/e01-15.webp" type="image/webp"/><img src="/e01-15.jpg" alt="Edition 01, Sukuru Speciality Coffee, Calicut" loading="lazy"/></picture>
+            </figure>
+          </div>
+          <button class="sl-btn sl-prev" aria-label="Previous photo">&larr;</button>
+          <button class="sl-btn sl-next" aria-label="Next photo">&rarr;</button>
         </div>
       </div>
     </article>
     </div>
   </div>
 </section>
-</div></div>
 
 <div class="kasavu" aria-hidden="true"></div>
 
 <section class="support-section" id="register">
   <div class="bed" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="wsplit" data-split>Your coffee can be specialty.</h2>
+  <div class="wrap fx">
+    <h2>Your coffee can be specialty.</h2>
     <p class="mal" lang="ml">കർഷകർക്കൊപ്പം</p>
     <p class="lead">However small your farm, if you want to take your coffee to specialty grade, we'll work with you at every step — from harvest to cup.</p>
     <div class="tags">
@@ -778,7 +707,6 @@ html.locked,html.locked body{overflow:hidden}
 
 <footer>
   <div class="wrap">
-    <img src="/logo-paper.png" srcset="/logo-paper.png 1x, /logo-paper@2x.png 2x" alt="Kerala Origins" />
     <div class="fgrid">
       <div>
         <h4>Kerala Origins</h4>
@@ -803,11 +731,9 @@ html.locked,html.locked body{overflow:hidden}
   </picture>
 </footer>
 
-
 <button class="dial" id="dial" aria-haspopup="dialog" aria-label="Edition 02 — 11 October 2026, The Cochin Club, Fort Kochi">
   <svg class="scallop" viewBox="0 0 132 132" aria-hidden="true">
     <path d="M124.0 66.0 Q141.1 86.1 116.2 95.0 Q121.0 121.0 95.0 116.2 Q86.1 141.1 66.0 124.0 Q45.9 141.1 37.0 116.2 Q11.0 121.0 15.8 95.0 Q-9.1 86.1 8.0 66.0 Q-9.1 45.9 15.8 37.0 Q11.0 11.0 37.0 15.8 Q45.9 -9.1 66.0 8.0 Q86.1 -9.1 95.0 15.8 Q121.0 11.0 116.2 37.0 Q141.1 45.9 124.0 66.0 Z" fill="#D6472F" stroke="#191510" stroke-width="2.5" stroke-linejoin="round"/>
-    <circle cx="66" cy="66" r="45" fill="#0B4F3A" stroke="#F2B827" stroke-width="1.5"/>
     <defs><path id="ring" d="M66,66 m-51,0 a51,51 0 1,1 102,0 a51,51 0 1,1 -102,0"/></defs>
     <text><textPath href="#ring" startOffset="0">&#9733; THE COCHIN CLUB &#9733; 11 OCTOBER &#9733; FORT KOCHI </textPath></text>
   </svg>
@@ -834,169 +760,53 @@ html.locked,html.locked body{overflow:hidden}
 </div>
 
 <script>
+/* ---- home-page-only behaviour. Shared reveal/ticker/slider/menu/cursor
+   logic lives in app.js and applies here too via the .fx / .ticker /
+   .slider classes above. Nothing below can hide page content — each
+   piece only adds a class or a value, never sets opacity:0 on load. ---- */
 
-
-/* split headlines into animating words */
-document.querySelectorAll('[data-split]').forEach(el=>{
-  const walk=node=>{
-    [...node.childNodes].forEach(n=>{
-      if(n.nodeType===3){
-        const frag=document.createDocumentFragment();
-        n.textContent.split(/(\s+)/).forEach(part=>{
-          if(!part)return;
-          if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(part));return;}
-          const w=document.createElement('span');w.className='w';
-          const inner=document.createElement('span');inner.textContent=part;
-          w.appendChild(inner);frag.appendChild(w);
-        });
-        node.replaceChild(frag,n);
-      } else if(n.nodeType===1 && n.tagName!=='BR'){ walk(n); }
-    });
-  };
-  walk(el);
-  el.querySelectorAll('.w>span').forEach((s,i)=>s.style.transitionDelay=(i*70)+'ms');
-});
-
-/* one observer for all entrance systems */
-const fxio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');fxio.unobserve(e.target);}
-}),{threshold:.2});
-document.querySelectorAll('.wsplit,.fx,.axisline').forEach(el=>fxio.observe(el));
-document.querySelectorAll('.fx').forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+'ms'});
-
+/* fog fades in a beat after the page settles */
 setTimeout(function(){
   document.querySelectorAll('.fog').forEach(function(f){f.classList.add('lit');});
 },1200);
 
-/* ---------- pinned scene engine ---------- */
-const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* mountain parallax — purely decorative. If this never runs, the image
+   just stays at its default position: fully visible either way. */
+(function(){
+  var pic=document.querySelector('.ghats picture');
+  if(!pic||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var ticking=false;
+  function tick(){
+    var y=Math.min(window.scrollY,700);
+    pic.style.transform='translateY('+(y*0.07)+'px)';
+    ticking=false;
+  }
+  addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(tick);ticking=true;}
+  },{passive:true});
+})();
 
-/* flat word split for scroll-driven text */
-document.querySelectorAll('[data-jsplit]').forEach(el=>{
-  const walk=node=>{[...node.childNodes].forEach(n=>{
-    if(n.nodeType===3){
-      const frag=document.createDocumentFragment();
-      n.textContent.split(/(\s+)/).forEach(part=>{
-        if(!part)return;
-        if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(part));return;}
-        const w=document.createElement('span');w.className='jw';w.textContent=part;
-        frag.appendChild(w);
-      });
-      node.replaceChild(frag,n);
-    } else if(n.nodeType===1&&n.tagName!=='BR'){walk(n);}
-  });};
-  walk(el);
-});
-
-const seg=(p,a,b)=>Math.min(1,Math.max(0,(p-a)/(b-a)));
-const ease=t=>t*t*(3-2*t);
-
-function wordFill(words,p,start,end,dim){
-  const n=words.length,span=(end-start),step=span*.75/Math.max(1,n);
-  words.forEach((w,i)=>{
-    const o=ease(seg(p,start+i*step,start+i*step+span*.3));
-    w.style.opacity=(dim+(1-dim)*o);
-    w.style.transform='translateY('+((1-o)*14)+'px)';
-  });
-}
-
-const S={};
-document.querySelectorAll('.scene').forEach(sc=>{
-  S[sc.dataset.scene]={el:sc,view:sc.querySelector('.scene-view')};
-});
-const $=(k,q)=>S[k]?S[k].el.querySelector(q):null;
-const $$=(k,q)=>S[k]?[...S[k].el.querySelectorAll(q)]:[];
-
-const els={
-  gpic:$('hero','.ghats picture'), hcopy:$('hero','.hero-copy'), heroW:$$('hero','h1 .w>span'),
-  proW:$$('prologue','.jw'), proWho:$('prologue','.who'),
-  whyW:$$('why','h2 .jw'), whyL:$('why','.grid>div:first-child'),
-  eps:$$('why','.epwrap p'),
-  pppW:$$('ppp','h2 .jw'), panels:$$('ppp','.panel'),
-  edHead:$('editions','.sec-head'), axis:$('editions','.axisline'),
-  eds:$$('editions','.ed'), shots:$('editions','.shots'),
-};
-if(els.axis){els.axis.style.setProperty('transition','none');}
-
-function slide(el,p,a,b,dx,dy){
-  if(!el)return;
-  const o=ease(seg(p,a,b));
-  el.style.opacity=o;
-  el.style.transform='translate('+((1-o)*dx)+'px,'+((1-o)*dy)+'px)';
-}
-
-const draw={
-  hero(p){
-    if(els.gpic)els.gpic.style.transform='translateY('+(p*42)+'px) scale('+(1+p*.05)+')';
-    var hw=els.heroW||[],n=hw.length;
-    hw.forEach(function(s,i){
-      var f=ease(seg(p,.02+i/n*.34,.02+(i+1)/n*.34));
-      s.style.backgroundSize=(f*100)+'% 74%';
-    });
-    if(els.hcopy){
-      els.hcopy.style.transform='translateY('+(-70*ease(seg(p,.5,.9)))+'px)';
-      els.hcopy.style.opacity=1-ease(seg(p,.55,.92));
-    }
-  },
-  prologue(p){
-    wordFill(els.proW,p,.05,.85,.14);
-    slide(els.proWho,p,.72,.95,0,18);
-  },
-  why(p){
-    slide(els.whyL,p,0,.22,-40,0);
-    wordFill(els.whyW,p,.05,.4,0);
-    slide(els.eps[0],p,.28,.48,0,34);
-    slide(els.eps[1],p,.46,.66,0,34);
-    slide(els.eps[2],p,.64,.84,0,34);
-  },
-  ppp(p){
-    wordFill(els.pppW,p,.04,.3,0);
-    els.panels.forEach((pa,i)=>{
-      const o=ease(seg(p,.24+i*.2,.44+i*.2));
-      pa.style.opacity=o;
-      pa.style.transform='translateY('+((1-o)*54)+'px) scale('+(0.95+o*.05)+')';
-    });
-  },
-  editions(p){
-    slide(els.edHead,p,0,.18,0,24);
-    if(els.axis)els.axis.style.setProperty('--ax',ease(seg(p,.1,.5)));
-    if(els.axis)els.axis.querySelectorAll&&(els.axis.style.position='relative');
-    if(els.axis){const l=els.axis; l.classList.add('in'); l.style.setProperty('transform','none');}
-    if(els.axis)els.axis.style.setProperty('--noop','0');
-    if(els.axis){const line=els.axis; line.style.setProperty('--p',p);}
-    if(els.axis)els.axis.style.setProperty('opacity',1);
-    if(els.axis){/* scaleY via pseudo: use inline CSS var consumed below */}
-    slide(els.eds[0],p,.14,.36,-50,0);
-    slide(els.eds[1],p,.4,.62,50,0);
-    slide(els.shots,p,.6,.85,0,40);
-  },
-};
-
-/* axis line scaleY via CSS var */
-const st=document.createElement('style');
-st.textContent='.axisline::before{transform:scaleY(calc(var(--ax,0)))!important;transition:none!important}';
-document.head.appendChild(st);
-
-function progress(s){
-  const r=s.el.getBoundingClientRect();
-  const total=s.el.offsetHeight-innerHeight;
-  return total>0?Math.min(1,Math.max(0,-r.top/total)):1;
-}
-
-let tick=false;
-function frame(){
-  for(const k in S){ if(draw[k]) draw[k](RM?1:progress(S[k])); }
-  tick=false;
-}
-if(!RM){
-  addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(frame);tick=true;}},{passive:true});
-  addEventListener('resize',()=>{if(!tick){requestAnimationFrame(frame);tick=true;}},{passive:true});
-}
-frame();
-
-
+/* flavour spinner */
 var FLAV=[["jackfruit","\u0d1a\u0d15\u0d4d\u0d15"],["jaggery","\u0d36\u0d7c\u0d15\u0d4d\u0d15\u0d30"],["cacao nib","\u0d15\u0d4a\u0d15\u0d4d\u0d15\u0d4b"],["black pepper","\u0d15\u0d41\u0d30\u0d41\u0d2e\u0d41\u0d33\u0d15\u0d4d"],["ripe banana","\u0d2a\u0d34\u0d02"],["filter kaapi","\u0d2b\u0d3f\u0d7d\u0d1f\u0d4d\u0d1f\u0d7c \u0d15\u0d3e\u0d2a\u0d4d\u0d2a\u0d3f"],["cardamom","\u0d0f\u0d32\u0d02"],["honey","\u0d24\u0d47\u0d7b"]];
 var fi=0,sb=document.getElementById('spinBtn'),sw=document.getElementById('spinWord'),sm=document.getElementById('spinMal');
+
+function fitSpin(){
+  if(!sb)return;
+  var probe=document.createElement('span');
+  probe.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font-family:var(--head);font-weight:700;letter-spacing:-.03em;font-size:100px';
+  document.body.appendChild(probe);
+  var avail=sb.clientWidth||sb.parentElement.clientWidth, best=1e9;
+  FLAV.forEach(function(f){
+    probe.textContent='Kerala tastes like '+f[0];
+    var px=avail/(probe.offsetWidth/100);
+    if(px<best)best=px;
+  });
+  document.body.removeChild(probe);
+  sb.style.setProperty('--spin-size',Math.max(16,Math.min(best*0.97,62))+'px');
+}
+addEventListener('load',fitSpin);
+addEventListener('resize',fitSpin);
+setTimeout(fitSpin,300);
 if(sb){sb.addEventListener('click',function(){
   sw.classList.add('flip');
   setTimeout(function(){
@@ -1006,28 +816,23 @@ if(sb){sb.addEventListener('click',function(){
   },180);
 });}
 
-const dial=document.getElementById('dial'),sheet=document.getElementById('sheet'),
-      sheetX=document.getElementById('sheetX');
-const openSheet=()=>{sheet.classList.add('open');document.documentElement.classList.add('locked');if(sheetX)sheetX.focus();};
-const closeSheet=()=>{sheet.classList.remove('open');document.documentElement.classList.remove('locked');if(dial)dial.focus();};
-var dialClose=document.getElementById('dialClose');
+/* KO-02 badge + popup */
+var dial=document.getElementById('dial'),sheet=document.getElementById('sheet'),
+    sheetX=document.getElementById('sheetX'),dialClose=document.getElementById('dialClose');
+function openSheet(){sheet.classList.add('open');document.documentElement.classList.add('locked');if(sheetX)sheetX.focus();}
+function closeSheet(){sheet.classList.remove('open');document.documentElement.classList.remove('locked');if(dial)dial.focus();}
+if(dial&&sheet){
+  dial.addEventListener('click',openSheet);
+  if(sheetX)sheetX.addEventListener('click',closeSheet);
+  sheet.addEventListener('click',function(e){if(e.target===sheet)closeSheet();});
+}
 if(dialClose&&dial){
   dialClose.addEventListener('click',function(){
     dial.classList.add('hidden');dialClose.classList.add('hidden');
   });
 }
-if(dial&&sheet){
-  dial.addEventListener('click',openSheet);
-  if(sheetX)sheetX.addEventListener('click',closeSheet);
-  sheet.addEventListener('click',e=>{if(e.target===sheet)closeSheet();});
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sheet.classList.contains('open'))closeSheet();});
-
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
-}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{
-  el.style.transitionDelay=(i%5)*55+'ms';io.observe(el);
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&sheet&&sheet.classList.contains('open'))closeSheet();
 });
 </script>
 <script src="/app.js" defer></script>
