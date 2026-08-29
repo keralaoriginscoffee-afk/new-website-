@@ -375,28 +375,20 @@ body.home .hero-stamps{position:absolute;left:28px;bottom:clamp(20px,4vh,42px);z
 .ig-link:hover{color:var(--paper)}
 .ig-link svg{display:block}
 
-/* ---------- footer harvest artwork ---------- */
+/* ---------- footer harvest image ---------- */
 footer{position:relative !important;overflow:hidden !important}
 footer .wrap{position:relative;z-index:2}
-footer .footer-harvest{position:absolute;top:0;right:0;bottom:0;width:42%;z-index:1;pointer-events:none;display:flex;align-items:center;justify-content:flex-end;padding:12px 6px}
-footer .footer-harvest svg{display:block;height:100%;width:auto;max-width:100%;pointer-events:auto;cursor:pointer}
+footer .footer-harvest{position:absolute;top:0;right:0;bottom:0;display:block;pointer-events:none;z-index:1;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 100%)}
+footer .footer-harvest img{height:100%;width:auto;margin:0;display:block}
 @media(max-width:820px){
-  footer .footer-harvest{position:static;width:min(86%,400px);margin:26px auto 2px;padding:0;justify-content:center}
-  footer .footer-harvest svg{width:100%;height:auto}
+  footer{padding-bottom:0 !important}
+  footer .footer-harvest{
+    position:static;width:100%;margin:26px 0 0;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 28%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 28%);
+  }
+  footer .footer-harvest img{width:100%;height:auto}
 }
-.fh .fh-hand{transition:transform .65s cubic-bezier(.3,.7,.3,1);transform-origin:640px 260px}
-.fh:hover .fh-hand,.fh.play .fh-hand{transform:translate(16px,-7px) rotate(2deg)}
-.fh .fh-drop{transform-box:fill-box;transform-origin:center}
-.fh:hover .fh-drop,.fh.play .fh-drop{animation:fhFall .72s .18s linear forwards}
-@keyframes fhFall{0%{transform:translate(0,0) rotate(0)}30%{transform:translate(-12px,26px) rotate(40deg)}60%{transform:translate(-32px,76px) rotate(120deg)}85%{transform:translate(-50px,116px) rotate(200deg)}100%{transform:translate(-58px,130px) rotate(230deg)}}
-.fh .fh-impact{opacity:0;transform-origin:422px 438px}
-.fh:hover .fh-impact,.fh.play .fh-impact{animation:fhHit .55s .84s ease-out forwards}
-@keyframes fhHit{0%{opacity:0;transform:scale(.4)}30%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.3)}}
-.fh .fh-lf{transform-box:fill-box;transform-origin:0% 50%}
-.fh:hover .fh-lf,.fh.play .fh-lf{animation:fhSway 1.9s ease-in-out infinite alternate}
-.fh:hover .fh-lf-b,.fh.play .fh-lf-b{animation-delay:.5s;animation-duration:2.3s}
-@keyframes fhSway{to{transform:rotate(2.6deg)}}
-@media(prefers-reduced-motion:reduce){.fh *,.footer-harvest *{animation:none !important;transition:none !important}}
 
 /* ---------- floating event dial ---------- */
 .dial{
@@ -807,136 +799,10 @@ html.locked,html.locked body{overflow:hidden}
       <span>Kerala Origins</span>
     </div>
   </div>
-  <div class="footer-harvest" aria-hidden="true">
-<svg class="fh" viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
-  <path id="leafP" d="M0 0 Q60 -34 122 -2 L128 0 L122 2 Q60 34 0 0 Z"/>
-  <filter id="print" x="-8%" y="-8%" width="116%" height="116%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="4" result="warp"/>
-    <feDisplacementMap in="SourceGraphic" in2="warp" scale="5" result="rough"/>
-    <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="9" result="n"/>
-    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  .9 .9 .9 0 -1.05" result="na"/>
-    <feComposite in="na" in2="rough" operator="in" result="spk"/>
-    <feFlood flood-color="#191510" flood-opacity=".5" result="inkc"/>
-    <feComposite in="inkc" in2="spk" operator="in" result="grain"/>
-    <feMerge><feMergeNode in="rough"/><feMergeNode in="grain"/></feMerge>
-  </filter>
-</defs>
-
-<g filter="url(#print)">
-  <!-- Western Ghats contour -->
-  <g fill="none" stroke="#F1E2C0" stroke-width="2" stroke-linejoin="round" opacity=".22">
-    <path d="M4 150 Q90 98 172 126 Q252 152 330 106 Q404 66 478 108 Q548 146 628 116 Q672 100 716 118"/>
-    <path d="M56 176 Q130 146 196 164 Q266 182 336 156 Q392 136 448 152" opacity=".5"/>
-  </g>
-
-  <!-- branch -->
-  <path d="M26 120 C150 138, 300 186, 466 292" fill="none" stroke="#E7D5AF" stroke-width="7" stroke-linecap="round"/>
-  <path d="M254 204 C258 196, 262 190, 268 186" fill="none" stroke="#E7D5AF" stroke-width="4" stroke-linecap="round"/>
-  <path d="M452 288 L460 300" fill="none" stroke="#E7D5AF" stroke-width="3.5" stroke-linecap="round"/>
-
-  <!-- petioles -->
-  <g fill="none" stroke="#E7D5AF" stroke-width="3.5" stroke-linecap="round">
-    <path d="M114 122 Q118 118 124 116"/>
-    <path d="M198 156 Q203 158 208 160"/>
-    <path d="M308 206 Q314 208 320 211"/>
-    <path d="M92 172 Q95 176 98 180"/>
-    <path d="M376 246 Q381 249 386 253"/>
-    <path d="M54 116 Q50 112 46 108"/>
-  </g>
-
-  <!-- leaves -->
-  <g transform="translate(120,116) rotate(-24)"><g class="fh-lf">
-    <use href="#leafP" fill="none" stroke="#F1E2C0" stroke-width="2.4" transform="translate(4,-4)"/>
-    <use href="#leafP" fill="#0E5641"/>
-    <path d="M8 0 Q62 -2 118 0 M32 -2 Q40 -12 52 -16 M32 2 Q40 12 52 16 M62 -3 Q72 -12 84 -14 M62 3 Q72 12 84 14" fill="none" stroke="#F1E2C0" stroke-width="1.6" opacity=".8"/>
-  </g></g>
-  <g transform="translate(206,158) rotate(38)"><g class="fh-lf fh-lf-b">
-    <use href="#leafP" fill="none" stroke="#F1E2C0" stroke-width="2.4" transform="translate(4,-4)"/>
-    <use href="#leafP" fill="#0E5641"/>
-    <path d="M8 0 Q62 -2 118 0 M34 -2 Q44 -12 56 -15 M34 2 Q44 12 56 15" fill="none" stroke="#F1E2C0" stroke-width="1.6" opacity=".8"/>
-  </g></g>
-  <g transform="translate(318,210) rotate(-12) scale(1.08)"><g class="fh-lf">
-    <use href="#leafP" fill="none" stroke="#F1E2C0" stroke-width="2.4" transform="translate(4,-4)"/>
-    <use href="#leafP" fill="#0E5641"/>
-    <path d="M8 0 Q62 -2 118 0 M36 -3 Q46 -13 58 -16 M36 3 Q46 13 58 16 M68 -3 Q78 -11 90 -13" fill="none" stroke="#F1E2C0" stroke-width="1.6" opacity=".8"/>
-  </g></g>
-  <g transform="translate(96,178) rotate(74) scale(.9)"><g class="fh-lf fh-lf-b">
-    <use href="#leafP" fill="none" stroke="#F1E2C0" stroke-width="2.4" transform="translate(4,-4)"/>
-    <use href="#leafP" fill="#0E5641"/>
-    <path d="M8 0 Q62 -2 118 0" fill="none" stroke="#F1E2C0" stroke-width="1.6" opacity=".8"/>
-  </g></g>
-  <g transform="translate(384,252) rotate(46) scale(.92)"><g class="fh-lf">
-    <use href="#leafP" fill="none" stroke="#F1E2C0" stroke-width="2.4" transform="translate(4,-4)"/>
-    <use href="#leafP" fill="#0E5641"/>
-    <path d="M8 0 Q62 -2 118 0 M40 -3 Q50 -12 62 -14" fill="none" stroke="#F1E2C0" stroke-width="1.6" opacity=".8"/>
-  </g></g>
-
-  <g transform="translate(44,106) rotate(-52) scale(.62)"><g class="fh-lf fh-lf-b">
-    <use href="#leafP" fill="none" stroke="#F1E2C0" stroke-width="2.4" transform="translate(4,-4)"/>
-    <use href="#leafP" fill="#0E5641"/>
-    <path d="M8 0 Q62 -2 118 0" fill="none" stroke="#F1E2C0" stroke-width="1.8" opacity=".8"/>
-  </g></g>
-  <g>
-    <circle cx="152" cy="148" r="7.5" fill="#BE4530"/><circle cx="149" cy="145" r="2" fill="#F2B827"/>
-    <circle cx="166" cy="152" r="7" fill="#96351F"/>
-  </g>
-
-  <!-- cherry cluster A -->
-  <g>
-    <circle cx="244" cy="212" r="11" fill="#BE4530"/><circle cx="240" cy="208" r="3" fill="#F2B827"/>
-    <circle cx="266" cy="206" r="10" fill="#BE4530"/><circle cx="263" cy="202" r="2.6" fill="#F2B827"/>
-    <circle cx="256" cy="228" r="10.5" fill="#BE4530"/><circle cx="252" cy="224" r="2.8" fill="#F2B827"/>
-    <circle cx="276" cy="222" r="9" fill="#F2B827"/><circle cx="273" cy="219" r="2.4" fill="#F8E9BF"/>
-  </g>
-
-  <!-- bowl back + heap -->
-  <ellipse cx="404" cy="448" rx="98" ry="21" fill="#082B20"/>
-  <g>
-    <circle cx="366" cy="440" r="10" fill="#BE4530"/><circle cx="390" cy="435" r="10.5" fill="#96351F"/>
-    <circle cx="414" cy="439" r="10" fill="#BE4530"/><circle cx="437" cy="437" r="9.5" fill="#BE4530"/>
-    <circle cx="402" cy="428" r="9" fill="#BE4530"/><circle cx="379" cy="429" r="8.5" fill="#F2B827"/>
-    <circle cx="426" cy="428" r="8.5" fill="#96351F"/>
-  </g>
-
-  <!-- falling cherry (behind bowl front) -->
-  <g class="fh-drop">
-    <circle cx="470" cy="310" r="10.5" fill="#BE4530"/>
-    <circle cx="466" cy="306" r="2.8" fill="#F2B827"/>
-    <path d="M470 300 L465 291" stroke="#0E5641" stroke-width="2.5" stroke-linecap="round"/>
-  </g>
-
-  <!-- cluster B at the pinch -->
-  <g>
-    <circle cx="446" cy="286" r="10" fill="#BE4530"/><circle cx="442" cy="282" r="2.6" fill="#F2B827"/>
-    <circle cx="464" cy="280" r="9" fill="#96351F"/>
-    <circle cx="452" cy="300" r="9" fill="#F2B827"/><circle cx="449" cy="297" r="2.2" fill="#F8E9BF"/>
-  </g>
-
-  <!-- impact marks -->
-  <g class="fh-impact" stroke="#F2B827" stroke-width="3.5" stroke-linecap="round">
-    <path d="M412 432 L406 422"/><path d="M422 429 L422 418"/><path d="M432 432 L438 422"/>
-  </g>
-
-  <!-- bowl front -->
-  <path d="M306 448 C312 492, 354 522, 404 522 C454 522, 496 492, 502 448 C470 462, 338 462, 306 448 Z" fill="#0E5641"/>
-  <path d="M306 448 C338 462, 470 462, 502 448" fill="none" stroke="#F1E2C0" stroke-width="3"/>
-  <path d="M318 474 C354 488, 454 488, 490 474" fill="none" stroke="#F2B827" stroke-width="4" opacity=".9"/>
-  <ellipse cx="404" cy="448" rx="98" ry="21" fill="none" stroke="#F1E2C0" stroke-width="2.6"/>
-
-  <!-- hand + forearm -->
-  <g class="fh-hand">
-    <path d="M720 236 L648 250 Q622 256 614 272 Q608 292 622 302 Q638 310 662 305 L720 294 Z" fill="#EFDFBE" stroke="#0E5641" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M644 251 L636 305 M660 248 L653 307" stroke="#F2B827" stroke-width="5" stroke-linecap="round"/>
-    <path d="M620 262 Q590 252 564 260 Q548 266 546 282 Q546 300 564 306 Q590 312 612 302 Q624 292 622 276 Z" fill="#EFDFBE" stroke="#0E5641" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M552 264 Q516 268 486 288 Q476 295 480 302 Q485 308 496 304 Q524 292 554 289 Q562 278 552 264 Z" fill="#EFDFBE" stroke="#0E5641" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M556 302 Q524 306 500 316 Q490 321 494 328 Q499 334 509 330 Q536 320 562 316 Q566 307 556 302 Z" fill="#EFDFBE" stroke="#0E5641" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M566 306 Q572 318 586 318 Q596 317 598 308 M588 304 Q593 314 606 313 Q615 311 615 303" fill="none" stroke="#0E5641" stroke-width="3" stroke-linecap="round"/>
-    <path d="M516 288 Q513 293 515 298 M530 282 Q527 288 529 294" fill="none" stroke="#0E5641" stroke-width="2" opacity=".6"/>
-  </g>
-</g>
-</svg>
-  </div>
+  <picture class="footer-harvest" aria-hidden="true">
+    <source srcset="/footer-harvest.webp" type="image/webp"/>
+    <img src="/footer-harvest.png" alt="" loading="lazy" decoding="async"/>
+  </picture>
 </footer>
 
 <button class="dial" id="dial" aria-haspopup="dialog" aria-label="Edition 02 — 11 October 2026, The Cochin Club, Fort Kochi">
@@ -1044,14 +910,5 @@ document.addEventListener('keydown',function(e){
 });
 </script>
 <script src="/app.js" defer></script>
-<script>
-document.querySelectorAll('svg.fh').forEach(function(s){
-  s.addEventListener('click',function(){
-    s.classList.remove('play');void s.getBoundingClientRect();
-    requestAnimationFrame(function(){s.classList.add('play')});
-    setTimeout(function(){s.classList.remove('play')},2100);
-  });
-});
-</script>
 </body>
 </html>
