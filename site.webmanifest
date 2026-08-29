@@ -1,10 +1,10 @@
 {
   "name": "Kerala Origins",
   "short_name": "Kerala Origins",
+  "description": "Kerala's specialty coffee gathering — the people, places and processes behind the cup.",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
   ],
   "theme_color": "#0B4F3A",
   "background_color": "#F4E8CF",
