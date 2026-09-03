@@ -446,7 +446,14 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     }
     e.preventDefault();
     var btn=f.querySelector('button.send'); btn.disabled=true; btn.textContent='Sending\u2026';
-    fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+    var fd=new FormData(f);
+    /* An unticked checkbox sends nothing at all, so a declined publish-consent would
+       arrive looking identical to a missing field. State it explicitly instead. */
+    if(!fd.has('Consent to publish')) fd.append('Consent to publish','NO \u2014 do not publish this farm');
+    ['Varieties','Processing','Own steps','Looking for'].forEach(function(k){
+      if(!fd.has(k)) fd.append(k,'\u2014 none selected');
+    });
+    fetch(f.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
       .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok,data:d}; }); })
       .then(function(res){
         if(res.ok){
