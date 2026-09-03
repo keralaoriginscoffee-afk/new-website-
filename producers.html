@@ -237,9 +237,10 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     <h2 class="fx" style="margin-top:10px">Tell us about your farm.</h2>
     <p class="note fx">Take your time &mdash; the more you tell us, the better we can represent your coffee. Only the first few fields are required; leave anything you&rsquo;re unsure about blank.</p>
 
-    <form class="fx" id="prForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="fx" id="prForm" action="https://formspree.io/f/xljenzdk" method="POST">
       <!-- simple bot trap; real people never see or fill this -->
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0" />
+      <input type="hidden" name="_subject" value="New producer submission — Kerala Origins" />
 
       <fieldset>
         <legend>01 &middot; About you</legend>
@@ -254,7 +255,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
           </div>
           <div class="f">
             <label for="email">Email <span class="opt">(optional)</span></label>
-            <input type="email" id="email" name="Email" autocomplete="email" />
+            <input type="email" id="email" name="email" autocomplete="email" />
           </div>
           <div class="f">
             <label for="lang">Language you prefer <span class="ml" lang="ml">ഭാഷ</span></label>
@@ -433,8 +434,11 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 (function(){
   var f=document.getElementById('prForm'), msg=document.getElementById('prMsg');
   if(!f)return;
+  f.addEventListener('input',function(e){
+    if(e.target.getAttribute('aria-invalid')){ e.target.removeAttribute('aria-invalid'); e.target.style.outline=''; }
+  });
   f.addEventListener('submit',function(e){
-    if(f.action.indexOf('YOUR_FORM_ID')>-1){
+    if(f.action.indexOf('formspree.io/f/')<0){
       e.preventDefault();
       msg.className='msg err';
       msg.textContent='This form isn\u2019t connected yet. Please send your details on WhatsApp to +91 98475 99828 and we\u2019ll add your farm.';
@@ -443,17 +447,36 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     e.preventDefault();
     var btn=f.querySelector('button.send'); btn.disabled=true; btn.textContent='Sending\u2026';
     fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
-      .then(function(r){
-        if(r.ok){
+      .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok,data:d}; }); })
+      .then(function(res){
+        if(res.ok){
           f.reset();
           msg.className='msg ok';
           msg.textContent='Thank you \u2014 your farm details have reached us. We read every one and will be in touch.';
           msg.scrollIntoView({behavior:'smooth',block:'center'});
-        } else { throw new Error('bad response'); }
+          return;
+        }
+        /* Formspree returns per-field problems; point the grower at the exact field
+           rather than making them hunt through six sections. */
+        var errs = res.data && res.data.errors;
+        if(errs && errs.length){
+          var first=null;
+          errs.forEach(function(er){
+            var fld = er.field && f.querySelector('[name="'+er.field+'"]');
+            if(fld){ fld.setAttribute('aria-invalid','true'); fld.style.outline='3px solid var(--cherry)'; if(!first)first=fld; }
+          });
+          msg.className='msg err';
+          msg.textContent = errs.map(function(er){ return (er.field? er.field+': ':'')+er.message; }).join(' \u00b7 ');
+          (first||msg).scrollIntoView({behavior:'smooth',block:'center'});
+          if(first)first.focus({preventScroll:true});
+        } else {
+          msg.className='msg err';
+          msg.textContent='That didn\u2019t send. Please try again, or WhatsApp your details to +91 98475 99828.';
+        }
       })
       .catch(function(){
         msg.className='msg err';
-        msg.textContent='That didn\u2019t send. Please try again, or WhatsApp your details to +91 98475 99828.';
+        msg.textContent='That didn\u2019t send \u2014 your connection may have dropped. Please try again, or WhatsApp your details to +91 98475 99828.';
       })
       .finally(function(){ btn.disabled=false; btn.textContent='Send my details'; });
   });
