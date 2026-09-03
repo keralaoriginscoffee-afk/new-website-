@@ -133,14 +133,32 @@ button.send:disabled{opacity:.55;cursor:progress}
 .msg.err{display:block;background:var(--cherry);color:var(--paper)}
 @media(max-width:700px){.row{grid-template-columns:1fr;gap:0}}
 /* ---------- footer (identical on every page) ---------- */
-footer{position:relative}
+footer{position:relative;isolation:isolate}
+/* misty Ghats backdrop: wide art on desktop, tall art on mobile. The footer keeps
+   its natural height and the artwork crops to fit, anchored bottom so the coffee
+   bushes always meet the bottom edge. Soft top fade so it never hard-cuts. */
+footer::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:image-set(url("/footer-wide.webp") type("image/webp"), url("/footer-wide.jpg") type("image/jpeg"));
+  background-size:cover;background-position:center bottom;background-repeat:no-repeat;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
+          mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 100%);
+}
 footer .wrap{position:relative;z-index:2}
 footer .fnext{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--turmeric);margin-top:34px}
 footer .fbot span{font-size:11px;letter-spacing:.06em}
 footer .fgrid a.ig-link{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;margin-top:14px;text-decoration:none;text-transform:none;letter-spacing:normal}
 footer .fgrid a.ig-link:hover{opacity:.75}
 footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
-@media(max-width:820px){footer .fnext{margin-top:28px}}
+@media(max-width:820px){
+  footer .fnext{margin-top:28px}
+  footer .wrap{padding-bottom:118px}
+  footer::before{
+    background-image:image-set(url("/footer-tall.webp") type("image/webp"), url("/footer-tall.jpg") type("image/jpeg"));
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 100%);
+            mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 100%);
+  }
+}
 </style>
 </head>
 <body>
