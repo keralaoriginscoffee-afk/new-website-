@@ -1,12 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Kerala Origins — Kerala Specialty Coffee, Told from Where It Begins</title>
-<meta name="description" content="Kerala's specialty coffee gathering — growers, roasters and cuppers around traceable lots from Wayanad, Idukki and Palakkad." />
+<title>Kerala Origins — Specialty Coffee from Kerala, Grower by Grower</title>
+<meta name="description" content="Kerala specialty coffee, grower by grower — traceable lots from Wayanad, Idukki and Palakkad, the annual gathering, and support for farms going specialty." />
 <link rel="canonical" href="https://keralaoriginscoffee.com/" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta name="geo.region" content="IN-KL" />
+<meta name="geo.placename" content="Kerala, India" />
 <meta name="theme-color" content="#0B4F3A" />
 
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -19,8 +22,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kerala Origins" />
 <meta property="og:url" content="https://keralaoriginscoffee.com/" />
-<meta property="og:title" content="Kerala specialty coffee, told from where it begins." />
-<meta property="og:description" content="Kerala's specialty coffee gathering — growers, roasters and cuppers around traceable lots from Wayanad, Idukki and Palakkad." />
+<meta property="og:title" content="Kerala Origins — Specialty Coffee from Kerala, Grower by Grower" />
+<meta property="og:description" content="Kerala specialty coffee, grower by grower — traceable lots from Wayanad, Idukki and Palakkad, the annual gathering, and support for farms going specialty." />
 <meta property="og:image" content="https://keralaoriginscoffee.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -28,8 +31,8 @@
 <meta property="og:image:alt" content="Women harvesting ripe coffee cherries into cane baskets on a shaded Kerala estate" />
 <meta property="og:locale" content="en_IN" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Kerala specialty coffee, told from where it begins." />
-<meta name="twitter:description" content="Kerala's specialty coffee gathering — growers, roasters and cuppers around traceable lots from Wayanad, Idukki and Palakkad." />
+<meta name="twitter:title" content="Kerala Origins — Specialty Coffee from Kerala, Grower by Grower" />
+<meta name="twitter:description" content="Kerala specialty coffee, grower by grower — traceable lots from Wayanad, Idukki and Palakkad, the annual gathering, and support for farms going specialty." />
 <meta name="twitter:image" content="https://keralaoriginscoffee.com/og-image.jpg" />
 <meta name="twitter:image:alt" content="Women harvesting ripe coffee cherries into cane baskets on a shaded Kerala estate" />
 
@@ -45,7 +48,14 @@
       "logo": "https://keralaoriginscoffee.com/logo-green.png",
       "email": "keralaoriginscoffee@gmail.com",
       "telephone": "+919847599828",
-      "areaServed": "Kerala, India",
+      "areaServed": {
+        "@type": "State",
+        "name": "Kerala",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "India"
+        }
+      },
       "sameAs": [
         "https://www.instagram.com/keralaoriginscoffee/"
       ],
@@ -59,7 +69,26 @@
           "Malayalam"
         ]
       },
-      "description": "Kerala Origins is the annual gathering celebrating the people, places and processes that define Kerala coffee, and supports smallholder farmers taking their coffee to specialty grade with guidance, consulting, processing, roasting and sampling."
+      "description": "Kerala Origins is the home of Kerala specialty coffee: an annual gathering of growers, roasters and cuppers around traceable lots from Wayanad, Idukki and Palakkad, an open record of Kerala's coffee producers, and hands-on support — guidance, consulting, processing, roasting and sampling — for farms taking their coffee to specialty grade.",
+      "alternateName": "Kerala Origins Coffee",
+      "slogan": "Kerala coffee, told from where it begins.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Kerala, India"
+      },
+      "knowsAbout": [
+        "Kerala coffee",
+        "Indian specialty coffee",
+        "Wayanad coffee",
+        "Idukki coffee",
+        "Palakkad coffee",
+        "Robusta coffee",
+        "Arabica coffee",
+        "Coffee processing",
+        "Coffee cupping",
+        "Coffee farmer support",
+        "Western Ghats coffee"
+      ]
     },
     {
       "@type": "WebSite",
@@ -69,6 +98,25 @@
       "publisher": {
         "@id": "https://keralaoriginscoffee.com/#org"
       }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://keralaoriginscoffee.com/#farmer-support",
+      "name": "Farmer support for specialty coffee",
+      "serviceType": "Coffee farm guidance, consulting, processing, roasting and sampling",
+      "provider": {
+        "@id": "https://keralaoriginscoffee.com/#org"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Kerala"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Coffee farmers and smallholders in Kerala"
+      },
+      "description": "However small the farm, Kerala Origins works alongside growers taking their coffee to specialty grade — from harvest to cup.",
+      "url": "https://keralaoriginscoffee.com/#register"
     }
   ]
 }
@@ -629,7 +677,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
       <p>
         Kerala Origins puts that back in order. Every lot on the table is traced to
         the estate, the elevation, and the person who processed it — and that person
-        is standing next to it, answering questions.
+        is standing next to it, answering questions. <a href="/producers.html" style="color:var(--turmeric)">See the producers on record.</a>
       </p>
       <p>
         No trade stand. No panel of buyers explaining the farmer's own coffee to them.
