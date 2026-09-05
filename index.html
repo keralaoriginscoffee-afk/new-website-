@@ -536,26 +536,34 @@ html.locked,html.locked body{overflow:hidden}
 /* ---------- roasting partner ---------- */
 .partner{
   position:relative;overflow:hidden;background-color:#F4E8C0;
-  border-top:1px solid rgba(25,21,16,.12);padding:70px 0 74px;
+  border-top:1px solid rgba(25,21,16,.12);
+  padding:64px 0 68px;min-height:clamp(300px,24vw,430px);
+  display:flex;align-items:center;
 }
-/* Bermito wordmark as a watermark: bleeds off the right on desktop,
-   sits along the bottom on mobile. Text always keeps clear cream. */
+/* the Bermito wordmark fills the whole band */
 .partner::before{
   content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:image-set(url("/partner-wide.webp") type("image/webp"), url("/partner-wide.jpg") type("image/jpeg"));
-  background-repeat:no-repeat;background-position:right center;background-size:58% auto;
+  background-repeat:no-repeat;background-position:center;background-size:100% auto;
 }
-.partner .wrap{position:relative;z-index:2}
-.partner .pbox{max-width:40rem}
+/* soft cream fade over the left third so the copy sits on clean ground,
+   fully transparent by the middle — the right half of the mark stays untouched */
+/* whisper-light lift only — the wordmark stays fully readable */
+.partner::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(244,232,192,.42) 0%,rgba(244,232,192,.30) 34%,rgba(244,232,192,.10) 56%,rgba(244,232,192,0) 72%);
+}
+.partner .wrap{position:relative;z-index:2;width:100%}
+.partner .pbox{max-width:34rem}
 .partner h2{
   font-family:var(--head);font-weight:700;line-height:1.06;letter-spacing:-.02em;
-  font-size:clamp(1.35rem,2.9vw,2.05rem);color:var(--ink);max-width:18ch;
+  font-size:clamp(1.35rem,2.9vw,2.05rem);color:var(--ink);max-width:18ch;text-shadow:0 0 10px #F4E8C0,0 0 20px #F4E8C0,0 0 30px rgba(244,232,192,.9),1px 1px 0 rgba(244,232,192,.85),-1px -1px 0 rgba(244,232,192,.85);
 }
 .partner .pname{
   font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--green);margin-top:14px;
+  color:var(--ink);opacity:.82;margin-top:14px;text-shadow:0 0 10px #F4E8C0,0 0 20px #F4E8C0,0 0 30px rgba(244,232,192,.9),1px 1px 0 rgba(244,232,192,.85),-1px -1px 0 rgba(244,232,192,.85);
 }
-.partner .pdesc{font-family:var(--serif);font-size:1.05rem;line-height:1.6;color:var(--ink);margin-top:14px;max-width:46ch}
+.partner .pdesc{font-family:var(--serif);font-size:1.05rem;line-height:1.6;color:var(--ink);margin-top:14px;max-width:42ch;text-shadow:0 0 10px #F4E8C0,0 0 20px #F4E8C0,0 0 30px rgba(244,232,192,.9),1px 1px 0 rgba(244,232,192,.85),-1px -1px 0 rgba(244,232,192,.85);}
 .partner .pcta{
   display:inline-flex;align-items:center;gap:9px;margin-top:26px;
   background:var(--turmeric);color:var(--ink);border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--ink);
@@ -564,14 +572,15 @@ html.locked,html.locked body{overflow:hidden}
 }
 .partner .pcta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
 @media(max-width:820px){
-  .partner{padding:56px 0 0}
+  .partner{padding:56px 0 0;min-height:0;display:block}
+  .partner h2,.partner .pname,.partner .pdesc{text-shadow:none}
   .partner::before{
     background-image:image-set(url("/partner-square.webp") type("image/webp"), url("/partner-square.jpg") type("image/jpeg"));
     background-position:center bottom;background-size:100% auto;
   }
+  .partner::after{background:none}
   .partner .wrap{padding-bottom:34%}
-  .partner .pbox{max-width:none}
-  .partner .pdesc{max-width:none}
+  .partner .pbox,.partner .pdesc{max-width:none}
 }
 /* ---------- footer (identical on every page) ---------- */
 footer{position:relative;isolation:isolate}
