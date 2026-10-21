@@ -1,0 +1,75 @@
+KERALA ORIGINS JOURNAL — IMAGE CREDITS
+Sources and licences checked: 21 October 2026
+
+These photographs are openly licensed, not public-domain or copyright-free.
+All three source works are offered under Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+Licence: https://creativecommons.org/licenses/by-sa/4.0/
+Legal code: https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+
+Keep the photographer attribution, source links, licence links and change
+notices when reusing these files. Image adaptations must remain under the
+same licence. Use does not imply endorsement by any photographer. The
+licence applies to these images, not to the website's separate code,
+branding or article text merely because the images appear alongside them.
+
+1. WAYANAD COFFEE
+Creator / credit: Nrr1729
+Work title: Wayanad coffee
+Photographed: 29 November 2020
+Source: https://commons.wikimedia.org/wiki/File:Wayanad_coffee.jpg
+Creator: https://commons.wikimedia.org/wiki/User:Nrr1729
+Licence: https://creativecommons.org/licenses/by-sa/4.0/
+Downloaded rendition:
+https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wayanad_coffee.jpg/1280px-Wayanad_coffee.jpg
+Website files:
+  wayanad-coffee.jpg
+  wayanad-coffee.webp
+  wayanad-coffee-720.webp
+  kerala-coffee-guide-social.jpg
+Changes: resized and compressed; WebP versions converted from JPEG.
+The social image is centre-cropped to 1200 x 630. The journal card and
+article hero also crop the image in display using CSS. No AI retouching.
+These image versions/adaptations are licensed under CC BY-SA 4.0.
+
+2. WAYANAD-WUS06247
+Creator / credit: Rainer Halama
+Work title: Wayanad-WUS06247
+Photographed: 15 March 2025
+Source: https://commons.wikimedia.org/wiki/File:Wayanad-WUS06247.jpg
+Creator: https://commons.wikimedia.org/wiki/User:Rainer_Halama
+Licence: https://creativecommons.org/licenses/by-sa/4.0/
+Downloaded rendition:
+https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Wayanad-WUS06247.jpg/1280px-Wayanad-WUS06247.jpg
+Website files:
+  wayanad-kalpetta.jpg
+  wayanad-kalpetta.webp
+  wayanad-kalpetta-720.webp
+Changes: resized and compressed; WebP versions converted from JPEG.
+No content changes or AI retouching.
+These image versions/adaptations are licensed under CC BY-SA 4.0.
+Context: coffee plants near Kalpetta, Wayanad. Not a photograph of
+Krishnagiri Estate or another featured producer's identified farm.
+
+3. TEA ESTATE LANDSCAPES AT NELLIYAMPATHY
+Creator / credit: Abhijithgangadharan
+Work title: Tea Estate Landscapes at Nelliyampathy
+Photographed: 28 August 2022
+Source: https://commons.wikimedia.org/wiki/File:Tea_Estate_Landscapes_at_Nelliyampathy.jpg
+Creator: https://commons.wikimedia.org/wiki/User:Abhijithgangadharan
+Licence: https://creativecommons.org/licenses/by-sa/4.0/
+Downloaded rendition:
+https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Tea_Estate_Landscapes_at_Nelliyampathy.jpg/1280px-Tea_Estate_Landscapes_at_Nelliyampathy.jpg
+Website files:
+  nelliyampathy-landscape.jpg
+  nelliyampathy-landscape.webp
+  nelliyampathy-landscape-720.webp
+Changes: resized and compressed; WebP versions converted from JPEG.
+No content changes or AI retouching.
+These image versions/adaptations are licensed under CC BY-SA 4.0.
+Context: a TEA-growing landscape illustrating the wider Nelliyampathy
+region, not a photograph of Poabs' coffee plots or an identified farm.
+
+Editorial note: None of the images documents a Kerala Origins farm visit.
+The surrounding article and captions do not identify photographed farms
+as named participating producers or imply that photographers endorse us.

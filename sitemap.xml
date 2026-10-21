@@ -141,4 +141,21 @@
     <loc>https://www.keralaoriginscoffee.com/contact.html</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
+  <url>
+    <loc>https://www.keralaoriginscoffee.com/journal.html</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.keralaoriginscoffee.com/kerala-specialty-coffee-regions-producers.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <image:image>
+      <image:loc>https://www.keralaoriginscoffee.com/assets/journal/wayanad-coffee.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.keralaoriginscoffee.com/assets/journal/wayanad-kalpetta.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.keralaoriginscoffee.com/assets/journal/nelliyampathy-landscape.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
