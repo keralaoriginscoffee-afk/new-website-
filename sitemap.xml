@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.keralaoriginscoffee.com/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/our-story.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/why-we-exist.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/producers.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/farmers.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/events.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/kochi-2026.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <image:image>
       <image:loc>https://www.keralaoriginscoffee.com/assets/kochi-2026/photo-01.webp</image:loc>
     </image:image>
@@ -90,7 +90,7 @@
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/kozhikode-2026.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <image:image>
       <image:loc>https://www.keralaoriginscoffee.com/e01-1.webp</image:loc>
     </image:image>
@@ -139,15 +139,15 @@
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/contact.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/journal.html</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.keralaoriginscoffee.com/kerala-specialty-coffee-regions-producers.html</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <image:image>
       <image:loc>https://www.keralaoriginscoffee.com/assets/journal/wayanad-coffee.jpg</image:loc>
     </image:image>
@@ -157,5 +157,9 @@
     <image:image>
       <image:loc>https://www.keralaoriginscoffee.com/assets/journal/nelliyampathy-landscape.jpg</image:loc>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.keralaoriginscoffee.com/kozhikode-coffee-weekend-2026.html</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
 </urlset>

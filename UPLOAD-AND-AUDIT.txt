@@ -1,0 +1,83 @@
+KERALA ORIGINS — COMMUNITY AND JOURNAL UPDATE
+Prepared 13 November 2026
+
+This ZIP contains 16 new or changed website files and this note. It is an update
+to the existing keralaoriginscoffee.com website, not a complete replacement site.
+The baseline was downloaded from the live site on 13 November 2026. The older
+attached Index.txt was reviewed but was not used to overwrite the newer live site.
+
+MANUAL UPLOAD
+1. Extract the ZIP on your computer. Keep a backup of the existing website files.
+2. Open the GitHub repository that serves keralaoriginscoffee.com. Use the same
+   website directory that already contains index.html, styles.css and app.js.
+3. Upload the 16 website files from this ZIP into that directory, replacing files
+   with the same names. Add kozhikode-coffee-weekend-2026.html as a new file.
+4. Leave existing images, assets, hosting settings and other files in place.
+   UPLOAD-AND-AUDIT.txt is a handover note; it need not be uploaded to the site.
+5. Commit the upload and let the existing hosting deployment finish.
+6. Open the homepage, Journal, new article and Our Story. Refresh the page if an
+   older cached copy appears. Updated CSS/JS references use v=20261113.
+
+No live publication or GitHub changes were made during this task.
+
+AUDIT FINDINGS AND CHANGES
+- The live homepage, Our Story, FAQ, producer directory, older guide and event
+  archives contained founder/ownership wording. Founder cards and titles were
+  removed, including founder properties in structured data.
+- Our Story now explains a shared community purpose. One paragraph acknowledges
+  Wajid K.V., Ephrem Joseph, Moideen Kalladi and Nihal Parambath through their
+  contributions. Producers retain their natural farm credits in the directory.
+- Bermito is credited for roasting, sample evaluation, cupping and collaboration.
+  The website does not present Kerala Origins as its subsidiary or commercial
+  property, or claim a legal society registration that has not been supplied.
+- Journal previously existed but was only linked from the footer. It now has a
+  visible header shortcut and main-menu entry on every page, plus a homepage
+  feature. Events stays out of the main menu and remains available in the footer.
+- Added the full November coffee-weekend article with source links, reading
+  contents, BlogPosting/Breadcrumb metadata and its sitemap entry. The existing
+  Kerala regions/producers guide is retained and its community wording updated.
+- The new article covers the wider community from Kerala and Bengaluru, festival
+  programmes, cafe collaborations, NAS x Jaseem, Wayanad espresso and pumpkin
+  coffee. Public programme details and team-supplied accounts are distinguished
+  in the article's sourcing note. No results, recipes or attendance were invented.
+- Automatic video, parallax, ticker animation, reveal effects and pause/resume
+  controls were removed. Existing video posters provide static backgrounds.
+- The contact bus illustration links to contact options without horn audio or
+  motion. An obsolete hidden ticket link was removed from keyboard navigation.
+- Menu focus handling, Escape, gallery controls and producer filters are retained.
+- Existing green/paper palette, typography, branding and photo galleries retained.
+
+VALIDATION
+- 12 HTML pages: one H1, title, meta description and canonical each.
+- 12 JSON-LD blocks parse; no founder properties remain.
+- 677 internal references, 148 fragments, 115 srcset references and 62 inline CSS
+  asset references resolve in the prepared site.
+- Three inline scripts and two JavaScript files pass syntax checks.
+- No duplicate HTML IDs. Sitemap includes all 12 pages.
+- Desktop homepage, Journal and article reviewed in browser preview.
+- Mobile layouts reviewed at a 390px frame width (375px content viewport) for
+  homepage, community story, article, contact and producer pages; no horizontal
+  overflow observed in those checks. Seven-item mobile menu fits and is usable.
+- Producer filter, gallery Next and Escape/close exercised in preview.
+- All 20 Kochi gallery photos remain in their original order. Homepage first three
+  remain unchanged. All 40 Kochi full-size/thumbnail assets match the live baseline.
+- No real form submission was sent; inbox delivery/Formspree account status was
+  not tested. Existing endpoint and consent behaviour were preserved.
+
+WEBSITE FILES IN THIS ZIP
+app.js
+contact.html
+events.html
+farmers.html
+index.html
+journal.css
+journal.html
+kerala-specialty-coffee-regions-producers.html
+kochi-2026.html
+kozhikode-2026.html
+kozhikode-coffee-weekend-2026.html
+our-story.html
+producers.html
+sitemap.xml
+styles.css
+why-we-exist.html

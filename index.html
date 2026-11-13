@@ -36,8 +36,7 @@
 <meta name="twitter:image" content="https://www.keralaoriginscoffee.com/og-image.jpg" />
 <meta name="twitter:image:alt" content="Women harvesting ripe coffee cherries into cane baskets on a shaded Kerala estate" />
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -61,7 +60,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "contactType": "customer support",
+        "contactType": "Producer and community enquiries",
         "email": "keralaoriginscoffee@gmail.com",
         "telephone": "+919847599828",
         "availableLanguage": [
@@ -69,13 +68,9 @@
           "Malayalam"
         ]
       },
-      "description": "Kerala Origins is a joint initiative for Kerala specialty coffee, founded on 25 June 2026. It brings together producers, roasters, brewers and buyers through coffee showcases, a producer directory and practical producer support.",
+      "description": "Kerala Origins is a community movement for Kerala specialty coffee. It connects producers, roasters, brewers and buyers through shared learning, coffee showcases and practical producer support.",
       "alternateName": "Kerala Origins Coffee",
       "slogan": "Kerala coffee, told from where it begins.",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "Kerala, India"
-      },
       "knowsAbout": [
         "Kerala coffee",
         "Indian specialty coffee",
@@ -88,46 +83,6 @@
         "Coffee cupping",
         "Coffee farmer support",
         "Western Ghats coffee"
-      ],
-      "foundingDate": "2026-06-25",
-      "founder": [
-        {
-          "@type": "Person",
-          "@id": "https://www.keralaoriginscoffee.com/our-story.html#vajid-kaitha-valappil",
-          "name": "Vajid Kaitha Valappil",
-          "affiliation": {
-            "@type": "Organization",
-            "name": "Bermito Coffee Roasters",
-            "url": "https://bermito.com/"
-          }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://www.keralaoriginscoffee.com/our-story.html#ephrem-joseph",
-          "name": "Ephrem Joseph",
-          "affiliation": {
-            "@type": "Organization",
-            "name": "Terra Vagamon Conservancy"
-          }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://www.keralaoriginscoffee.com/our-story.html#moideen-kalladi",
-          "name": "Moideen Kalladi",
-          "affiliation": {
-            "@type": "Organization",
-            "name": "Silent Valley Estate"
-          }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://www.keralaoriginscoffee.com/our-story.html#nihal-parambath",
-          "name": "Nihal Parambath",
-          "affiliation": {
-            "@type": "Organization",
-            "name": "On Ground Farm"
-          }
-        }
       ]
     },
     {
@@ -159,8 +114,7 @@
       "url": "https://www.keralaoriginscoffee.com/farmers.html"
     }
   ]
-}
-</script>
+}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -670,8 +624,11 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
             mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 100%);
   }
 }
+.ko-journal-home{padding:80px 0;background:var(--paper-warm)}
+.ko-journal-home h2{font-family:var(--head);font-size:clamp(2.2rem,5vw,4rem);line-height:1.08;letter-spacing:-.035em;margin:18px 0}
+.ko-journal-home p{max-width:64ch}.ko-journal-home-date{font-size:.82rem;color:var(--muted);margin-top:16px}
 </style>
-<link rel="stylesheet" href="/styles.css?v=20261014" />
+<link rel="stylesheet" href="/styles.css?v=20261113" />
 <noscript><style>.fx{opacity:1 !important;transform:none !important}.loader{display:none !important}</style></noscript>
 <link rel="stylesheet" href="/events.css" />
 </head>
@@ -680,6 +637,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 <nav class="nav">
   <div class="wrap">
     <a href="/"><img height="38" width="144" src="/logo-green.png" srcset="/logo-green.png 1x, /logo-green@2x.png 2x, /logo-green@3x.png 3x" alt="Kerala Origins" /></a>
+    <a class="ko-journal-shortcut" href="/journal.html">Journal</a>
     <button type="button" class="menu-btn" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false">Menu</button>
   </div>
 </nav>
@@ -695,14 +653,15 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     <img height="38" width="144" src="/logo-paper.png" alt="Kerala Origins" />
     <button type="button" class="menu-x">Close</button>
   </div>
-  <nav class="menu-links">
+  <nav class="menu-links" aria-label="Main navigation">
     <a href="/" aria-current="page"><span class="no">01</span>Home<span class="m" lang="ml">തുടക്കം</span></a>
     <a href="/why-we-exist.html"><span class="no">02</span>Why We Exist<span class="m" lang="ml">എന്തിന്</span></a>
     <a href="/our-story.html"><span class="no">03</span>Our Story<span class="m" lang="ml">കഥ</span></a>
     <a href="/farmers.html"><span class="no">04</span>For Producers<span class="m" lang="ml">കർഷകർ</span></a>
     <a href="/producers.html"><span class="no">05</span>Producers<span class="m" lang="ml">ഉത്പാദകർ</span></a>
     <a href="/contact.html"><span class="no">06</span>Contact<span class="m" lang="ml">ബന്ധപ്പെടുക</span></a>
-  </nav>
+      <a href="/journal.html"><span class="no">07</span>Journal<span class="m" lang="ml">വായന</span></a>
+</nav>
   
 </div>
 
@@ -737,9 +696,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 <div class="ticker t-turmeric" aria-hidden="true"><div class="ticker-track"><span>Kaapi</span><span class="m" lang="ml">കാപ്പി</span><span>&#10041;</span><span>Wayanad</span><span>&#10041;</span><span>Idukki</span><span>&#10041;</span><span>Palakkad</span><span>&#10041;</span><span class="m" lang="ml">കേരളത്തിന്റെ കാപ്പിക്കഥകൾ</span><span>&#10041;</span></div></div>
 
 <section class="prologue" id="prologue">
-  <video class="pro-vid" muted loop playsinline preload="none" data-background-video poster="/prologue-poster.jpg" aria-hidden="true">
-    <source src="/prologue.mp4" type="video/mp4" />
-  </video>
+  <img class="pro-vid" src="/prologue-poster.jpg" alt="" aria-hidden="true" decoding="async" />
   <div class="pro-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <blockquote class="fx">&ldquo;Here, in these hills, every harvest leaves a story &mdash; and the people who grow it <em>help us understand the cup.</em>&rdquo;</blockquote>
@@ -759,10 +716,10 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
       <p class="mal" lang="ml" style="margin-top:14px">വളരുന്നത് ഇവിടെ</p>
     </div>
     <div class="fx">
-      <p class="first">Kerala coffee deserves to be recognised for the places it comes from and the people who grow it. Our founders came together around that belief: there is more to discover in these coffees, and more value to build with their producers.</p>
-      <p>Founded on <time datetime="2026-06-25">25 June 2026</time>, Kerala Origins is a joint initiative of Bermito Coffee Roasters, Terra Vagamon Conservancy, Silent Valley Estate and On Ground Farm. Roasting experience and producer knowledge meet around the same table.</p>
+      <p class="first">Kerala coffee deserves to be recognised for the places it comes from and the people who grow it. Our community works towards that recognition through shared learning, practical support and opportunities to taste Kerala-grown coffees.</p>
+      <p>Kerala Origins brings growers, roasters, brewers and coffee drinkers around the same table. Producer knowledge and roasting experience help us understand each coffee and share its story with care.</p>
       <p>Through practical support, open conversations and showcases in Kochi and Kozhikode, we connect growers with roasters, brewers and buyers. Our ambition is to bring Kerala coffee to wider audiences across India and internationally.</p>
-      <p><a class="ko-text-link" href="/our-story.html">Meet the four co-founders and read our story →</a></p>
+      <p><a class="ko-text-link" href="/our-story.html">Explore our shared purpose →</a></p>
     </div>
   </div>
 </section>
@@ -857,12 +814,20 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
   </div>
 </section>
 
+<section class="ko-journal-home" aria-labelledby="journalHomeTitle"><div class="wrap">
+<p class="eyebrow">From the journal · Community &amp; coffee culture</p>
+<h2 id="journalHomeTitle">A shared love for coffee.</h2>
+<p>A weekend in Kozhikode brought visitors from across Kerala and Bengaluru together around a festival, café collaborations and Kerala-grown coffee.</p>
+<p class="ko-journal-home-date">7–8 November 2026 · A look back</p>
+<div class="cta-row"><a class="btn" href="/kozhikode-coffee-weekend-2026.html">Read the weekend story</a><a class="btn ghost" href="/journal.html">Explore the journal</a></div>
+</div></section>
+
 <section class="partner" id="roasting-partner" aria-labelledby="partnerH">
   <div class="wrap fx">
     <div class="pbox">
-      <h2 id="partnerH">Bermito, from the beginning.</h2>
+      <h2 id="partnerH">Roasting as part of the shared work.</h2>
       <p class="pname"><a class="pig" href="https://www.instagram.com/bermitoindia/" target="_blank" rel="noopener">Bermito Coffee Roasters</a> &middot; Kozhikode, Kerala</p>
-      <p class="pdesc">Bermito Coffee Roasters helped found Kerala Origins alongside three producer co-founders. Its contribution brings sample roasting, roast development and cupping to the shared work of understanding Kerala-grown coffees. Growers bring the knowledge of their farms; the roasting table opens another part of the conversation.</p>
+      <p class="pdesc">Bermito Coffee Roasters contributes sample roasting, roast development and cupping alongside the knowledge of participating producers. Tasting together helps us understand Kerala-grown coffees, discuss their potential and prepare them for new audiences.</p>
       <a class="pcta" href="https://bermito.com/pages/roastery" target="_blank" rel="noopener">Explore Bermito’s roasting work <span aria-hidden="true">&#8599;</span></a>
     </div>
   </div>
@@ -909,28 +874,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
    .slider classes above. Nothing below can hide page content — each
    piece only adds a class or a value, never sets opacity:0 on load. ---- */
 
-/* fog fades in a beat after the page settles */
-setTimeout(function(){
-  document.querySelectorAll('.fog').forEach(function(f){f.classList.add('lit');});
-},1200);
-
-/* mountain parallax — purely decorative. If this never runs, the image
-   just stays at its default position: fully visible either way. */
-(function(){
-  var pic=document.querySelector('.ghats picture');
-  if(!pic||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var ticking=false;
-  function tick(){
-    var y=Math.min(window.scrollY,700);
-    pic.style.transform='translateY('+(y*0.07)+'px)';
-    ticking=false;
-  }
-  addEventListener('scroll',function(){
-    if(!ticking){requestAnimationFrame(tick);ticking=true;}
-  },{passive:true});
-})();
-
-/* flavour spinner */
+/* User-operated flavour selector. */
 var FLAV=[["jackfruit","\u0d1a\u0d15\u0d4d\u0d15"],["jaggery","\u0d36\u0d7c\u0d15\u0d4d\u0d15\u0d30"],["cacao nib","\u0d15\u0d4a\u0d15\u0d4d\u0d15\u0d4b"],["black pepper","\u0d15\u0d41\u0d30\u0d41\u0d2e\u0d41\u0d33\u0d15\u0d4d"],["ripe banana","\u0d2a\u0d34\u0d02"],["filter kaapi","\u0d2b\u0d3f\u0d7d\u0d1f\u0d4d\u0d1f\u0d7c \u0d15\u0d3e\u0d2a\u0d4d\u0d2a\u0d3f"],["cardamom","\u0d0f\u0d32\u0d02"],["honey","\u0d24\u0d47\u0d7b"]];
 var fi=0,sb=document.getElementById('spinBtn'),sw=document.getElementById('spinWord'),sm=document.getElementById('spinMal');
 
@@ -952,16 +896,14 @@ addEventListener('load',fitSpin);
 addEventListener('resize',fitSpin);
 setTimeout(fitSpin,300);
 if(sb){sb.addEventListener('click',function(){
-  sw.classList.add('flip');
-  setTimeout(function(){
+
     fi=(fi+1+Math.floor(Math.random()*(FLAV.length-1)))%FLAV.length;
     sw.textContent=FLAV[fi][0]; sm.textContent=FLAV[fi][1];
-    sw.classList.remove('flip');
-  },180);
+
 });}
 
 </script>
-<script src="/app.js?v=20261014" defer></script>
-<script src="/events.js?v=20261014" defer></script>
+<script src="/app.js?v=20261113" defer></script>
+<script src="/events.js?v=20261113" defer></script>
 </body>
 </html>

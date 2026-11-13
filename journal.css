@@ -223,3 +223,27 @@
   .j-article-ending .j-button { display: none; }
   .j-inline-photo { break-inside: avoid; }
 }
+
+/* A static typographic treatment for the November community feature. */
+.ko-journal *, .ko-journal *::before, .ko-journal *::after { animation: none!important; transition: none!important; scroll-behavior: auto!important; }
+.j-weekend-art { display:flex; flex-direction:column; justify-content:space-between; gap:40px; min-height:475px; padding:36px; background:var(--green); color:var(--paper)!important; text-decoration:none; border:1px solid var(--green); }
+.j-weekend-art:hover { text-decoration:none; }
+.j-weekend-kicker, .j-weekend-date { font:700 11px/1.6 var(--body); letter-spacing:.11em; text-transform:uppercase; }
+.j-weekend-date { border-top:1px solid rgba(244,232,207,.4); padding-top:18px; }
+.j-weekend-word { font:700 clamp(3.5rem,6.4vw,5.4rem)/.98 var(--head); letter-spacing:-.055em; }
+.j-weekend-word em { font-style:normal; color:var(--turmeric); }
+.j-weekend-feature h2 { font-size:clamp(2.1rem,3.6vw,3.1rem); }
+.ko-weekend .j-article-title { max-width:22ch; }
+.ko-weekend .j-article-deck { max-width:55ch; }
+.j-weekend-context { padding-block:18px; border-block:1px solid rgba(11,79,58,.35); }
+.j-weekend-context p { color:var(--green); font:600 12px/1.8 var(--body); }
+.ko-weekend .j-sources li { overflow-wrap:anywhere; }
+@media(max-width:760px) {
+ .j-weekend-art { min-height:360px; gap:28px; padding:28px; }
+ .j-weekend-word { font-size:clamp(3.2rem,14vw,5rem); }
+ .ko-weekend .j-article-title { font-size:clamp(2.6rem,9.2vw,4.4rem); max-width:22ch; }
+ .ko-weekend .j-toc ol { grid-template-columns:1fr; }
+ .ko-weekend .j-toc a { min-height:44px; display:flex; align-items:center; }
+}
+
+.j-button span[aria-hidden="true"]{font-family:Arial,sans-serif}

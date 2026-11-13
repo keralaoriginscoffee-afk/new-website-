@@ -33,8 +33,7 @@
 <meta name="twitter:image" content="https://www.keralaoriginscoffee.com/og-image.jpg" />
 <meta name="twitter:image:alt" content="Women harvesting ripe coffee cherries into cane baskets on a shaded Kerala estate" />
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -69,13 +68,12 @@
       ]
     }
   ]
-}
-</script>
+}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/styles.css?v=20261014" />
+<link rel="stylesheet" href="/styles.css?v=20261113" />
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -152,7 +150,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
   }
 }
 
-/* Mission: distinct from the founding story, with practical public principles. */
+/* Mission: community purpose, with practical public principles. */
 .fp-hero h1 .alt{color:var(--turmeric);-webkit-text-stroke:0}
 .mission-lead{max-width:55ch;margin-top:26px;font-family:var(--serif);font-size:clamp(1.08rem,2vw,1.3rem)}
 .mission-columns{display:grid;grid-template-columns:1fr 1fr;gap:36px 64px}
@@ -182,6 +180,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 <nav class="nav">
   <div class="wrap">
     <a href="/"><img height="38" width="144" src="/logo-green.png" srcset="/logo-green.png 1x, /logo-green@2x.png 2x" alt="Kerala Origins" /></a>
+    <a class="ko-journal-shortcut" href="/journal.html">Journal</a>
     <button type="button" class="menu-btn" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false">Menu</button>
   </div>
 </nav>
@@ -197,22 +196,21 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     <img height="38" width="144" src="/logo-paper.png" alt="Kerala Origins" />
     <button type="button" class="menu-x">Close</button>
   </div>
-  <nav class="menu-links">
+  <nav class="menu-links" aria-label="Main navigation">
     <a href="/"><span class="no">01</span>Home<span class="m" lang="ml">തുടക്കം</span></a>
     <a href="/why-we-exist.html" aria-current="page"><span class="no">02</span>Why We Exist<span class="m" lang="ml">എന്തിന്</span></a>
     <a href="/our-story.html"><span class="no">03</span>Our Story<span class="m" lang="ml">കഥ</span></a>
     <a href="/farmers.html"><span class="no">04</span>For Producers<span class="m" lang="ml">കർഷകർ</span></a>
     <a href="/producers.html"><span class="no">05</span>Producers<span class="m" lang="ml">ഉത്പാദകർ</span></a>
     <a href="/contact.html"><span class="no">06</span>Contact<span class="m" lang="ml">ബന്ധപ്പെടുക</span></a>
-  </nav>
+      <a href="/journal.html"><span class="no">07</span>Journal<span class="m" lang="ml">വായന</span></a>
+</nav>
   
 </div>
 
 <main id="main-content">
 <header class="page-hero fp-hero grain">
-  <video class="fp-vid" muted loop playsinline preload="none" poster="/why-hero-poster.jpg" aria-hidden="true" data-motion-video>
-    <source src="/why-hero.mp4" type="video/mp4" />
-  </video>
+  <img class="fp-vid" src="/why-hero-poster.jpg" alt="" aria-hidden="true" decoding="async" />
   <div class="fp-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <p class="kicker fx">A movement for Kerala specialty coffee</p>
@@ -273,7 +271,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
       <div class="fx"><dt>Credit the source</dt><dd>Farm, location and processing information comes from producers unless another source is identified. Details that are not yet available are left open rather than filled in.</dd></div>
       <div class="fx"><dt>Describe the actual lot</dt><dd>A processing method or tasting note belongs to a particular coffee. It should not automatically describe every coffee a farm grows.</dd></div>
       <div class="fx"><dt>Keep tasting in context</dt><dd>If a score or assessment is published, its source and context should be stated. Being listed or showcased is not a certification or a guaranteed grade.</dd></div>
-      <div class="fx"><dt>Make relationships visible</dt><dd>Founders, participating producers, roasters and event partners have different roles. We credit those roles and welcome corrections from the people involved.</dd></div>
+      <div class="fx"><dt>Make relationships visible</dt><dd>Participating producers, roasters, brewers and event collaborators bring different contributions. We credit those roles and welcome corrections from the people involved.</dd></div>
     </dl>
     <p class="fx"><a href="/contact.html">Send a correction or ask about a coffee &rarr;</a></p>
   </div>
@@ -283,7 +281,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
   <div class="wrap fx">
     <p class="kicker" style="color:var(--turmeric)">The purpose we share</p>
     <h2>More value for the work. <em>More recognition for the origin.</em></h2>
-    <p class="mission-close">Kerala Origins is a joint initiative built by Bermito Coffee Roasters and producer co-founders. Discover the people behind it, or tell us how you would like to take part.</p>
+    <p class="mission-close">Kerala Origins is built through cooperation between producers, roasters, brewers and coffee drinkers. Explore our shared purpose, or tell us how you would like to take part.</p>
     <div class="mission-actions">
       <a class="btn-max" href="/our-story.html">Read our story &rarr;</a>
       <a href="/producers.html#submit">Introduce your farm &rarr;</a>
@@ -323,7 +321,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     </div>
   </div>
 </footer>
-<script src="/app.js?v=20261014" defer></script>
-<script src="/events.js?v=20261014" defer></script>
+<script src="/app.js?v=20261113" defer></script>
+<script src="/events.js?v=20261113" defer></script>
 </body>
 </html>
