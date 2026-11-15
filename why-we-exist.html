@@ -73,7 +73,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/styles.css?v=20261113" />
+<link rel="stylesheet" href="/styles.css?v=20261113-visual2" />
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -170,7 +170,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 .skip-link{position:absolute;left:16px;top:-100px;z-index:10000;background:var(--paper);color:var(--ink);padding:12px 18px;border:2px solid var(--ink)}
 .skip-link:focus{top:12px}
 @media(max-width:700px){.mission-columns,.transparency-grid{grid-template-columns:1fr}.act,.interval{padding:60px 0}.mission-columns{gap:12px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fp-vid{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fp-vid{display:block}}
 </style>
 <noscript><style>.fx{opacity:1 !important;transform:none !important}.loader{display:none !important}</style></noscript>
 <link rel="stylesheet" href="/events.css" />
@@ -209,8 +209,9 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 </div>
 
 <main id="main-content">
-<header class="page-hero fp-hero grain">
-  <img class="fp-vid" src="/why-hero-poster.jpg" alt="" aria-hidden="true" decoding="async" />
+<header class="page-hero fp-hero grain ko-film-section">
+  <video id="ko-why-film" class="fp-vid" muted playsinline controls preload="none" poster="/why-hero-poster.jpg" aria-label="Coffee growing in Kerala" data-background-video><source src="/why-hero.mp4" type="video/mp4" /></video>
+  <button type="button" class="ko-film-toggle" aria-controls="ko-why-film" data-play-label="Play film" hidden>Play film</button>
   <div class="fp-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <p class="kicker fx">A movement for Kerala specialty coffee</p>
@@ -321,7 +322,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     </div>
   </div>
 </footer>
-<script src="/app.js?v=20261113" defer></script>
-<script src="/events.js?v=20261113" defer></script>
+<script src="/app.js?v=20261113-visual2" defer></script>
+<script src="/events.js?v=20261113-visual2" defer></script>
 </body>
 </html>

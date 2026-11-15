@@ -1,0 +1,72 @@
+KERALA ORIGINS — VISUAL REPAIR UPDATE
+13 November 2026
+
+WHAT THIS ZIP CONTAINS
+14 changed website files, plus this guide. This is an update for the current
+Kerala Origins website with the Community / Journal update already installed.
+It is not a complete website backup. No files need to be deleted.
+
+UPLOAD TO GITHUB
+1. Extract this ZIP on your computer.
+2. Open the Kerala Origins website repository and the folder containing
+   index.html, styles.css and app.js.
+3. Upload all 14 website files from this ZIP into that same folder, replacing
+   their existing versions. Keep the filenames unchanged. Do not upload the
+   ZIP itself or create a new enclosing folder. This guide need not be uploaded.
+4. Keep all other website files, folders, photos, fonts, posters and videos.
+   In particular, retain prologue.mp4 and why-hero.mp4. These existing live
+   assets are deliberately not duplicated in the update.
+5. Commit the upload. If hosting is connected to GitHub, let its normal
+   deployment finish. Otherwise use your existing publishing process.
+6. Open the homepage and refresh once. Check the Journal link, event galleries
+   and Play film buttons. The updated asset version on all 12 HTML pages helps
+   browsers load the repaired CSS and JavaScript.
+
+WHAT WAS REPAIRED
+- Desktop headline alignment, hero proportions and mountain visibility.
+- Mobile header, buttons, spacing and hero image placement.
+- Static decorative artwork, including the menu hornbill and footer stars.
+- Both homepage galleries: 20 Kochi photos and 15 Kozhikode photos, in the
+  original archive order. The first three Kochi photos remain first.
+- Natural photo proportions, manual gallery controls and enlarged photo views.
+- Original event posters, clearly labelled as closed registrations.
+- Both original films, with Play / Pause / Replay controls. No autoplay or loop.
+- Bermito heading wrapping and artwork placement.
+- Compact static ticker strips and sticky-header anchor offsets.
+
+CONTENT PRESERVED
+The approved community wording, natural contributor credits, producer pages,
+blogs, SEO metadata and structured data remain. Journal remains visible in the
+header and menu; Events remains a footer navigation link. Completed events and
+closed registrations remain labelled accordingly.
+
+VALIDATION COMPLETED
+- Desktop and responsive mobile / tablet browser checks, including narrow
+  320px and 375px frames, a 768px frame and a desktop viewport.
+- Gallery arrows, enlarged-photo navigation and Escape-to-close.
+- Mobile menu opening / closing and manual video playback.
+- All 12 HTML pages checked for internal asset references, fragment targets,
+  duplicate IDs, ARIA references, metadata and valid JSON-LD.
+- All 35 homepage photos verified against archive order; responsive image
+  declarations checked against the image dimensions.
+- JavaScript syntax checked; ZIP integrity and packaged file bytes verified.
+
+No blocking issues were found in these checks. This does not certify every
+browser or third-party service. No enquiry was submitted, and email delivery
+was not tested. Nothing has been published or changed in your GitHub account.
+
+FILES TO UPLOAD
+app.js
+contact.html
+events.html
+farmers.html
+index.html
+journal.html
+kerala-specialty-coffee-regions-producers.html
+kochi-2026.html
+kozhikode-2026.html
+kozhikode-coffee-weekend-2026.html
+our-story.html
+producers.html
+styles.css
+why-we-exist.html
