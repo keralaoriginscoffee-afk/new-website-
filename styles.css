@@ -241,7 +241,7 @@ footer img{height:40px;margin-bottom:24px}
 }
 
 /* October 2026: readable defaults, stable galleries and keyboard navigation. */
-.fx,.fx.in{opacity:1!important;transform:none!important;transition:none!important}
+.fx,.fx.in{opacity:1;transform:none}
 .slide img{opacity:1!important}
 .menu-btn{display:none}
 .ko-enhanced .menu-btn{display:inline-block}
@@ -313,30 +313,13 @@ footer .fbot{padding-right:0!important}
 /* Keep the menu logo proportional when intrinsic dimensions are supplied. */
 .menu-top img{width:auto}
 
-/* November 2026 visual repair: retain the artwork; no automatic motion. */
-html{scroll-behavior:auto!important}
-.ticker-track,.fog,.fog svg,.m-fly,.m-bob,.m-bob img,.dial .scallop,footer .f-stars i,.bus-wrap .bus-inner,.bus-wrap .lamp{animation:none!important}
-.fx,.fx.in{opacity:1!important;transform:none!important}
-.ko-motion-toggle,.ko-video-control,.cursor,.cursor-dot,.cursor-ring,.custom-cursor{display:none!important}
+/* Original illustrations stay visible; motion remains optional. */
+html{scroll-behavior:smooth}
+.cursor,.cursor-dot,.cursor-ring,.custom-cursor{display:none!important}
 body{cursor:auto!important}
 a,button,[role="button"]{cursor:pointer}
 button:disabled{cursor:default}
-.fog{opacity:1!important}
-.fog svg{opacity:.2}
-.ghats picture{transform:none!important}
-/* Compact, stationary bands preserve every label. */
-.ticker{white-space:normal;overflow:hidden;padding:10px 18px}
-.ticker-track{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:3px 0;max-width:1140px;margin:0 auto;transform:none!important;will-change:auto;line-height:1.4}
-.ticker span{padding:0 10px;font-size:.9rem}
-.ticker-track [aria-hidden="true"]{display:none}
-/* The hornbill remains an illustration, rather than disappearing with its animation. */
-.menu-scene{display:block}
-.menu-scene .m-fly{display:block;left:auto;right:9%;top:32%;width:clamp(140px,23vw,300px);transform:rotate(-8deg);opacity:.72}
-.menu-scene .m-bob{transform:none}
-.menu-scene .hb-down img{opacity:1}
-.menu-scene .hb-up{display:none}
 footer .f-stars{display:block}
-footer .f-stars i{opacity:calc(var(--o,.7) * .55);transform:none}
 .menu{max-height:100dvh;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding-bottom:max(28px,env(safe-area-inset-bottom));transition:transform .22s ease}
 .menu-top{gap:16px;flex-shrink:0}
 .menu-btn,.menu-x,.sl-btn{min-width:44px;min-height:44px}
@@ -347,9 +330,6 @@ footer .f-stars i{opacity:calc(var(--o,.7) * .55);transform:none}
  .menu{padding:20px 20px max(24px,env(safe-area-inset-bottom))}
  .menu-links{padding:20px 0}
  .menu-links a{font-size:clamp(1.6rem,7.2vw,2.25rem);gap:10px}
- .menu-scene .m-fly{top:auto;bottom:4%;right:5%;width:110px;opacity:.4}
- .ticker{padding:8px 10px}
- .ticker span{font-size:.76rem;line-height:1.35;padding:0 6px}
  .sl-btn{width:44px;height:44px}
 }
 /* One header layout shared by every page, with room for the Journal shortcut. */
@@ -369,7 +349,7 @@ footer .f-stars i{opacity:calc(var(--o,.7) * .55);transform:none}
  .nav img{height:26px;max-width:100px}
  .nav .menu-btn{padding:12px;font-size:11px}
 }
-/* Films start only after a visitor presses Play. */
+/* Muted background films retain a visible pause / play control. */
 .ko-film-section{position:relative}
 .ko-film-toggle{position:absolute;right:clamp(18px,3vw,40px);bottom:22px;z-index:6;min-height:44px;max-width:calc(100% - 36px);padding:12px 18px;border:1px solid var(--paper);background:var(--green-deep);color:var(--paper);font:600 12px/1.5 var(--body);cursor:pointer;transition:background .18s ease}
 .ko-film-toggle:hover{background:var(--green)}
@@ -387,3 +367,49 @@ footer .f-stars i{opacity:calc(var(--o,.7) * .55);transform:none}
 /* Keep anchored sections clear of the sticky header. */
 [id]{scroll-margin-top:90px}
 @media(max-width:820px){[id]{scroll-margin-top:78px}}
+
+/* Shared moving details, restored November 2026. */
+.fx,.fx.in{opacity:1;transform:none}
+.fx.ko-reveal{animation:ko-reveal .65s cubic-bezier(.2,.7,.2,1) both}
+@keyframes ko-reveal{from{opacity:.45;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.ticker{white-space:nowrap;padding:12px 0}
+.ticker .ticker-track{display:flex;width:max-content;max-width:none;align-items:center;flex-wrap:nowrap;gap:0;margin:0;animation:none;line-height:1.4;will-change:transform}
+.ticker .ticker-track.ko-ticker-ready{animation:ko-marquee var(--ticker-time,28s) linear infinite}
+.ticker .ko-ticker-group{display:flex;flex:0 0 auto;align-items:center;gap:0;width:max-content}
+.ticker .ko-ticker-group>span{flex:0 0 auto;font-size:.95rem;padding:0 20px}
+@keyframes ko-marquee{to{transform:translateX(-50%)}}
+.menu-scene{display:block;overflow:hidden}
+.menu-scene .m-fly{display:block;left:0;right:auto;top:22%;bottom:auto;width:clamp(110px,14vw,170px);opacity:.9;transform:translateX(24vw);animation:none}
+.menu.open .m-fly{animation:m-cross 19s linear -5s infinite}
+.menu-scene .m-bob{animation:m-bob 2.6s ease-in-out infinite alternate}
+.menu-scene .hb-down,.menu-scene .hb-up{display:block;position:absolute;inset:0}
+.menu-scene .hb-down img{animation:m-flap-a .52s steps(1) infinite}
+.menu-scene .hb-up img{animation:m-flap-b .52s steps(1) infinite}
+.menu:not(.open) .m-bob,.menu:not(.open) .m-bob img{animation-play-state:paused}
+footer .f-stars i{animation:fstar var(--d,5s) ease-in-out var(--dl,0s) infinite}
+.ko-motion-toggle{display:inline-flex;align-items:center;align-self:flex-start;position:relative;z-index:3;margin-top:22px;min-height:44px;padding:10px 14px;border:1px solid rgba(244,232,207,.5);background:transparent;color:var(--paper);font:600 12px/1.5 var(--body);cursor:pointer}
+.ko-motion-toggle:hover{border-color:var(--turmeric);color:var(--turmeric)}
+.ko-motion-toggle:disabled{opacity:.7;cursor:default}
+@media(max-width:820px){
+ .menu-scene .m-fly{top:clamp(92px,16vh,150px);width:112px}
+ .ticker .ko-ticker-group>span{font-size:.86rem;padding:0 15px}
+}
+html.ko-page-hidden *,html.ko-page-hidden *::before,html.ko-page-hidden *::after{animation-play-state:paused!important}
+html.ko-motion-paused *,html.ko-motion-paused *::before,html.ko-motion-paused *::after{animation-play-state:paused!important;scroll-behavior:auto!important}
+html.ko-motion-paused .fx{animation:none!important;opacity:1;transform:none}
+html.ko-motion-paused .ticker{white-space:normal;padding:10px 14px}
+html.ko-motion-paused .ticker-track{animation:none!important;transform:none!important;width:100%;justify-content:center}
+html.ko-motion-paused .ko-ticker-group{width:100%;flex-wrap:wrap;justify-content:center}
+html.ko-motion-paused .ko-ticker-group[aria-hidden="true"],html.ko-motion-paused .ko-ticker-group>[aria-hidden="true"]{display:none}
+html.ko-motion-paused .ko-ticker-group>span{padding:0 8px}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .fx{animation:none!important;opacity:1;transform:none}
+ .menu-scene .m-fly{display:block;transform:translateX(24vw)}
+ .menu-scene .hb-up{display:none}
+ .menu-scene .hb-down img{opacity:1}
+ .ticker{white-space:normal;padding:10px 14px}
+ .ticker .ticker-track{transform:none;width:100%;justify-content:center}
+ .ticker .ko-ticker-group{width:100%;flex-wrap:wrap;justify-content:center}
+ .ko-ticker-group[aria-hidden="true"],.ko-ticker-group>[aria-hidden="true"]{display:none}
+}
