@@ -73,3 +73,20 @@ region, not a photograph of Poabs' coffee plots or an identified farm.
 Editorial note: None of the images documents a Kerala Origins farm visit.
 The surrounding article and captions do not identify photographed farms
 as named participating producers or imply that photographers endorse us.
+
+
+ADDITIONS — 17 November 2026
+
+/assets/journal/anaimalai-coffee-harvest.webp
+Sorting coffee cherries after harvest in the Anaimalai Hills, Southern Western Ghats (2010). A regional illustration, not a photograph of a Kerala Origins partner farm or the current season.
+Photo: PJeganathan
+Source: https://commons.wikimedia.org/wiki/File:Coffee_berries_harvest_in_Anaimalai_Hills,_Southern_Western_Ghats_P1110957.jpg
+License: CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
+Changes: Resized and converted to WebP; no generative changes.
+
+/assets/journal/coffee-drying-malawi.webp
+Coffee drying on raised beds in Malawi. An illustration of drying, not a Kerala Origins producer site.
+Photo: Ludger001
+Source: https://commons.wikimedia.org/wiki/File:Coffee_Processing_%E2%80%93_Drying_the_beans.jpg
+License: CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
+Changes: Resized and converted to WebP; no generative changes.

@@ -225,7 +225,7 @@
 }
 
 /* A static typographic treatment for the November community feature. */
-.ko-journal *, .ko-journal *::before, .ko-journal *::after { animation: none!important; transition: none!important; scroll-behavior: auto!important; }
+
 .j-weekend-art { display:flex; flex-direction:column; justify-content:space-between; gap:40px; min-height:475px; padding:36px; background:var(--green); color:var(--paper)!important; text-decoration:none; border:1px solid var(--green); }
 .j-weekend-art:hover { text-decoration:none; }
 .j-weekend-kicker, .j-weekend-date { font:700 11px/1.6 var(--body); letter-spacing:.11em; text-transform:uppercase; }
@@ -246,4 +246,20 @@
  .ko-weekend .j-toc a { min-height:44px; display:flex; align-items:center; }
 }
 
-.j-button span[aria-hidden="true"]{font-family:Arial,sans-serif}
+.j-link-arrow{display:inline-block;width:16px;height:16px;flex:none;vertical-align:-2px}.j-button .j-link-arrow{width:20px;height:20px}
+
+/* Journal guide shelf: spacious photography and a clear reading order. */
+.j-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;padding-bottom:56px}
+.j-guide-card{min-width:0;border-top:1px solid var(--green);padding-top:24px}
+.j-card-photo{display:block;overflow:hidden}
+.j-card-photo img{width:100%;height:auto;aspect-ratio:1.65;object-fit:cover}
+.j-guide-card .j-eyebrow{margin-top:24px}
+.j-guide-card h3{font:700 clamp(1.7rem,3vw,2.35rem)/1.13 var(--head);letter-spacing:-.035em;margin:12px 0 16px}
+.j-guide-card h3 a{text-decoration:none}
+.j-guide-card>p:not(.j-eyebrow):not(.j-photo-credit){font:400 18px/1.7 var(--serif);max-width:45ch}
+.j-guide-card .j-text-link{margin-top:12px}
+.j-article-body table{width:100%;border-collapse:collapse;font:400 15px/1.65 var(--body);margin:24px 0}
+.j-article-body th,.j-article-body td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(11,79,58,.3);overflow-wrap:anywhere}
+.j-article-body th{color:var(--green);font-weight:700}
+.j-article-body a{overflow-wrap:anywhere}
+@media(max-width:760px){.j-guide-grid{grid-template-columns:1fr;gap:30px;padding-bottom:36px}.j-article-body th,.j-article-body td{padding:9px 6px;font-size:13px}}

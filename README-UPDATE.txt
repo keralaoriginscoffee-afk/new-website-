@@ -1,79 +1,90 @@
-KERALA ORIGINS — MOTION & MOBILE REPAIR UPDATE
-15 November 2026
+KERALA ORIGINS — JOURNAL & SEO UPDATE
+17 November 2026
 
-This ZIP contains 18 changed or new website files and this guide. Apply it to
-the current Kerala Origins website after the November visual / Journal update.
-It is an update package, not a complete website backup. No build step is needed.
+This is an update-only package for the current Kerala Origins website, after
+the 15 November motion/mobile repair. It contains 20 changed or new website
+files. Keep all existing website files that are not included. No build is needed.
 
-MANUAL UPLOAD
-1. Extract the ZIP on your computer.
-2. Open the Kerala Origins website repository and the folder containing
-   index.html, styles.css and app.js.
-3. Upload all 18 website files listed below into that same folder. Replace
-   existing versions and add the new files. Keep the filenames unchanged.
-   Do not upload the ZIP itself or create an enclosing folder. This guide
-   does not need to be uploaded.
-4. Keep every other existing website file and asset. In particular, preserve
-   the existing photos, posters, fonts, logo files, ghats.webp, hb-up / hb-down
-   artwork, kerala-origins-bus artwork, prologue.mp4 and why-hero.mp4. Their
-   filenames must remain unchanged; this package references those assets.
-5. Commit the files. Let your usual GitHub-connected hosting deployment finish,
-   or use your existing publishing process if hosting is not connected.
-6. Refresh the live homepage, open the menu, and tap the bus on Contact.
-   A new shared asset version is included on all 12 HTML pages to help browsers
-   request the updated CSS and JavaScript.
+UPLOAD
+1. Extract the ZIP.
+2. Open the website folder that contains index.html. Upload the files there,
+   preserving the assets/journal/ folder structure. Replace matching files and
+   add the new files. Do not upload the ZIP itself or create an enclosing folder.
+3. Keep all other photos, videos, fonts, illustrations and shared scripts.
+   Do not delete any existing files. This README does not need to be uploaded.
+4. Commit the files and let your usual hosting process deploy the update.
+   Nothing has been published or uploaded to GitHub by this work.
 
-WHAT CHANGED
-- A coordinated mobile / desktop landing page with clearer button labels,
-  improved image framing, responsive spacing and readable badges.
-- Gentle drifting clouds with consistent proportions and restrained opacity,
-  plus subtle mountain movement while scrolling.
-- Flying / flapping menu hornbill, moving ticker strips, entrance reveals,
-  footer stars, flavour-word transitions and a rotating archive seal.
-- Contact-page bus entrance, tap-to-honk original sound, lights, ticket and
-  repeat interaction. Sound plays only after a click, tap or keyboard action.
-- Muted inline background films that play when visible, with pause controls.
-- A saved Pause motion / Resume motion control and respect for the device's
-  reduced-motion preference.
-- The approved name is now Vajid KV.
+WHAT IS INCLUDED
+- Three researched articles: buying Kerala specialty coffee; the Kerala coffee
+  harvest season; and washed, natural and honey processing.
+- The harvest guide includes a dated community update. It does not invent
+  current farm progress, stock availability or future event dates.
+- Real photographs with captions and credits, including two newly added
+  open-licensed photographs. Existing event and regional photographs are reused
+  where relevant; their original files must remain on the website.
+- A Journal page with five articles and links to the new reading guides.
+- Relevant links from existing pages, unique article metadata, social previews,
+  structured data and a sitemap containing all 15 website pages.
+- Canonical and internal links aligned with the clean URLs used by the live host.
+- Journal and article arrow icons use SVG so missing font glyphs do not appear.
+- A Journal CSS override that disabled shared motion has been removed; the
+  moving bird and the site-wide Pause motion control work on Journal pages.
+- The community story, Vajid KV spelling, completed-event status, gallery order,
+  bus horn and existing moving design are preserved.
 
-CONTENT PRESERVED
-The community wording, producer information, blogs, SEO metadata and structured
-data remain. All 20 Kochi and 15 Kozhikode gallery photos retain their original
-order. Completed events remain completed, with closed registrations. Journal
-remains visible in navigation, and Events remains a footer navigation link.
+SOURCE VALIDATION COMPLETED
+All 15 HTML pages were checked. The checks covered 1,118 local or own-domain
+references, 181 srcset candidates, all 158 image alt attributes and dimensions,
+fragments, ARIA references, duplicate IDs, page titles and canonical URLs.
+All 15 JSON-LD blocks parsed successfully. The sitemap contains 15 unique clean
+page URLs and the Journal schema lists all five articles. All four shared
+JavaScript files are unchanged and pass syntax checks. The 35 homepage gallery
+photographs retain their original order. No files were removed.
 
-VALIDATION
-- All 12 HTML pages checked for local asset links, fragments, ARIA targets,
-  duplicate IDs and JSON-LD. JavaScript syntax checks passed.
-- Responsive browser checks at widths 320, 375, 768, 1024 and 1348 pixels found
-  no horizontal overflow.
-- Desktop / mobile-width bus horn and keyboard playback verified through
-  the audio element, along with gallery arrows and enlarged-photo views.
-- Muted film autoplay / pause and the saved motion toggle verified.
-- All 35 gallery photos and their order checked against the previous version.
-- ZIP CRC integrity and every packaged file's bytes verified against source.
+BROWSER PREVIEW VALIDATION
+The Journal, buyer guide and processing guide were checked at 375px width;
+the harvest guide was checked at 320px. The Journal and all three articles
+were also checked at 1348px desktop width. No horizontal overflow was found.
+Article navigation and table-of-contents links worked, and the real hero
+photographs loaded. The Journal bird's flap animation was running; Pause motion
+paused it and Resume motion restored it. HTML, JSON-LD, IDs and ARIA references
+were rechecked after the final icon replacements.
+These were browser-preview checks, not physical iPhone or Safari tests.
+ZIP CRC integrity and every packaged website file's bytes were verified.
 
-Physical phone hardware and Safari were not tested. Audio playback was checked
-through the browser's media element; individual device volume was not assessed.
-No files have been published or uploaded to your GitHub account by this work.
+AFTER UPLOAD
+Open the Journal and each new article on mobile and desktop. Check photographs,
+article links and source links. Then, in the verified Google Search Console
+property, submit or resubmit:
+https://www.keralaoriginscoffee.com/sitemap.xml
+Use URL Inspection for the updated Journal and three new article URLs below.
+If a URL is not indexed, inspect the live URL and request indexing where offered.
+Google decides recrawl timing; submitting a sitemap does not guarantee rankings.
+
+https://www.keralaoriginscoffee.com/journal
+https://www.keralaoriginscoffee.com/buy-kerala-specialty-coffee
+https://www.keralaoriginscoffee.com/kerala-coffee-harvest-season
+https://www.keralaoriginscoffee.com/coffee-processing-washed-natural-honey
 
 FILES TO UPLOAD
-app.js
-bus.js
+assets/journal/IMAGE-CREDITS.txt
+assets/journal/anaimalai-coffee-harvest.webp
+assets/journal/coffee-drying-malawi.webp
+buy-kerala-specialty-coffee.html
+coffee-processing-washed-natural-honey.html
 contact.html
 events.html
 farmers.html
-home-motion.css
-home-motion.js
 index.html
+journal.css
 journal.html
-kerala-bus-horn.mp3
+kerala-coffee-harvest-season.html
 kerala-specialty-coffee-regions-producers.html
 kochi-2026.html
 kozhikode-2026.html
 kozhikode-coffee-weekend-2026.html
 our-story.html
 producers.html
-styles.css
+sitemap.xml
 why-we-exist.html
