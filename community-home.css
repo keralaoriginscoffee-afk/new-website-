@@ -1,0 +1,81 @@
+/* A field note from the cupping table, set in the existing Kerala Origins almanac. */
+.ko-fieldnote {
+  background:var(--paper);
+  color:var(--ink);
+  padding-block:clamp(38px,6vw,82px);
+  border-bottom:2px solid var(--ink);
+}
+.ko-fieldnote-label {
+  display:flex;
+  gap:16px;
+  align-items:baseline;
+  justify-content:space-between;
+  margin-bottom:clamp(24px,3.6vw,44px);
+  padding-bottom:10px;
+  border-bottom:2px solid var(--green);
+  color:var(--green);
+}
+.ko-fieldnote-label span:first-child, .ko-fieldnote-place {
+  font:700 .72rem/1.5 var(--body);
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.ko-fieldnote-label [lang="ml"] {font:500 1.05rem/1.4 var(--mal)}
+.ko-fieldnote-grid {
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 1.03fr);
+  gap:clamp(24px,5.8vw,75px);
+  align-items:center;
+}
+.ko-fieldnote-place {color:var(--green);margin:0 0 10px}
+.ko-fieldnote h2 {
+  margin:0;
+  color:var(--ink);
+  font:700 clamp(2.25rem,4.6vw,3.85rem)/1.04 var(--head);
+  letter-spacing:-.05em;
+  max-width:15ch;
+  text-wrap:balance;
+}
+.ko-fieldnote-lead {font:400 clamp(1.1rem,1.4vw,1.25rem)/1.58 var(--serif);margin:16px 0 22px}
+.ko-fieldnote-method {border-top:1px solid var(--green)}
+.ko-fieldnote-method + .ko-fieldnote-method {border-bottom:1px solid var(--green)}
+.ko-fieldnote-method summary {
+  list-style:none;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  min-height:48px;
+  color:var(--green);
+  cursor:pointer;
+  font:700 1rem/1.4 var(--head);
+}
+.ko-fieldnote-method summary::-webkit-details-marker {display:none}
+.ko-fieldnote-method summary::after {
+  content:"";
+  display:block;
+  width:9px;
+  height:9px;
+  flex:none;
+  margin-right:5px;
+  border:solid currentColor;
+  border-width:0 2px 2px 0;
+  transform:translateY(-2px) rotate(45deg);
+}
+.ko-fieldnote-method[open] summary::after {transform:translateY(2px) rotate(225deg)}
+.ko-fieldnote-method p {font:400 1rem/1.6 var(--body);margin:0;max-width:47ch;padding:0 12px 17px 0}
+.ko-fieldnote-paths {display:flex;flex-wrap:wrap;gap:0 22px;margin-top:12px}
+.ko-fieldnote a {color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:.22em;text-decoration-thickness:1px}
+.ko-fieldnote-paths a {display:inline-flex;align-items:center;min-height:44px;font:700 .89rem/1.5 var(--body)}
+.ko-fieldnote a:hover, .ko-fieldnote-method summary:hover {text-decoration:underline;text-decoration-thickness:2px}
+.ko-fieldnote a:focus-visible,.ko-fieldnote summary:focus-visible {outline:2px solid var(--green);outline-offset:3px}
+.ko-fieldnote-photo {margin:0;min-width:0}
+.ko-fieldnote-photo img {width:100%;height:auto;display:block;border:2px solid var(--ink)}
+.ko-fieldnote-photo figcaption {margin-top:12px;padding:0 0 0 12px;border-left:3px solid var(--turmeric);font:500 .84rem/1.6 var(--body);max-width:50ch}
+.ko-fieldnote-photo figcaption a {display:inline-block;margin-left:.2em}
+@media(max-width:759px) {
+  .ko-fieldnote-grid {grid-template-columns:1fr;gap:18px}
+  .ko-fieldnote-label {margin-bottom:24px}
+  .ko-fieldnote h2 {max-width:18ch}
+  .ko-fieldnote-lead {margin-block:14px 18px}
+}

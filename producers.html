@@ -164,7 +164,7 @@
             "@type": "Organization",
             "@id": "https://www.keralaoriginscoffee.com/producers#terra-vagamon-conservancy",
             "name": "Terra Vagamon Conservancy",
-            "description": "Ephrem Joseph contributes TerraVagamon Conservancy’s producer perspective. Arabica, Robusta and Excelsa connect its forest-growing approach with the coffee programme.",
+            "description": "Ephrem Joseph contributes Terra Vagamon Conservancy’s producer perspective. Arabica, Robusta and Excelsa connect its forest-growing approach with the coffee programme.",
             "url": "https://www.keralaoriginscoffee.com/producers#terra-vagamon-conservancy",
             "location": {
               "@type": "Place",
@@ -328,6 +328,27 @@ button.send:disabled{opacity:.55;cursor:progress}
 .pd-transparency{margin-top:28px;font-family:var(--serif);max-width:70ch}
 .pd-transparency a{color:var(--green);text-underline-offset:3px}
 @media(max-width:700px){.row{grid-template-columns:1fr;gap:0}}
+
+/* Grower introductions: the short enquiry works with or without JavaScript. */
+#sourcing,#privacy{scroll-margin-top:100px}
+.frm form,.frm fieldset,.frm .row>*{min-width:0}
+.frm .pd-intro-fields{margin-top:0}
+.frm .pd-contact-consent{padding:0;background:none;border:0;box-shadow:none;margin:2px 0 24px}
+.frm .pd-contact-consent label{margin:0;align-items:center}
+.frm .pd-extra{border-top:2px solid var(--green);border-bottom:1px solid var(--green);margin-top:24px}
+.frm .pd-extra summary{display:flex;gap:14px;align-items:center;justify-content:space-between;min-height:55px;padding:10px 4px;font:700 16px/1.4 var(--body);color:var(--green);cursor:pointer;list-style:none}
+.frm .pd-extra summary::-webkit-details-marker{display:none}
+.frm .pd-extra summary small{font:400 12px/1.4 var(--body);margin-left:6px;color:var(--muted)}
+.frm .pd-extra summary:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.frm .pd-toggle{position:relative;display:block;flex:0 0 16px;height:16px}
+.frm .pd-toggle::before,.frm .pd-toggle::after{content:"";position:absolute;left:0;right:0;height:2px;top:7px;background:currentColor}
+.frm .pd-toggle::after{transform:rotate(90deg)}
+.frm .pd-extra[open] .pd-toggle::after{transform:none}
+.frm .pd-extra-body{padding:2px 0 24px}
+.frm .pd-publication{box-shadow:none;border:1px solid var(--green)}
+.frm .pd-privacy{max-width:64ch;margin:20px 0 0;font:400 13px/1.65 var(--body);color:var(--muted)}
+.frm .pd-privacy a{color:var(--green)}
+
 /* ---------- footer (identical on every page) ---------- */
 footer{position:relative;isolation:isolate}
 /* misty Ghats backdrop: wide art on desktop, tall art on mobile. The footer keeps
@@ -453,8 +474,8 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
     <a href="/"><span class="no">01</span>Home<span class="m" lang="ml">തുടക്കം</span></a>
     <a href="/why-we-exist"><span class="no">02</span>Why We Exist<span class="m" lang="ml">എന്തിന്</span></a>
     <a href="/our-story"><span class="no">03</span>Our Story<span class="m" lang="ml">കഥ</span></a>
-    <a href="/farmers"><span class="no">04</span>For Producers<span class="m" lang="ml">കർഷകർ</span></a>
-    <a href="/producers" aria-current="page"><span class="no">05</span>Producers<span class="m" lang="ml">ഉത്പാദകർ</span></a>
+    <a href="/farmers"><span class="no">04</span>Grower support<span class="m" lang="ml">കർഷകർ</span></a>
+    <a href="/producers" aria-current="page"><span class="no">05</span>Meet the producers<span class="m" lang="ml">ഉത്പാദകർ</span></a>
     <a href="/contact"><span class="no">06</span>Contact<span class="m" lang="ml">ബന്ധപ്പെടുക</span></a>
       <a href="/journal"><span class="no">07</span>Journal<span class="m" lang="ml">വായന</span></a>
 </nav>
@@ -530,11 +551,11 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
       </article>
       <article class="pd-card" id="rose-garden" data-producer-editions="kochi" aria-labelledby="rose-garden-title">
         <div class="pd-card-top"><span>Farming community</span><span class="pd-number" aria-hidden="true">06</span></div>
-        <h3 id="rose-garden-title"><a href="#rose-garden">Rose Garden</a></h3>
+        <h3 id="rose-garden-title">Rose Garden</h3>
         <p class="pd-place">Meppadi, Wayanad</p>
         <p class="pd-description">Based in Meppadi, Wayanad, the Rose Garden farming community shared washed and honey-processed Robusta for the Kochi programme.</p>
         <ul class="pd-coffees" aria-label="Coffee and processing"><li>Robusta</li><li>Washed</li><li>Honey</li></ul>
-        <div class="pd-editions"><span>With Kerala Origins</span><div><a href="/kochi-2026">Kochi · 2026</a></div></div>
+        <div class="pd-editions"><span>With Kerala Origins</span><div><a href="/kochi-2026">Kochi · 2026</a><a href="/coffee-processing-washed-natural-honey">Compare processes</a><a href="mailto:keralaoriginscoffee@gmail.com?subject=Producer%20enquiry%20%E2%80%94%20Rose%20Garden">Ask about this coffee</a></div></div>
       </article>
       <article class="pd-card" id="on-ground" data-producer-editions="kochi kozhikode" aria-labelledby="on-ground-title">
         <div class="pd-card-top"><span>Coffee collaborator</span><span class="pd-number" aria-hidden="true">07</span></div>
@@ -556,7 +577,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
         <div class="pd-card-top"><span>Conservancy</span><span class="pd-number" aria-hidden="true">09</span></div>
         <h3 id="terra-vagamon-conservancy-title"><a href="#terra-vagamon-conservancy">Terra Vagamon Conservancy</a></h3>
         <p class="pd-place">Vagamon, Kerala</p>
-        <p class="pd-description">Ephrem Joseph contributes TerraVagamon Conservancy’s producer perspective. Arabica, Robusta and Excelsa connect its forest-growing approach with the coffee programme.</p>
+        <p class="pd-description">Ephrem Joseph contributes Terra Vagamon Conservancy’s producer perspective. Arabica, Robusta and Excelsa connect its forest-growing approach with the coffee programme.</p>
         <ul class="pd-coffees" aria-label="Coffee and processing"><li>Arabica</li><li>Robusta</li><li>Excelsa</li></ul>
         <div class="pd-editions"><span>With Kerala Origins</span><div><a href="/kochi-2026">Kochi · 2026</a><a href="/kozhikode-2026">Kozhikode · 2026</a></div></div>
       </article>
@@ -602,7 +623,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 </section>
 
 <section class="buy" id="source">
-  <div class="wrap fx">
+  <div class="wrap fx" id="sourcing">
     <p class="kicker">Roasters &amp; buyers</p>
     <h2>Start with the coffee. Meet its grower.</h2>
     <p>Looking for Kerala coffee for your roastery, café or buying programme? Tell us whether you need green or roasted coffee, your preferred origins, processes, approximate volume and destination. We can discuss relevant producer connections and what information is available for each lot.</p>
@@ -622,15 +643,15 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
   <div class="wrap">
     <p class="kicker fx" style="color:var(--green)">The form</p>
     <h2 class="fx" style="margin-top:10px">Tell us about your farm.</h2>
-    <p class="note fx">Take your time &mdash; the more you tell us, the better we can represent your coffee. Your name, phone, district and permission to contact you are required; leave anything else you&rsquo;re unsure about blank.</p>
+    <p class="note fx">Start with your name, phone number and district. With your permission, we’ll get in touch to hear about your coffee and what would be useful for your farm.</p>
 
     <form class="fx" aria-describedby="privacy" id="prForm" action="https://formspree.io/f/xljenzdk" method="POST">
       <!-- simple bot trap; real people never see or fill this -->
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0" />
       <input type="hidden" name="_subject" value="New producer submission — Kerala Origins" />
 
-      <fieldset>
-        <legend>01 &middot; About you</legend>
+      <fieldset class="pd-intro-fields">
+        <legend>Start here</legend>
         <div class="row">
           <div class="f">
             <label for="name">Your name <span class="opt">(required)</span> <span class="ml" lang="ml">പേര്</span></label>
@@ -639,28 +660,6 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
           <div class="f">
             <label for="phone">Phone / WhatsApp <span class="opt">(required)</span> <span class="ml" lang="ml">ഫോൺ</span></label>
             <input type="tel" id="phone" name="Phone" required autocomplete="tel" placeholder="+91" />
-          </div>
-          <div class="f">
-            <label for="email">Email <span class="opt">(optional)</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" />
-          </div>
-          <div class="f">
-            <label for="lang">Language you prefer <span class="ml" lang="ml">ഭാഷ</span></label>
-            <select id="lang" name="Preferred language">
-              <option value="Malayalam">Malayalam &mdash; മലയാളം</option>
-              <option value="English">English</option>
-              <option value="Both">Either</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>02 &middot; The farm</legend>
-        <div class="row">
-          <div class="f">
-            <label for="farm">Farm or estate name <span class="opt">(if it has one)</span></label>
-            <input type="text" id="farm" name="Farm name" />
           </div>
           <div class="f">
             <label for="district">District <span class="opt">(required)</span> <span class="ml" lang="ml">ജില്ല</span></label>
@@ -674,6 +673,36 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
               <option value="Outside Kerala">Outside Kerala</option>
             </select>
           </div>
+        </div>
+        <div class="consent pd-contact-consent">
+          <label><input type="checkbox" name="Consent to contact" value="Yes — may contact" required /> <span>You may contact me about this enquiry. <span class="opt">(required)</span></span></label>
+        </div>
+      </fieldset>
+
+      <details class="pd-extra" id="farm-details">
+        <summary><span>Add details about my coffee <small>Optional</small></span><span class="pd-toggle" aria-hidden="true"></span></summary>
+        <div class="pd-extra-body">
+          <p class="hint">Share what you know, in Malayalam or English. You can leave any question blank.</p>
+          <fieldset>
+        <legend>The farm</legend>
+        <div class="row">
+          <div class="f">
+            <label for="farm">Farm or estate name <span class="opt">(if it has one)</span></label>
+            <input type="text" id="farm" name="Farm name" />
+          </div>
+          <div class="f">
+            <label for="email">Email <span class="opt">(optional)</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" />
+          </div>
+          <div class="f">
+            <label for="lang">Language you prefer <span class="ml" lang="ml">ഭാഷ</span></label>
+            <select id="lang" name="Preferred language">
+              <option value="Malayalam">Malayalam &mdash; മലയാളം</option>
+              <option value="English">English</option>
+              <option value="Both">Either</option>
+            </select>
+          </div>
+
           <div class="f">
             <label for="village">Village / town <span class="ml" lang="ml">സ്ഥലം</span></label>
             <input type="text" id="village" name="Village or town" />
@@ -693,9 +722,8 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
           </div>
         </div>
       </fieldset>
-
-      <fieldset>
-        <legend>03 &middot; What you grow</legend>
+          <fieldset>
+        <legend>What you grow</legend>
         <div class="f full">
           <p class="field-label" id="coffee-types-label">Coffee types <span lang="ml">ഇനങ്ങൾ</span></p>
           <div class="checks" role="group" aria-labelledby="coffee-types-label">
@@ -715,9 +743,8 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
           <input type="text" id="yield" name="Annual production" placeholder="e.g. 800 kg cherry, or 2 tonnes" />
         </div>
       </fieldset>
-
-      <fieldset>
-        <legend>04 &middot; How you process</legend>
+          <fieldset>
+        <legend>How you process</legend>
         <div class="f full">
           <p class="field-label" id="processing-label">Methods and fermentation approaches you already use</p>
           <div class="checks" role="group" aria-labelledby="processing-label">
@@ -738,9 +765,8 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
           </div>
         </div>
       </fieldset>
-
-      <fieldset>
-        <legend>05 &middot; Your experience</legend>
+          <fieldset>
+        <legend>Your experience</legend>
         <div class="f full">
           <label for="story">Tell us about your farm and your coffee <span class="ml" lang="ml">നിങ്ങളുടെ കഥ</span></label>
           <textarea id="story" name="Their story" placeholder="How long has the family grown coffee? What have you changed recently? What are you proud of? What is difficult? Write in Malayalam or English — either is fine."></textarea>
@@ -751,9 +777,8 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
           <p class="hint">No link? Send photos on WhatsApp after you submit &mdash; we&rsquo;ll match them to your entry.</p>
         </div>
       </fieldset>
-
-      <fieldset>
-        <legend>06 &middot; What are you looking for?</legend>
+          <fieldset>
+        <legend>What are you looking for?</legend>
         <div class="f full">
           <div class="checks">
             <label><input type="checkbox" name="Looking for" value="Showcase my farm" /> Showcase my farm</label>
@@ -765,19 +790,19 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
           </div>
         </div>
       </fieldset>
-
-      <div class="consent">
-        <p id="privacy"><strong>Your information.</strong> This form sends your details through Formspree to Kerala Origins so the team can review and reply to your enquiry. Phone numbers and email addresses are not published. Publishing the farm details below is a separate, optional choice. To correct your information or ask us to remove it, email <a href="mailto:keralaoriginscoffee@gmail.com">keralaoriginscoffee@gmail.com</a>.</p>
-        <p><strong>Before you send.</strong> We&rsquo;d like to feature growers publicly &mdash; but only with your say-so, and never your phone number or email.</p>
-        <label><input type="checkbox" name="Consent to publish" value="Yes — may publish farm name, district, elevation, coffee types and story" />
+          <div class="consent pd-publication">
+            <p><strong>May we feature your farm?</strong> This is optional. You can contact us without making your farm details public.</p>
+            <label><input type="checkbox" name="Consent to publish" value="Yes — may publish farm name, district, elevation, coffee types and story" />
           You may publish my farm name, district, elevation, coffee types and story on the Kerala Origins website. My phone and email stay private.</label>
-        <label style="margin-top:14px"><input type="checkbox" name="Consent to contact" value="Yes — may contact" required />
-          You may contact me about my submission. <span class="opt">(required)</span></label>
-      </div>
+          </div>
+        </div>
+      </details>
+
+      <p class="pd-privacy" id="privacy"><strong>Your information.</strong> Formspree passes this enquiry to Kerala Origins. We keep your phone number and email private. For corrections or removal, <a href="mailto:keralaoriginscoffee@gmail.com">email the team</a>.</p>
 
       <div class="submit">
         <button class="send" type="submit">Send my details</button>
-        <p class="alt">Or send it all on WhatsApp: <a href="https://wa.me/919847599828?text=I%27d%20like%20to%20add%20my%20farm%20to%20Kerala%20Origins">+91 98475 99828</a></p>
+        <p class="alt">Prefer WhatsApp? <a href="https://wa.me/919847599828?text=I%27d%20like%20to%20add%20my%20farm%20to%20Kerala%20Origins">+91 98475 99828</a></p>
       </div>
       <div class="msg" id="prMsg" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
     </form>
@@ -798,8 +823,8 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
         <h4>Pages</h4>
         <a href="/why-we-exist">Why We Exist</a>
         <a href="/our-story">Our Story</a>
-        <a href="/farmers">For Producers</a>
-        <a href="/producers">Producers</a>
+        <a href="/farmers">Grower support</a>
+        <a href="/producers">Meet the producers</a>
         <a href="/contact">Contact</a>
         <a href="/events">Events</a>
         <a href="/journal">Journal</a>
@@ -822,10 +847,17 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
 /* Enhance the existing Formspree form; native submission remains the fallback. */
 (function(){
   var f=document.getElementById('prForm'), msg=document.getElementById('prMsg');
-  if(!f || !window.fetch || !window.FormData || !window.AbortController)return;
+  if(!f)return;
+  function openFieldGroup(field){
+    var group=field && field.closest && field.closest('details');
+    if(group)group.open=true;
+  }
+  // Reveal an invalid optional field before the browser tries to focus it.
+  f.addEventListener('invalid',function(e){openFieldGroup(e.target);},true);
+  if(!window.fetch || !window.FormData || !window.AbortController)return;
   var pending=false;
   function reveal(node){
-    var reduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    openFieldGroup(node);
     node.scrollIntoView({behavior:'auto',block:'center'});
   }
   f.addEventListener('input',function(e){
@@ -863,6 +895,7 @@ footer .fgrid a.ig-link svg{width:16px;height:16px;flex:none;display:block}
       .then(function(res){
         if(res.ok){
           f.reset();
+          document.getElementById('farm-details').open=false;
           msg.className='msg ok';
           msg.textContent='Your details have been submitted for review. The Kerala Origins team can now follow up using the contact details you provided.';
           reveal(msg);

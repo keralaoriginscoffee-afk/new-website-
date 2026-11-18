@@ -1,0 +1,6 @@
+KERALA ORIGINS | 18 November 2026
+Apply this update to the existing Kerala Origins website with the 17 November Journal update already installed. Extract the ZIP, then upload the 17 HTML, CSS and XML files in the directory containing index.html. Replace matching files and add community-home.css. Leave all other files in place; no build or deletion required. UPLOAD.txt is for your reference only.
+
+Start at the home page. Select Take part, then try the grower, buyer or visitor paths. The producer enquiry uses the existing Formspree endpoint. No enquiry was transmitted during testing; after upload confirm delivery with a real authorised submission. The visitor WhatsApp link is an editable enquiry, not event registration or an automatic subscription.
+
+The photograph in the Rose Garden field note is from the Kochi gathering, as captioned. To illustrate the November weekend, supply the date, venue, photographer credit and permission to publish an original photograph from that weekend. For a crop progress update, supply an observation, location and date approved by the grower. Neither is represented as current material in this update.
